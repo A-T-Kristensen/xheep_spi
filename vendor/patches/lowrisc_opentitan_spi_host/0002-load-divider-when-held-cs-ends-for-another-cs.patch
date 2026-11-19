@@ -1,0 +1,32 @@
+--- a/rtl/spi_host_fsm.sv
++++ b/rtl/spi_host_fsm.sv
+@@ -42,6 +42,7 @@
+   logic [15:0]      clkdiv, clkdiv_q;
+   logic [15:0]      clk_cntr_q, clk_cntr_d;
+   logic             clk_cntr_en;
++  logic             held_cs_to_trail;
+ 
+   logic [1:0]       speed_cpha0, speed_cpha1;
+ 
+@@ -190,6 +191,7 @@
+   // (CSNLEAD+1 half cycles in WaitLead); the idle hold at zero applies only while no
+   // command is accepted.
+   assign clk_cntr_d = sw_rst_i              ? 16'h0 :
++                      held_cs_to_trail      ? clkdiv :
+                       !clk_cntr_en          ? clk_cntr_q :
+                       new_command           ? clkdiv :
+                       is_idle               ? 16'h0 :
+@@ -314,6 +316,13 @@
+     end
+   end
+ 
++  // A command for another chip select ends a held (CSAAT) transfer from IdleCSBActive without
++  // being accepted, so no new_command loads the clock counter, and the counter sits at zero while
++  // the engine idles. Loading the divider on this step makes the first CSNTRAIL half period last
++  // CLKDIV+1 cycles; without it WaitTrail lasts one cycle plus CSNTRAIL half periods instead of
++  // CSNTRAIL+1 half periods.
++  assign held_cs_to_trail = fsm_en && (state_q == IdleCSBActive) && (state_d == WaitTrail);
++
+   // All register updates freeze when a stall is detected.
+   // The definition of the stall signal looks ahead to determine whether a conflict is looming.
+   // Thus stall depends on state_d.  Making state_d depend on stall

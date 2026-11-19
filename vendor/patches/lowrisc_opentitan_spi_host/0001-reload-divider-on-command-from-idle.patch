@@ -1,0 +1,18 @@
+--- a/rtl/spi_host_fsm.sv
++++ b/rtl/spi_host_fsm.sv
+@@ -185,10 +185,14 @@
+ 
+   assign active_o   = ~is_idle;
+ 
++  // A command accepted in Idle or IdleCSBActive loads the divider like one accepted in
++  // WaitIdle, so its first lead or clock phase lasts a full half sck period
++  // (CSNLEAD+1 half cycles in WaitLead); the idle hold at zero applies only while no
++  // command is accepted.
+   assign clk_cntr_d = sw_rst_i              ? 16'h0 :
+                       !clk_cntr_en          ? clk_cntr_q :
+-                      is_idle               ? 16'h0 :
+                       new_command           ? clkdiv :
++                      is_idle               ? 16'h0 :
+                       (clk_cntr_q == 16'h0) ? clkdiv :
+                       clk_cntr_q - 1;
+ 

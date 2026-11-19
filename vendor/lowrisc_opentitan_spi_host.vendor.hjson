@@ -4,6 +4,7 @@
 {
   name: "lowrisc_opentitan_spi_host",
   target_dir: "lowrisc_opentitan_spi_host"
+  patch_dir: "patches/lowrisc_opentitan_spi_host"
 
   upstream: {
     url: "https://github.com/x-heep/xheep_opentitan_spi_host.git",

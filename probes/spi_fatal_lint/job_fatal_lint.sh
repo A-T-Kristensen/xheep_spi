@@ -1,14 +1,16 @@
 #!/bin/bash
 # owner-check: probes/spi_host_top_lint/lint_top.sh — read it on xheep_spi wip/xheep-fix-prs — it always passes -Wno-fatal and uses laptop paths; this job adds the warnings-fatal passes over the same file list inside a sent bundle
-# Lints the full spi_host top of two RTL trees, main 91acf0f3 and the PR tip
-# f6408ba8, with Verilator -Wall in three passes each:
+# Usage: job_fatal_lint.sh TREE...   (each TREE is a folder trees/TREE/ with rtl/ and lint/)
+# Lints the full spi_host top of each named RTL tree, for example main 91acf0f3
+# and a PR tip, with Verilator -Wall in three passes each:
 #   fatal_waivers  warnings fatal, with the repository waiver file lint/spi_host.vlt
 #   fatal_census   warnings fatal, without the waiver file
 #   census         warnings non-fatal, without the waiver file (the earlier census)
 # Prints one LINT line per pass with the Verilator exit status, the warning and
 # error counts and the warning classes. A nonzero Verilator status is the
-# measured result, not a job failure. The job exits nonzero only when
-# Verilator is missing or a pass wrote no Verilator output. Run from the
+# measured result, not a job failure. The job exits nonzero only when no
+# tree is named, a named tree is missing, Verilator is missing or a pass
+# wrote no Verilator output. Run from the
 # bundle root; each pass truncates its own log, so no earlier result remains.
 set -uo pipefail
 # On an EPFL host, Verilator 5.040 (the laptop's version) is under /softs.
@@ -98,6 +100,17 @@ run_tree() {
   done
 }
 
-run_tree 91acf0f3
-run_tree f6408ba8
+tree_names=("$@")
+if [ "${#tree_names[@]}" -eq 0 ]; then
+  echo "ERROR: name at least one tree under trees/, for example 91acf0f3"
+  exit 2
+fi
+for tree_name in "${tree_names[@]}"; do
+  if [ ! -d "$bundle_dir/trees/$tree_name/rtl" ]; then
+    echo "ERROR: trees/$tree_name/rtl does not exist"
+    job_failed=1
+    continue
+  fi
+  run_tree "$tree_name"
+done
 exit "$job_failed"

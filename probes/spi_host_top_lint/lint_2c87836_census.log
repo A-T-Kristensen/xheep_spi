@@ -1,0 +1,704 @@
+%Warning-REDEFMACRO: /home/andreas/gitlab_esl/x-heep/hw/vendor/pulp_platform/common_cells/include/common_cells/assertions.svh:73:7: Redefining existing define: 'ASSERT_I', with different value: '\
+`ifdef INC_ASSERT                                    \
+  __name: assert (__prop)                            \
+    else begin                                       \
+      `ASSERT_RPT(`ASSERT_STRINGIFY(__name), __desc) \
+    end                                              \
+`endif (__name, __prop, __desc = "")'
+                     /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_assert_dummy_macros.svh:18:1: ... Location of previous definition, with value: ' (__name, __prop)'
+                     ... For warning description see https://verilator.org/warn/REDEFMACRO?v=5.040
+                     ... Use "/* verilator lint_off REDEFMACRO */" and lint_on around source to disable this message.
+%Warning-REDEFMACRO: /home/andreas/gitlab_esl/x-heep/hw/vendor/pulp_platform/common_cells/include/common_cells/assertions.svh:84:7: Redefining existing define: 'ASSERT_INIT', with different value: '\
+`ifdef INC_ASSERT                                      \
+  initial begin                                        \
+    __name: assert (__prop)                            \
+      else begin                                       \
+        `ASSERT_RPT(`ASSERT_STRINGIFY(__name), __desc) \
+      end                                              \
+  end                                                  \
+`endif (__name, __prop, __desc = "")'
+                     /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_assert_dummy_macros.svh:18:1: ... Location of previous definition, with value: ' (__name, __prop)'
+%Warning-REDEFMACRO: /home/andreas/gitlab_esl/x-heep/hw/vendor/pulp_platform/common_cells/include/common_cells/assertions.svh:97:7: Redefining existing define: 'ASSERT_FINAL', with different value: '\
+`ifdef INC_ASSERT                                                            \
+  final begin                                                                \
+    __name: assert (__prop || $test$plusargs("disable_assert_final_checks")) \
+      else begin                                                             \
+        `ASSERT_RPT(`ASSERT_STRINGIFY(__name), __desc)                       \
+      end                                                                    \
+  end                                                                        \
+`endif (__name, __prop, __desc = "")'
+                     /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_assert_dummy_macros.svh:18:1: ... Location of previous definition, with value: ' (__name, __prop)'
+%Warning-REDEFMACRO: /home/andreas/gitlab_esl/x-heep/hw/vendor/pulp_platform/common_cells/include/common_cells/assertions.svh:107:7: Redefining existing define: 'ASSERT', with different value: '\
+`ifdef INC_ASSERT                                                                                     \
+  __name: assert property (@(posedge __clk) disable iff ((__rst) !== '0) (__prop))                    \
+    else begin                                                                                        \
+      `ASSERT_RPT(`ASSERT_STRINGIFY(__name), __desc)                                                  \
+    end                                                                                               \
+`endif (__name, __prop, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST, __desc = "")'
+                     /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_assert_dummy_macros.svh:18:1: ... Location of previous definition, with value: ' (__name, __prop, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST)'
+%Warning-REDEFMACRO: /home/andreas/gitlab_esl/x-heep/hw/vendor/pulp_platform/common_cells/include/common_cells/assertions.svh:120:7: Redefining existing define: 'ASSERT_NEVER', with different value: '\
+`ifdef INC_ASSERT                                                                                           \
+  __name: assert property (@(posedge __clk) disable iff ((__rst) !== '0) not (__prop))                      \
+    else begin                                                                                              \
+      `ASSERT_RPT(`ASSERT_STRINGIFY(__name), __desc)                                                        \
+    end                                                                                                     \
+`endif (__name, __prop, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST, __desc = "")'
+                     /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_assert_dummy_macros.svh:18:1: ... Location of previous definition, with value: ' (__name, __prop, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST)'
+%Warning-REDEFMACRO: /home/andreas/gitlab_esl/x-heep/hw/vendor/pulp_platform/common_cells/include/common_cells/assertions.svh:127:7: Redefining existing define: 'ASSERT_KNOWN', with different value: '\
+`ifdef INC_ASSERT                                                                                          \
+  `ASSERT(__name, !$isunknown(__sig), __clk, __rst, __desc)                                                \
+`endif (__name, __sig, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST, __desc = "")'
+                     /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_assert_dummy_macros.svh:18:1: ... Location of previous definition, with value: ' (__name, __sig, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST)'
+%Warning-REDEFMACRO: /home/andreas/gitlab_esl/x-heep/hw/vendor/pulp_platform/common_cells/include/common_cells/assertions.svh:133:7: Redefining existing define: 'COVER', with different value: '\
+`ifdef INC_ASSERT                                                                       \
+  __name: cover property (@(posedge __clk) disable iff ((__rst) !== '0) (__prop));      \
+`endif (__name, __prop, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST)'
+                     /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_assert_dummy_macros.svh:18:1: ... Location of previous definition, with value: ' (__name, __prop, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST)'
+%Warning-REDEFMACRO: /home/andreas/gitlab_esl/x-heep/hw/vendor/pulp_platform/common_cells/include/common_cells/assertions.svh:143:7: Redefining existing define: 'ASSERT_PULSE', with different value: '\
+`ifdef INC_ASSERT                                                                                          \
+  `ASSERT(__name, $rose(__sig) |=> !(__sig), __clk, __rst, __desc)                                         \
+`endif (__name, __sig, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST, __desc = "")'
+                     /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_assert.sv:133:1: ... Location of previous definition, with value: '\
+  `ASSERT(__name, $rose(__sig) |=> !(__sig), __clk, __rst) (__name, __sig, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST)'
+%Warning-REDEFMACRO: /home/andreas/gitlab_esl/x-heep/hw/vendor/pulp_platform/common_cells/include/common_cells/assertions.svh:150:7: Redefining existing define: 'ASSERT_IF', with different value: '\
+`ifdef INC_ASSERT                                                                                                  \
+  `ASSERT(__name, (__enable) |-> (__prop), __clk, __rst, __desc)                                                   \
+`endif (__name, __prop, __enable, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST, __desc = "")'
+                     /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_assert.sv:133:1: ... Location of previous definition, with value: '\
+  `ASSERT(__name, (__enable) |-> (__prop), __clk, __rst) (__name, __prop, __enable, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST)'
+%Warning-REDEFMACRO: /home/andreas/gitlab_esl/x-heep/hw/vendor/pulp_platform/common_cells/include/common_cells/assertions.svh:158:7: Redefining existing define: 'ASSERT_KNOWN_IF', with different value: '\
+`ifdef INC_ASSERT                                                                                                       \
+  `ASSERT_KNOWN(__name``KnownEnable, __enable, __clk, __rst, __desc)                                                    \
+  `ASSERT_IF(__name, !$isunknown(__sig), __enable, __clk, __rst, __desc)                                                \
+`endif (__name, __sig, __enable, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST, __desc = "")'
+                     /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_assert.sv:133:1: ... Location of previous definition, with value: '\
+  `ASSERT_KNOWN(__name``KnownEnable, __enable, __clk, __rst)                                               \
+  `ASSERT_IF(__name, !$isunknown(__sig), __enable, __clk, __rst) (__name, __sig, __enable, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST)'
+%Warning-REDEFMACRO: /home/andreas/gitlab_esl/x-heep/hw/vendor/pulp_platform/common_cells/include/common_cells/assertions.svh:177:7: Redefining existing define: 'ASSUME', with different value: '\
+`ifdef INC_ASSERT                                                                                     \
+  __name: assume property (@(posedge __clk) disable iff ((__rst) !== '0) (__prop))                    \
+    else begin                                                                                        \
+      `ASSERT_RPT(`ASSERT_STRINGIFY(__name), __desc)                                                  \
+    end                                                                                               \
+`endif (__name, __prop, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST, __desc = "")'
+                     /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_assert_dummy_macros.svh:18:1: ... Location of previous definition, with value: ' (__name, __prop, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST)'
+%Warning-REDEFMACRO: /home/andreas/gitlab_esl/x-heep/hw/vendor/pulp_platform/common_cells/include/common_cells/assertions.svh:186:7: Redefining existing define: 'ASSUME_I', with different value: '\
+`ifdef INC_ASSERT                                    \
+  __name: assume (__prop)                            \
+    else begin                                       \
+      `ASSERT_RPT(`ASSERT_STRINGIFY(__name), __desc) \
+    end                                              \
+`endif (__name, __prop, __desc = "")'
+                     /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_assert_dummy_macros.svh:18:1: ... Location of previous definition, with value: ' (__name, __prop)'
+%Warning-REDEFMACRO: /home/andreas/gitlab_esl/x-heep/hw/vendor/pulp_platform/common_cells/include/common_cells/assertions.svh:200:7: Redefining existing define: 'ASSUME_FPV', with different value: '\
+`ifdef FPV_ON                                                                                             \
+   `ASSUME(__name, __prop, __clk, __rst, __desc)                                                          \
+`endif (__name, __prop, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST, __desc = "")'
+                     /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_assert.sv:133:1: ... Location of previous definition, with value: '\
+`ifdef FPV_ON                                                                                \
+   `ASSUME(__name, __prop, __clk, __rst)                                                     \
+`endif (__name, __prop, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST)'
+%Warning-REDEFMACRO: /home/andreas/gitlab_esl/x-heep/hw/vendor/pulp_platform/common_cells/include/common_cells/assertions.svh:207:7: Redefining existing define: 'ASSUME_I_FPV', with different value: '\
+`ifdef FPV_ON                                     \
+   `ASSUME_I(__name, __prop, __desc)              \
+`endif (__name, __prop, __desc = "")'
+                     /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_assert.sv:133:1: ... Location of previous definition, with value: '\
+`ifdef FPV_ON                        \
+   `ASSUME_I(__name, __prop)         \
+`endif (__name, __prop)'
+%Warning-DECLFILENAME: /home/andreas/gitlab_esl/x-heep/hw/vendor/pulp_platform/register_interface/src/reg_intf.sv:22:11: Filename 'reg_intf' does not match IFACE name: 'REG_BUS'
+   22 | interface REG_BUS #(
+      |           ^~~~~~~
+                       ... For warning description see https://verilator.org/warn/DECLFILENAME?v=5.040
+                       ... Use "/* verilator lint_off DECLFILENAME */" and lint_on around source to disable this message.
+%Warning-PINCONNECTEMPTY: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_alert_sender.sv:81:6: Instance pin connected by name with empty reference: 'level_o'
+   81 |     .level_o  (                   ),
+      |      ^~~~~~~
+                          ... For warning description see https://verilator.org/warn/PINCONNECTEMPTY?v=5.040
+                          ... Use "/* verilator lint_off PINCONNECTEMPTY */" and lint_on around source to disable this message.
+%Warning-PINCONNECTEMPTY: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_alert_sender.sv:82:6: Instance pin connected by name with empty reference: 'rise_o'
+   82 |     .rise_o   (                   ),
+      |      ^~~~~~
+%Warning-PINCONNECTEMPTY: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_alert_sender.sv:83:6: Instance pin connected by name with empty reference: 'fall_o'
+   83 |     .fall_o   (                   ),
+      |      ^~~~~~
+%Warning-PINCONNECTEMPTY: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_alert_sender.sv:98:6: Instance pin connected by name with empty reference: 'rise_o'
+   98 |     .rise_o   (                  ),
+      |      ^~~~~~
+%Warning-PINCONNECTEMPTY: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_alert_sender.sv:99:6: Instance pin connected by name with empty reference: 'fall_o'
+   99 |     .fall_o   (                  ),
+      |      ^~~~~~
+%Warning-PINCONNECTEMPTY: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_alert_sender.sv:100:6: Instance pin connected by name with empty reference: 'event_o'
+  100 |     .event_o  (                  ),
+      |      ^~~~~~~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_byte_select.sv:50:6: Instance pin connected by name with empty reference: 'depth_o'
+   50 |     .depth_o   ()
+      |      ^~~~~~~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_byte_merge.sv:63:6: Instance pin connected by name with empty reference: 'depth_o'
+   63 |     .depth_o  ()
+      |      ^~~~~~~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_command_queue.sv:52:6: Instance pin connected by name with empty reference: 'full_o'
+   52 |     .full_o   (),
+      |      ^~~~~~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_data_fifos.sv:89:6: Instance pin connected by name with empty reference: 'full_o'
+   89 |     .full_o   (),
+      |      ^~~~~~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_data_fifos.sv:111:6: Instance pin connected by name with empty reference: 'full_o'
+  111 |     .full_o   (),
+      |      ^~~~~~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:289:6: Instance pin connected by name with empty reference: 'qe'
+  289 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:315:6: Instance pin connected by name with empty reference: 'qe'
+  315 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:343:6: Instance pin connected by name with empty reference: 'qe'
+  343 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:369:6: Instance pin connected by name with empty reference: 'qe'
+  369 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:387:6: Instance pin connected by name with empty reference: 'qre'
+  387 |     .qre    (),
+      |      ^~~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:390:6: Instance pin connected by name with empty reference: 'qs'
+  390 |     .qs     ()
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:402:6: Instance pin connected by name with empty reference: 'qre'
+  402 |     .qre    (),
+      |      ^~~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:405:6: Instance pin connected by name with empty reference: 'qs'
+  405 |     .qs     ()
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:418:6: Instance pin connected by name with empty reference: 'qre'
+  418 |     .qre    (),
+      |      ^~~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:421:6: Instance pin connected by name with empty reference: 'qs'
+  421 |     .qs     ()
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:445:6: Instance pin connected by name with empty reference: 'qe'
+  445 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:471:6: Instance pin connected by name with empty reference: 'qe'
+  471 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:497:6: Instance pin connected by name with empty reference: 'qe'
+  497 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:523:6: Instance pin connected by name with empty reference: 'qe'
+  523 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:549:6: Instance pin connected by name with empty reference: 'qe'
+  549 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:576:6: Instance pin connected by name with empty reference: 'qe'
+  576 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:577:6: Instance pin connected by name with empty reference: 'q'
+  577 |     .q      (),
+      |      ^
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:601:6: Instance pin connected by name with empty reference: 'qe'
+  601 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:602:6: Instance pin connected by name with empty reference: 'q'
+  602 |     .q      (),
+      |      ^
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:626:6: Instance pin connected by name with empty reference: 'qe'
+  626 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:627:6: Instance pin connected by name with empty reference: 'q'
+  627 |     .q      (),
+      |      ^
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:651:6: Instance pin connected by name with empty reference: 'qe'
+  651 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:652:6: Instance pin connected by name with empty reference: 'q'
+  652 |     .q      (),
+      |      ^
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:676:6: Instance pin connected by name with empty reference: 'qe'
+  676 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:677:6: Instance pin connected by name with empty reference: 'q'
+  677 |     .q      (),
+      |      ^
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:701:6: Instance pin connected by name with empty reference: 'qe'
+  701 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:702:6: Instance pin connected by name with empty reference: 'q'
+  702 |     .q      (),
+      |      ^
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:726:6: Instance pin connected by name with empty reference: 'qe'
+  726 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:727:6: Instance pin connected by name with empty reference: 'q'
+  727 |     .q      (),
+      |      ^
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:751:6: Instance pin connected by name with empty reference: 'qe'
+  751 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:752:6: Instance pin connected by name with empty reference: 'q'
+  752 |     .q      (),
+      |      ^
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:776:6: Instance pin connected by name with empty reference: 'qe'
+  776 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:777:6: Instance pin connected by name with empty reference: 'q'
+  777 |     .q      (),
+      |      ^
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:801:6: Instance pin connected by name with empty reference: 'qe'
+  801 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:802:6: Instance pin connected by name with empty reference: 'q'
+  802 |     .q      (),
+      |      ^
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:826:6: Instance pin connected by name with empty reference: 'qe'
+  826 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:827:6: Instance pin connected by name with empty reference: 'q'
+  827 |     .q      (),
+      |      ^
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:851:6: Instance pin connected by name with empty reference: 'qe'
+  851 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:852:6: Instance pin connected by name with empty reference: 'q'
+  852 |     .q      (),
+      |      ^
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:876:6: Instance pin connected by name with empty reference: 'qe'
+  876 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:877:6: Instance pin connected by name with empty reference: 'q'
+  877 |     .q      (),
+      |      ^
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:901:6: Instance pin connected by name with empty reference: 'qe'
+  901 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:902:6: Instance pin connected by name with empty reference: 'q'
+  902 |     .q      (),
+      |      ^
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:931:6: Instance pin connected by name with empty reference: 'qe'
+  931 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:957:6: Instance pin connected by name with empty reference: 'qe'
+  957 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:983:6: Instance pin connected by name with empty reference: 'qe'
+  983 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1009:6: Instance pin connected by name with empty reference: 'qe'
+ 1009 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1035:6: Instance pin connected by name with empty reference: 'qe'
+ 1035 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1061:6: Instance pin connected by name with empty reference: 'qe'
+ 1061 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1087:6: Instance pin connected by name with empty reference: 'qe'
+ 1087 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1116:6: Instance pin connected by name with empty reference: 'qe'
+ 1116 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1142:6: Instance pin connected by name with empty reference: 'qe'
+ 1142 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1168:6: Instance pin connected by name with empty reference: 'qe'
+ 1168 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1194:6: Instance pin connected by name with empty reference: 'qe'
+ 1194 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1220:6: Instance pin connected by name with empty reference: 'qe'
+ 1220 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1246:6: Instance pin connected by name with empty reference: 'qe'
+ 1246 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1272:6: Instance pin connected by name with empty reference: 'qe'
+ 1272 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1300:6: Instance pin connected by name with empty reference: 'qe'
+ 1300 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1318:6: Instance pin connected by name with empty reference: 'qre'
+ 1318 |     .qre    (),
+      |      ^~~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1321:6: Instance pin connected by name with empty reference: 'qs'
+ 1321 |     .qs     ()
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1333:6: Instance pin connected by name with empty reference: 'qre'
+ 1333 |     .qre    (),
+      |      ^~~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1336:6: Instance pin connected by name with empty reference: 'qs'
+ 1336 |     .qs     ()
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1348:6: Instance pin connected by name with empty reference: 'qre'
+ 1348 |     .qre    (),
+      |      ^~~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1351:6: Instance pin connected by name with empty reference: 'qs'
+ 1351 |     .qs     ()
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1363:6: Instance pin connected by name with empty reference: 'qre'
+ 1363 |     .qre    (),
+      |      ^~~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1366:6: Instance pin connected by name with empty reference: 'qs'
+ 1366 |     .qs     ()
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1390:6: Instance pin connected by name with empty reference: 'qe'
+ 1390 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1416:6: Instance pin connected by name with empty reference: 'qe'
+ 1416 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1442:6: Instance pin connected by name with empty reference: 'qe'
+ 1442 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1468:6: Instance pin connected by name with empty reference: 'qe'
+ 1468 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1494:6: Instance pin connected by name with empty reference: 'qe'
+ 1494 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1522:6: Instance pin connected by name with empty reference: 'qe'
+ 1522 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1548:6: Instance pin connected by name with empty reference: 'qe'
+ 1548 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1574:6: Instance pin connected by name with empty reference: 'qe'
+ 1574 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1600:6: Instance pin connected by name with empty reference: 'qe'
+ 1600 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1626:6: Instance pin connected by name with empty reference: 'qe'
+ 1626 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1652:6: Instance pin connected by name with empty reference: 'qe'
+ 1652 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1680:6: Instance pin connected by name with empty reference: 'qe'
+ 1680 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1706:6: Instance pin connected by name with empty reference: 'qe'
+ 1706 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1732:6: Instance pin connected by name with empty reference: 'qe'
+ 1732 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1758:6: Instance pin connected by name with empty reference: 'qe'
+ 1758 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1784:6: Instance pin connected by name with empty reference: 'qe'
+ 1784 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:1810:6: Instance pin connected by name with empty reference: 'qe'
+ 1810 |     .qe     (),
+      |      ^~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host.sv:97:8: Instance pin connected by name with empty reference: 'alert_ack_o'
+   97 |       .alert_ack_o   (               ),
+      |        ^~~~~~~~~~~
+%Warning-PINCONNECTEMPTY: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host.sv:98:8: Instance pin connected by name with empty reference: 'alert_state_o'
+   98 |       .alert_state_o (               ),
+      |        ^~~~~~~~~~~~~
+%Warning-WIDTHEXPAND: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_fsm.sv:602:109: Operator LT expects 32 bits on the LHS, but LHS's VARREF 'csid' generates 1 bits.
+                                                                                                                                                                           : ... note: In instance 'spi_host_lint_top.u_spi_host.u_spi_core.u_fsm'
+  602 |   ValidCSID_A: assert property (@(posedge clk_i) disable iff ((rst_ni) !== '0) ($isunknown(rst_ni) || (csid < NumCS)))                    
+      |                                                                                                             ^
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.040
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-WIDTHTRUNC: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_window.sv:54:28: Operator ASSIGNW expects 6 bits on the Assign RHS, but Assign RHS's SEL generates 32 bits.
+                                                                                                                                                                           : ... note: In instance 'spi_host_lint_top.u_spi_host.u_window'
+   54 |     assign rx_addr         = rx_win_i.addr;
+      |                            ^
+                     ... For warning description see https://verilator.org/warn/WIDTHTRUNC?v=5.040
+                     ... Use "/* verilator lint_off WIDTHTRUNC */" and lint_on around source to disable this message.
+%Warning-WIDTHTRUNC: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_window.sv:63:28: Operator ASSIGNW expects 6 bits on the Assign RHS, but Assign RHS's SEL generates 32 bits.
+                                                                                                                                                                           : ... note: In instance 'spi_host_lint_top.u_spi_host.u_window'
+   63 |     assign tx_addr         = tx_win_i.addr;
+      |                            ^
+%Warning-WIDTHTRUNC: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_top.sv:102:19: Operator ASSIGNW expects 6 bits on the Assign RHS, but Assign RHS's SEL generates 32 bits.
+                                                                                                                                                                             : ... note: In instance 'spi_host_lint_top.u_spi_host.u_reg'
+  102 |   assign reg_addr = reg_intf_req.addr;
+      |                   ^
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:276:33: Parameter is not used: 'SPI_DEVICE_INTR_STATE_OFFSET'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  276 |   parameter logic [BlockAw-1:0] SPI_DEVICE_INTR_STATE_OFFSET = 13'h 0;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                      ... For warning description see https://verilator.org/warn/UNUSEDPARAM?v=5.040
+                      ... Use "/* verilator lint_off UNUSEDPARAM */" and lint_on around source to disable this message.
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:277:33: Parameter is not used: 'SPI_DEVICE_INTR_ENABLE_OFFSET'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  277 |   parameter logic [BlockAw-1:0] SPI_DEVICE_INTR_ENABLE_OFFSET = 13'h 4;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:278:33: Parameter is not used: 'SPI_DEVICE_INTR_TEST_OFFSET'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  278 |   parameter logic [BlockAw-1:0] SPI_DEVICE_INTR_TEST_OFFSET = 13'h 8;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:279:33: Parameter is not used: 'SPI_DEVICE_CONTROL_OFFSET'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  279 |   parameter logic [BlockAw-1:0] SPI_DEVICE_CONTROL_OFFSET = 13'h c;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:280:33: Parameter is not used: 'SPI_DEVICE_CFG_OFFSET'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  280 |   parameter logic [BlockAw-1:0] SPI_DEVICE_CFG_OFFSET = 13'h 10;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:281:33: Parameter is not used: 'SPI_DEVICE_FIFO_LEVEL_OFFSET'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  281 |   parameter logic [BlockAw-1:0] SPI_DEVICE_FIFO_LEVEL_OFFSET = 13'h 14;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:282:33: Parameter is not used: 'SPI_DEVICE_ASYNC_FIFO_LEVEL_OFFSET'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  282 |   parameter logic [BlockAw-1:0] SPI_DEVICE_ASYNC_FIFO_LEVEL_OFFSET = 13'h 18;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:283:33: Parameter is not used: 'SPI_DEVICE_STATUS_OFFSET'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  283 |   parameter logic [BlockAw-1:0] SPI_DEVICE_STATUS_OFFSET = 13'h 1c;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:284:33: Parameter is not used: 'SPI_DEVICE_RXF_PTR_OFFSET'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  284 |   parameter logic [BlockAw-1:0] SPI_DEVICE_RXF_PTR_OFFSET = 13'h 20;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:285:33: Parameter is not used: 'SPI_DEVICE_TXF_PTR_OFFSET'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  285 |   parameter logic [BlockAw-1:0] SPI_DEVICE_TXF_PTR_OFFSET = 13'h 24;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:286:33: Parameter is not used: 'SPI_DEVICE_RXF_ADDR_OFFSET'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  286 |   parameter logic [BlockAw-1:0] SPI_DEVICE_RXF_ADDR_OFFSET = 13'h 28;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:287:33: Parameter is not used: 'SPI_DEVICE_TXF_ADDR_OFFSET'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  287 |   parameter logic [BlockAw-1:0] SPI_DEVICE_TXF_ADDR_OFFSET = 13'h 2c;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:288:33: Parameter is not used: 'SPI_DEVICE_CMD_FILTER_0_OFFSET'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  288 |   parameter logic [BlockAw-1:0] SPI_DEVICE_CMD_FILTER_0_OFFSET = 13'h 30;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:289:33: Parameter is not used: 'SPI_DEVICE_CMD_FILTER_1_OFFSET'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  289 |   parameter logic [BlockAw-1:0] SPI_DEVICE_CMD_FILTER_1_OFFSET = 13'h 34;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:290:33: Parameter is not used: 'SPI_DEVICE_CMD_FILTER_2_OFFSET'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  290 |   parameter logic [BlockAw-1:0] SPI_DEVICE_CMD_FILTER_2_OFFSET = 13'h 38;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:291:33: Parameter is not used: 'SPI_DEVICE_CMD_FILTER_3_OFFSET'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  291 |   parameter logic [BlockAw-1:0] SPI_DEVICE_CMD_FILTER_3_OFFSET = 13'h 3c;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:292:33: Parameter is not used: 'SPI_DEVICE_CMD_FILTER_4_OFFSET'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  292 |   parameter logic [BlockAw-1:0] SPI_DEVICE_CMD_FILTER_4_OFFSET = 13'h 40;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:293:33: Parameter is not used: 'SPI_DEVICE_CMD_FILTER_5_OFFSET'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  293 |   parameter logic [BlockAw-1:0] SPI_DEVICE_CMD_FILTER_5_OFFSET = 13'h 44;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:294:33: Parameter is not used: 'SPI_DEVICE_CMD_FILTER_6_OFFSET'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  294 |   parameter logic [BlockAw-1:0] SPI_DEVICE_CMD_FILTER_6_OFFSET = 13'h 48;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:295:33: Parameter is not used: 'SPI_DEVICE_CMD_FILTER_7_OFFSET'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  295 |   parameter logic [BlockAw-1:0] SPI_DEVICE_CMD_FILTER_7_OFFSET = 13'h 4c;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:296:33: Parameter is not used: 'SPI_DEVICE_ADDR_SWAP_MASK_OFFSET'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  296 |   parameter logic [BlockAw-1:0] SPI_DEVICE_ADDR_SWAP_MASK_OFFSET = 13'h 50;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:297:33: Parameter is not used: 'SPI_DEVICE_ADDR_SWAP_DATA_OFFSET'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  297 |   parameter logic [BlockAw-1:0] SPI_DEVICE_ADDR_SWAP_DATA_OFFSET = 13'h 54;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:300:25: Parameter is not used: 'SPI_DEVICE_INTR_TEST_RESVAL'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  300 |   parameter logic [5:0] SPI_DEVICE_INTR_TEST_RESVAL = 6'h 0;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:301:25: Parameter is not used: 'SPI_DEVICE_INTR_TEST_RXF_RESVAL'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  301 |   parameter logic [0:0] SPI_DEVICE_INTR_TEST_RXF_RESVAL = 1'h 0;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:302:25: Parameter is not used: 'SPI_DEVICE_INTR_TEST_RXLVL_RESVAL'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  302 |   parameter logic [0:0] SPI_DEVICE_INTR_TEST_RXLVL_RESVAL = 1'h 0;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:303:25: Parameter is not used: 'SPI_DEVICE_INTR_TEST_TXLVL_RESVAL'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  303 |   parameter logic [0:0] SPI_DEVICE_INTR_TEST_TXLVL_RESVAL = 1'h 0;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:304:25: Parameter is not used: 'SPI_DEVICE_INTR_TEST_RXERR_RESVAL'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  304 |   parameter logic [0:0] SPI_DEVICE_INTR_TEST_RXERR_RESVAL = 1'h 0;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:305:25: Parameter is not used: 'SPI_DEVICE_INTR_TEST_RXOVERFLOW_RESVAL'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  305 |   parameter logic [0:0] SPI_DEVICE_INTR_TEST_RXOVERFLOW_RESVAL = 1'h 0;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:306:25: Parameter is not used: 'SPI_DEVICE_INTR_TEST_TXUNDERFLOW_RESVAL'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  306 |   parameter logic [0:0] SPI_DEVICE_INTR_TEST_TXUNDERFLOW_RESVAL = 1'h 0;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:307:26: Parameter is not used: 'SPI_DEVICE_ASYNC_FIFO_LEVEL_RESVAL'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  307 |   parameter logic [23:0] SPI_DEVICE_ASYNC_FIFO_LEVEL_RESVAL = 24'h 0;
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:308:25: Parameter is not used: 'SPI_DEVICE_STATUS_RESVAL'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  308 |   parameter logic [5:0] SPI_DEVICE_STATUS_RESVAL = 6'h 3a;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:309:25: Parameter is not used: 'SPI_DEVICE_STATUS_RXF_EMPTY_RESVAL'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  309 |   parameter logic [0:0] SPI_DEVICE_STATUS_RXF_EMPTY_RESVAL = 1'h 1;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:310:25: Parameter is not used: 'SPI_DEVICE_STATUS_TXF_EMPTY_RESVAL'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  310 |   parameter logic [0:0] SPI_DEVICE_STATUS_TXF_EMPTY_RESVAL = 1'h 1;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:311:25: Parameter is not used: 'SPI_DEVICE_STATUS_ABORT_DONE_RESVAL'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  311 |   parameter logic [0:0] SPI_DEVICE_STATUS_ABORT_DONE_RESVAL = 1'h 1;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:312:25: Parameter is not used: 'SPI_DEVICE_STATUS_CSB_RESVAL'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  312 |   parameter logic [0:0] SPI_DEVICE_STATUS_CSB_RESVAL = 1'h 1;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:315:33: Parameter is not used: 'SPI_DEVICE_BUFFER_OFFSET'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  315 |   parameter logic [BlockAw-1:0] SPI_DEVICE_BUFFER_OFFSET = 13'h 1000;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:316:33: Parameter is not used: 'SPI_DEVICE_BUFFER_SIZE'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  316 |   parameter int unsigned        SPI_DEVICE_BUFFER_SIZE   = 'h 1000;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:345:25: Parameter is not used: 'SPI_DEVICE_PERMIT'
+                                                                                                                                   : ... note: In instance 'spi_host_lint_top'
+  345 |   parameter logic [3:0] SPI_DEVICE_PERMIT [22] = '{
+      |                         ^~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_pkg.sv:38:31: Parameter is not used: 'PASSTHROUGH_REQ_DEFAULT'
+                                                                                                                              : ... note: In instance 'spi_host_lint_top'
+   38 |   parameter passthrough_req_t PASSTHROUGH_REQ_DEFAULT = '{
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_pkg.sv:49:31: Parameter is not used: 'PASSTHROUGH_RSP_DEFAULT'
+                                                                                                                              : ... note: In instance 'spi_host_lint_top'
+   49 |   parameter passthrough_rsp_t PASSTHROUGH_RSP_DEFAULT = '{
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_pkg.sv:103:18: Parameter is not used: 'MEM_AW'
+                                                                                                                               : ... note: In instance 'spi_host_lint_top'
+  103 |   localparam int MEM_AW = 12;  
+      |                  ^~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_pkg.sv:173:26: Parameter is not used: 'SramTotalDepth'
+                                                                                                                               : ... note: In instance 'spi_host_lint_top'
+  173 |   parameter int unsigned SramTotalDepth = SramMsgDepth + SramMailboxDepth
+      |                          ^~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_pkg.sv:208:25: Parameter is not used: 'SramAddrFifoIdx'
+                                                                                                                               : ... note: In instance 'spi_host_lint_top'
+  208 |   parameter sram_addr_t SramAddrFifoIdx  = SramCmdFifoIdx + SramCmdFifoSize ;
+      |                         ^~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_pkg.sv:209:25: Parameter is not used: 'SramAddrFifoSize'
+                                                                                                                               : ... note: In instance 'spi_host_lint_top'
+  209 |   parameter sram_addr_t SramAddrFifoSize = sram_addr_t'(SramAddrFifoDepth);
+      |                         ^~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_pkg.sv:213:26: Parameter is not used: 'BitCntW'
+                                                                                                                               : ... note: In instance 'spi_host_lint_top'
+  213 |   parameter int unsigned BitCntW   = $clog2(BitLength + 1);
+      |                          ^~~~~~~
+%Warning-UNUSEDSIGNAL: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host.sv:39:44: Bits of signal are not used: 'passthrough_i'[11]
+                                                                                                                                                                      : ... note: In instance 'spi_host_lint_top.u_spi_host'
+   39 |   input  spi_device_pkg::passthrough_req_t passthrough_i,
+      |                                            ^~~~~~~~~~~~~
+                       ... For warning description see https://verilator.org/warn/UNUSEDSIGNAL?v=5.040
+                       ... Use "/* verilator lint_off UNUSEDSIGNAL */" and lint_on around source to disable this message.
+%Warning-UNUSEDSIGNAL: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_window.sv:15:10: Signal is not used: 'clk_i'
+                                                                                                                                                                             : ... note: In instance 'spi_host_lint_top.u_spi_host.u_window'
+   15 |   input  clk_i,
+      |          ^~~~~
+%Warning-UNUSEDSIGNAL: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_window.sv:16:10: Signal is not used: 'rst_ni'
+                                                                                                                                                                             : ... note: In instance 'spi_host_lint_top.u_spi_host.u_window'
+   16 |   input  rst_ni,
+      |          ^~~~~~
+%Warning-UNUSEDSIGNAL: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_window.sv:17:20: Bits of signal are not used: 'rx_win_i'[67:64,31:0]
+                                                                                                                                                                             : ... note: In instance 'spi_host_lint_top.u_spi_host.u_window'
+   17 |   input  reg_req_t rx_win_i,
+      |                    ^~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_alert_pkg.sv:19:24: Parameter is not used: 'ALERT_TX_DEFAULT'
+                                                                                                                        : ... note: In instance 'spi_host_lint_top.u_spi_host.u_spi_core'
+   19 |   parameter alert_tx_t ALERT_TX_DEFAULT = '{alert_p:  1'b0,
+      |                        ^~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_alert_pkg.sv:22:24: Parameter is not used: 'ALERT_RX_DEFAULT'
+                                                                                                                        : ... note: In instance 'spi_host_lint_top.u_spi_host.u_spi_core'
+   22 |   parameter alert_rx_t ALERT_RX_DEFAULT = '{ping_p: 1'b0,
+      |                        ^~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_pkg.sv:318:25: Parameter is not used: 'SPI_HOST_INTR_TEST_RESVAL'
+                                                                                                                                                                              : ... note: In instance 'spi_host_lint_top.u_spi_host.u_spi_core'
+  318 |   parameter logic [1:0] SPI_HOST_INTR_TEST_RESVAL = 2'h 0;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_pkg.sv:319:25: Parameter is not used: 'SPI_HOST_INTR_TEST_ERROR_RESVAL'
+                                                                                                                                                                              : ... note: In instance 'spi_host_lint_top.u_spi_host.u_spi_core'
+  319 |   parameter logic [0:0] SPI_HOST_INTR_TEST_ERROR_RESVAL = 1'h 0;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_pkg.sv:320:25: Parameter is not used: 'SPI_HOST_INTR_TEST_SPI_EVENT_RESVAL'
+                                                                                                                                                                              : ... note: In instance 'spi_host_lint_top.u_spi_host.u_spi_core'
+  320 |   parameter logic [0:0] SPI_HOST_INTR_TEST_SPI_EVENT_RESVAL = 1'h 0;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_pkg.sv:321:25: Parameter is not used: 'SPI_HOST_ALERT_TEST_RESVAL'
+                                                                                                                                                                              : ... note: In instance 'spi_host_lint_top.u_spi_host.u_spi_core'
+  321 |   parameter logic [0:0] SPI_HOST_ALERT_TEST_RESVAL = 1'h 0;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_pkg.sv:322:25: Parameter is not used: 'SPI_HOST_ALERT_TEST_FATAL_FAULT_RESVAL'
+                                                                                                                                                                              : ... note: In instance 'spi_host_lint_top.u_spi_host.u_spi_core'
+  322 |   parameter logic [0:0] SPI_HOST_ALERT_TEST_FATAL_FAULT_RESVAL = 1'h 0;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_pkg.sv:323:26: Parameter is not used: 'SPI_HOST_COMMAND_RESVAL'
+                                                                                                                                                                              : ... note: In instance 'spi_host_lint_top.u_spi_host.u_spi_core'
+  323 |   parameter logic [28:0] SPI_HOST_COMMAND_RESVAL = 29'h 0;
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_pkg.sv:324:26: Parameter is not used: 'SPI_HOST_COMMAND_LEN_RESVAL'
+                                                                                                                                                                              : ... note: In instance 'spi_host_lint_top.u_spi_host.u_spi_core'
+  324 |   parameter logic [23:0] SPI_HOST_COMMAND_LEN_RESVAL = 24'h 0;
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_pkg.sv:325:25: Parameter is not used: 'SPI_HOST_COMMAND_CSAAT_RESVAL'
+                                                                                                                                                                              : ... note: In instance 'spi_host_lint_top.u_spi_host.u_spi_core'
+  325 |   parameter logic [0:0] SPI_HOST_COMMAND_CSAAT_RESVAL = 1'h 0;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_pkg.sv:326:25: Parameter is not used: 'SPI_HOST_COMMAND_SPEED_RESVAL'
+                                                                                                                                                                              : ... note: In instance 'spi_host_lint_top.u_spi_host.u_spi_core'
+  326 |   parameter logic [1:0] SPI_HOST_COMMAND_SPEED_RESVAL = 2'h 0;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_pkg.sv:327:25: Parameter is not used: 'SPI_HOST_COMMAND_DIRECTION_RESVAL'
+                                                                                                                                                                              : ... note: In instance 'spi_host_lint_top.u_spi_host.u_spi_core'
+  327 |   parameter logic [1:0] SPI_HOST_COMMAND_DIRECTION_RESVAL = 2'h 0;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_pkg.sv:331:33: Parameter is not used: 'SPI_HOST_RXDATA_SIZE'
+                                                                                                                                                                              : ... note: In instance 'spi_host_lint_top.u_spi_host.u_spi_core'
+  331 |   parameter int unsigned        SPI_HOST_RXDATA_SIZE   = 'h 4;
+      |                                 ^~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host_reg_pkg.sv:333:33: Parameter is not used: 'SPI_HOST_TXDATA_SIZE'
+                                                                                                                                                                              : ... note: In instance 'spi_host_lint_top.u_spi_host.u_spi_core'
+  333 |   parameter int unsigned        SPI_HOST_TXDATA_SIZE   = 'h 4;
+      |                                 ^~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /home/andreas/gitlab_esl/x-heep/hw/vendor/pulp_platform/register_interface/src/reg_demux.sv:21:30: Signal is not used: 'clk_i'
+                                                                                                                        : ... note: In instance 'spi_host_lint_top.u_spi_host.u_reg.i_reg_demux'
+   21 |   input  logic               clk_i,
+      |                              ^~~~~
+%Warning-UNUSEDSIGNAL: /home/andreas/gitlab_esl/x-heep/hw/vendor/pulp_platform/register_interface/src/reg_demux.sv:22:30: Signal is not used: 'rst_ni'
+                                                                                                                        : ... note: In instance 'spi_host_lint_top.u_spi_host.u_reg.i_reg_demux'
+   22 |   input  logic               rst_ni,
+      |                              ^~~~~~
+%Warning-SYMRSVDWORD: /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/spi_device/rtl/spi_device_reg_pkg.sv:91:7: Symbol matches C++ common word: 'abort'
+   91 |     } abort;
+      |       ^~~~~
+                      ... For warning description see https://verilator.org/warn/SYMRSVDWORD?v=5.040
+                      ... Use "/* verilator lint_off SYMRSVDWORD */" and lint_on around source to disable this message.
+%Warning-SYNCASYNCNET: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/spi_host_lint_top.sv:11:59: Signal flopped as both synchronous and async: 'reset_n'
+                       /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host.sv:593:10: ... Location of async usage
+  593 |     if (!rst_ni) begin
+      |          ^~~~~~
+                       /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_top_lint/t_2c87836/rtl/spi_host.sv:143:77: ... Location of sync usage
+  143 |   PassthroughNumCSCompat_A: assert property (@(posedge clk_i) disable iff ((rst_ni) !== '0) ($isunknown(rst_ni) || (!passthrough_i.passthrough_en)))                    
+      |                                                                             ^~~~~~
+                       ... For warning description see https://verilator.org/warn/SYNCASYNCNET?v=5.040
+                       ... Use "/* verilator lint_off SYNCASYNCNET */" and lint_on around source to disable this message.
+- V e r i l a t i o n   R e p o r t: Verilator 5.040 2025-08-30 rev v5.040
+- Verilator: Built from 4.566 MB sources in 38 modules, into 0.610 MB in 5 C++ files needing 0.000 MB
+- Verilator: Walltime 0.153 s (elab=0.019, cvt=0.090, bld=0.000); cpu 0.153 s on 1 threads; alloced 45.082 MB

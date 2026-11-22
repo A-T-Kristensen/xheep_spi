@@ -1,11 +1,18 @@
-"""Decode the Byte Select and Shift Register WaveJSON rows of doc/_index.md
-and compare Byte Select with a cycle model of the RTL.
+"""Decode WaveJSON rows of the SPI host doc/_index.md and compare chosen
+figures with cycle models of the RTL.
 
 # owner-check: none — `ls ~/.local/bin`, `which wavedrom-cli`, loaded skills — no installed tool decodes WaveJSON per column against an RTL model
 
-Byte Select model: prim_packer_fifo gen_unpack_mode at OpenTitan 611d56f
-(InW 36, OutW 9) inside spi_host_byte_select.sv at the PR tip, with
-byte_ready_i tied high as in the waveform.
+Models:
+- Byte Select: prim_packer_fifo gen_unpack_mode at OpenTitan 611d56f
+  (InW 36, OutW 9) inside spi_host_byte_select.sv, byte_ready_i tied high
+  as in the figure.
+- RX buffer (Appendix figures "SPI_HOST Shift Register: ..."): rx_buf of
+  spi_host_shift_register.sv (rd_ready_o, rx_buf_valid_d) and the FSM terms
+  rx_stall_o = rd_en_internal & ~sr_rd_ready_i, rd_en_o = rd_en_internal &
+  ~stall. The figure's rd_en_i row is taken as the FSM read request.
+Only the figures named in main() are parsed; other figures hold data
+strings this simple row parser does not handle.
 Usage: python3 -I wave_check.py <doc file>
 """
 import ast
@@ -46,6 +53,14 @@ def rows_of_block(block):
   return rows
 
 
+def row_starting(rows, prefix):
+  """Return the column values of the first row whose name starts with prefix."""
+  for name, (values, _unused) in rows.items():
+    if name.startswith(prefix):
+      return values
+  raise KeyError(prefix)
+
+
 def byte_select_model(word_valid, words, byte_enables, flush):
   """Return per-column (word_ready_o, byte_valid_o, byte_o hex, depth_q)."""
   empty = [(0, 0)] * LANES_PER_WORD
@@ -77,23 +92,53 @@ def byte_select_model(word_valid, words, byte_enables, flush):
   return columns
 
 
+def rx_buffer_model(read_requests, rx_ready):
+  """Return per-column (rd_en_o, rx_valid_o, rd_ready_o, rx_stall_o)."""
+  buffer_valid = 0
+  columns = []
+  for request_symbol, ready_symbol in zip(read_requests, rx_ready):
+    request = int(request_symbol == '1')
+    ready_in = int(ready_symbol == '1')
+    rd_ready = int((not buffer_valid) or ready_in)
+    stall = request & (1 - rd_ready)
+    read_enable = request & (1 - stall)
+    columns.append((read_enable, buffer_valid, rd_ready, stall))
+    if read_enable and rd_ready:
+      buffer_valid = 1
+    elif buffer_valid and ready_in:
+      buffer_valid = 0
+  return columns
+
+
+def print_rows(tag, rows):
+  for name, (values, unused) in rows.items():
+    print(tag, name[:24].ljust(24), ' '.join(str(value) for value in values), 'unused=%s' % unused)
+
+
+def print_model(tag, labels, model):
+  for position, label in enumerate(labels):
+    print(tag, 'model', label.ljust(15), ' '.join(str(column[position]) for column in model))
+
+
 def main():
   text = open(sys.argv[1]).read()
   for block in BLOCK_PATTERN.findall(text):
     if 'Byte Select Operation' in block:
-      tag = 'BS'
-    elif 'Shift Register During Standard SPI' in block:
-      tag = 'SR'
-    else:
-      continue
-    rows = rows_of_block(block)
-    for name, (values, unused) in rows.items():
-      print(tag, name.ljust(24), ' '.join(str(value) for value in values), 'unused=%s' % unused)
-    if tag == 'BS':
+      rows = rows_of_block(block)
+      print_rows('BS', rows)
+      flush_row = rows['byte_flush_i'][0] if 'byte_flush_i' in rows else rows['flush_i'][0]
       model = byte_select_model(rows['word_valid_i'][0], rows['word_i[31:0]'][0],
-                                rows['word_be_i[3:0]'][0], rows['byte_flush_i'][0])
-      for position, label in enumerate(('word_ready_o', 'byte_valid_o', 'byte_o', 'depth_q')):
-        print('BS model', label.ljust(15), ' '.join(str(column[position]) for column in model))
+                                rows['word_be_i[3:0]'][0], flush_row)
+      print_model('BS', ('word_ready_o', 'byte_valid_o', 'byte_o', 'depth_q'), model)
+    elif 'Shift Register During Standard SPI' in block:
+      print_rows('SR', rows_of_block(block))
+    elif 'SPI_HOST Shift Register:' in block:
+      rows = rows_of_block(block)
+      title = re.search(r'Shift Register: ([^"]+)"', block).group(1)
+      tag = 'RX[' + title[:16] + ']'
+      print_rows(tag, rows)
+      model = rx_buffer_model(row_starting(rows, 'rd_en_i'), row_starting(rows, 'rx_ready_i'))
+      print_model(tag, ('rd_en_o', 'rx_valid_o', 'rd_ready_o', 'rx_stall_o'), model)
 
 
 main()

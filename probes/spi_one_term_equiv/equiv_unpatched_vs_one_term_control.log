@@ -1,0 +1,2524 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.70+360 (git sha1 5e740962d, Release, Clang /usr/bin/clang++ 21.1.8)
+
+-- Running command `
+  read_slang -I/home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl -I/home/andreas/gitlab_esl/x-heep/hw/vendor/pulp_platform/common_cells/include /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_util_pkg.sv /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_eq/spi_host_reg_pkg.sv /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_eq/spi_host_cmd_pkg.sv /home/andreas/gitlab_esl/x-heep/hw/vendor/lowrisc/opentitan/hw/ip/prim_generic/rtl/prim_generic_flop_en.sv /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_eq/prim_flop_en.sv /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_eq/w/fsm_unpatched.sv /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_eq/w/fsm_one_term.sv --top fsm_unpatched --top fsm_one_term;
+  proc; opt_clean; async2sync;
+  equiv_make fsm_unpatched fsm_one_term equiv_top;
+  hierarchy -top equiv_top;
+  equiv_simple -seq 5;
+  equiv_induct -seq 5;
+  equiv_status' --
+
+1. Executing SLANG frontend.
+Top level design units:
+    fsm_one_term
+    fsm_unpatched
+
+
+Build succeeded: 0 errors, 0 warnings
+
+1.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\fsm_unpatched.$330'.
+Removing empty process `fsm_unpatched.$322'.
+Found and cleaned up 1 empty switch in `\fsm_unpatched.$307'.
+Found and cleaned up 1 empty switch in `\fsm_unpatched.$299'.
+Removing empty process `fsm_unpatched.$288'.
+Removing empty process `fsm_unpatched.$265'.
+Found and cleaned up 1 empty switch in `\fsm_unpatched.$255'.
+Found and cleaned up 1 empty switch in `\fsm_unpatched.$221'.
+Found and cleaned up 1 empty switch in `\fsm_unpatched.$183'.
+Removing empty process `fsm_unpatched.$151'.
+Found and cleaned up 1 empty switch in `\fsm_unpatched.$126'.
+Found and cleaned up 1 empty switch in `\fsm_unpatched.$119'.
+Found and cleaned up 1 empty switch in `\fsm_unpatched.$115'.
+Removing empty process `fsm_unpatched.$48'.
+Removing empty process `fsm_unpatched.$33'.
+Found and cleaned up 1 empty switch in `\fsm_one_term.$332'.
+Removing empty process `fsm_one_term.$324'.
+Found and cleaned up 1 empty switch in `\fsm_one_term.$309'.
+Found and cleaned up 1 empty switch in `\fsm_one_term.$301'.
+Removing empty process `fsm_one_term.$290'.
+Removing empty process `fsm_one_term.$267'.
+Found and cleaned up 1 empty switch in `\fsm_one_term.$257'.
+Found and cleaned up 1 empty switch in `\fsm_one_term.$223'.
+Found and cleaned up 1 empty switch in `\fsm_one_term.$185'.
+Removing empty process `fsm_one_term.$153'.
+Found and cleaned up 1 empty switch in `\fsm_one_term.$128'.
+Found and cleaned up 1 empty switch in `\fsm_one_term.$121'.
+Found and cleaned up 1 empty switch in `\fsm_one_term.$117'.
+Removing empty process `fsm_one_term.$48'.
+Removing empty process `fsm_one_term.$33'.
+Cleaned up 18 empty switches.
+
+1.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 8 switch rules as full_case in process $255 in module fsm_unpatched.
+Marked 2 switch rules as full_case in process $221 in module fsm_unpatched.
+Removed 1 dead cases from process $126 in module fsm_unpatched.
+Marked 12 switch rules as full_case in process $126 in module fsm_unpatched.
+Marked 3 switch rules as full_case in process $119 in module fsm_unpatched.
+Marked 3 switch rules as full_case in process $115 in module fsm_unpatched.
+Marked 2 switch rules as full_case in process $330 in module fsm_unpatched.
+Marked 8 switch rules as full_case in process $257 in module fsm_one_term.
+Marked 2 switch rules as full_case in process $223 in module fsm_one_term.
+Removed 1 dead cases from process $128 in module fsm_one_term.
+Marked 12 switch rules as full_case in process $128 in module fsm_one_term.
+Marked 3 switch rules as full_case in process $121 in module fsm_one_term.
+Marked 3 switch rules as full_case in process $117 in module fsm_one_term.
+Marked 2 switch rules as full_case in process $332 in module fsm_one_term.
+Removed a total of 2 dead cases.
+
+1.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 46 redundant assignments.
+Promoted 0 assignments to connections.
+
+1.4. Executing PROC_INIT pass (extract init attributes).
+
+1.5. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~82 debug messages>
+
+1.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\fsm_unpatched.$255'.
+     1/5: $wait_cntr_d$260
+     2/5: $wait_cntr_d$261
+     3/5: $wait_cntr_d$257
+     4/5: $wait_cntr_d$262
+     5/5: $wait_cntr_d$263
+Creating decoders for process `\fsm_unpatched.$221'.
+     1/4: $start_bit$226
+     2/4: $shift_size$225
+     3/4: $start_bit$228
+     4/4: $shift_size$227
+Creating decoders for process `\fsm_unpatched.$183'.
+     1/6: $segment_rd_en_cpha1$193
+     2/6: $new_command_cpha1$192
+     3/6: $byte_ending_cpha0_q$191
+     4/6: $bit_shifting_cpha0_q$190
+     5/6: $byte_starting_cpha0_q$189
+     6/6: $speed_cpha1$188
+Creating decoders for process `\fsm_unpatched.$299'.
+     1/1: $csb_single_d$300
+Creating decoders for process `\fsm_unpatched.$126'.
+     1/15: $state_d$143
+     2/15: $command_ready_int$141
+     3/15: $state_d$140
+     4/15: $state_d$138
+     5/15: $state_d$133
+     6/15: $command_ready_int$134
+     7/15: $state_d$135
+     8/15: $command_ready_int$136
+     9/15: $state_d$128
+    10/15: $state_d$144
+    11/15: $command_ready_int$145
+    12/15: $command_ready_int$147
+    13/15: $state_d$146
+    14/15: $state_d$148
+    15/15: $command_ready_int$149
+Creating decoders for process `\fsm_unpatched.$119'.
+     1/4: $command_ready_idle_csb_active$124
+     2/4: $next_state_after_idle_csb_active$123
+     3/4: $command_ready_idle_csb_active$122
+     4/4: $next_state_after_idle_csb_active$121
+Creating decoders for process `\fsm_unpatched.$115'.
+     1/2: $next_state_after_idle$117
+     2/2: $next_state_after_idle$116
+Creating decoders for process `\fsm_unpatched.$330'.
+     1/2: $sd_en_o$332
+     2/2: $sd_en_o$333
+Creating decoders for process `\fsm_unpatched.$307'.
+     1/1: $u_sck_flop.u_prim_generic_flop_en.q_o$310
+Creating decoders for process `\fsm_one_term.$257'.
+     1/5: $wait_cntr_d$262
+     2/5: $wait_cntr_d$263
+     3/5: $wait_cntr_d$259
+     4/5: $wait_cntr_d$264
+     5/5: $wait_cntr_d$265
+Creating decoders for process `\fsm_one_term.$223'.
+     1/4: $start_bit$228
+     2/4: $shift_size$227
+     3/4: $start_bit$230
+     4/4: $shift_size$229
+Creating decoders for process `\fsm_one_term.$185'.
+     1/6: $segment_rd_en_cpha1$195
+     2/6: $new_command_cpha1$194
+     3/6: $byte_ending_cpha0_q$193
+     4/6: $bit_shifting_cpha0_q$192
+     5/6: $byte_starting_cpha0_q$191
+     6/6: $speed_cpha1$190
+Creating decoders for process `\fsm_one_term.$301'.
+     1/1: $csb_single_d$302
+Creating decoders for process `\fsm_one_term.$128'.
+     1/15: $state_d$145
+     2/15: $command_ready_int$143
+     3/15: $state_d$142
+     4/15: $state_d$140
+     5/15: $state_d$135
+     6/15: $command_ready_int$136
+     7/15: $state_d$137
+     8/15: $command_ready_int$138
+     9/15: $state_d$130
+    10/15: $state_d$146
+    11/15: $command_ready_int$147
+    12/15: $command_ready_int$149
+    13/15: $state_d$148
+    14/15: $state_d$150
+    15/15: $command_ready_int$151
+Creating decoders for process `\fsm_one_term.$121'.
+     1/4: $command_ready_idle_csb_active$126
+     2/4: $next_state_after_idle_csb_active$125
+     3/4: $command_ready_idle_csb_active$124
+     4/4: $next_state_after_idle_csb_active$123
+Creating decoders for process `\fsm_one_term.$117'.
+     1/2: $next_state_after_idle$119
+     2/2: $next_state_after_idle$118
+Creating decoders for process `\fsm_one_term.$332'.
+     1/2: $sd_en_o$334
+     2/2: $sd_en_o$335
+Creating decoders for process `\fsm_one_term.$309'.
+     1/1: $u_sck_flop.u_prim_generic_flop_en.q_o$312
+
+1.7. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 9 empty switches in `\fsm_unpatched.$255'.
+Removing empty process `fsm_unpatched.$255'.
+Found and cleaned up 3 empty switches in `\fsm_unpatched.$221'.
+Removing empty process `fsm_unpatched.$221'.
+Found and cleaned up 1 empty switch in `\fsm_unpatched.$183'.
+Removing empty process `fsm_unpatched.$183'.
+Found and cleaned up 1 empty switch in `\fsm_unpatched.$299'.
+Removing empty process `fsm_unpatched.$299'.
+Found and cleaned up 17 empty switches in `\fsm_unpatched.$126'.
+Removing empty process `fsm_unpatched.$126'.
+Found and cleaned up 3 empty switches in `\fsm_unpatched.$119'.
+Removing empty process `fsm_unpatched.$119'.
+Found and cleaned up 3 empty switches in `\fsm_unpatched.$115'.
+Removing empty process `fsm_unpatched.$115'.
+Found and cleaned up 3 empty switches in `\fsm_unpatched.$330'.
+Removing empty process `fsm_unpatched.$330'.
+Found and cleaned up 1 empty switch in `\fsm_unpatched.$307'.
+Removing empty process `fsm_unpatched.$307'.
+Found and cleaned up 9 empty switches in `\fsm_one_term.$257'.
+Removing empty process `fsm_one_term.$257'.
+Found and cleaned up 3 empty switches in `\fsm_one_term.$223'.
+Removing empty process `fsm_one_term.$223'.
+Found and cleaned up 1 empty switch in `\fsm_one_term.$185'.
+Removing empty process `fsm_one_term.$185'.
+Found and cleaned up 1 empty switch in `\fsm_one_term.$301'.
+Removing empty process `fsm_one_term.$301'.
+Found and cleaned up 17 empty switches in `\fsm_one_term.$128'.
+Removing empty process `fsm_one_term.$128'.
+Found and cleaned up 3 empty switches in `\fsm_one_term.$121'.
+Removing empty process `fsm_one_term.$121'.
+Found and cleaned up 3 empty switches in `\fsm_one_term.$117'.
+Removing empty process `fsm_one_term.$117'.
+Found and cleaned up 3 empty switches in `\fsm_one_term.$332'.
+Removing empty process `fsm_one_term.$332'.
+Found and cleaned up 1 empty switch in `\fsm_one_term.$309'.
+Removing empty process `fsm_one_term.$309'.
+Cleaned up 82 empty switches.
+
+1.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module fsm_unpatched.
+<suppressed ~53 debug messages>
+Optimizing module fsm_one_term.
+<suppressed ~53 debug messages>
+
+2. Executing PROC pass (convert processes to netlists).
+
+2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+2.4. Executing PROC_INIT pass (extract init attributes).
+
+2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module fsm_unpatched.
+Optimizing module fsm_one_term.
+
+3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \fsm_unpatched..
+Finding unused cells or wires in module \fsm_one_term..
+Removed 42 unused cells and 410 unused wires.
+<suppressed ~174 debug messages>
+
+4. Executing ASYNC2SYNC pass.
+Replacing fsm_unpatched.$driver$csb_q ($aldff): ALOAD=\rst_ni, AD=1'1, D=$328y, Q=\csb_q
+Replacing fsm_unpatched.$driver$u_sck_flop.u_prim_generic_flop_en.q_o ($aldff): ALOAD=\rst_ni, AD=1'0, D=$procmux$305_Y, Q=\u_sck_flop.u_prim_generic_flop_en.q_o
+Replacing fsm_unpatched.$driver$sample_en_q2 ($aldff): ALOAD=\rst_ni, AD=1'0, D=$296y, Q=\sample_en_q2
+Replacing fsm_unpatched.$driver$sample_en_q ($aldff): ALOAD=\rst_ni, AD=1'0, D=$293y, Q=\sample_en_q
+Replacing fsm_unpatched.$driver$wait_cntr_q ($aldff): ALOAD=\rst_ni, AD=4'0000, D=$271y, Q=\wait_cntr_q
+Replacing fsm_unpatched.$driver$byte_cntr_cpha1_q ($aldff): ALOAD=\rst_ni, AD=24'000000000000000000000000, D=$270y, Q=\byte_cntr_cpha1_q
+Replacing fsm_unpatched.$driver$byte_cntr_cpha0_q ($aldff): ALOAD=\rst_ni, AD=24'000000000000000000000000, D=$269y, Q=\byte_cntr_cpha0_q
+Replacing fsm_unpatched.$driver$bit_cntr_q ($aldff): ALOAD=\rst_ni, AD=3'000, D=$268y, Q=\bit_cntr_q
+Replacing fsm_unpatched.$driver$segment_rd_en_cpha1 ($aldff): ALOAD=\rst_ni, AD=1'0, D=$procmux$73_Y, Q=\segment_rd_en_cpha1
+Replacing fsm_unpatched.$driver$new_command_cpha1 ($aldff): ALOAD=\rst_ni, AD=1'0, D=$new_command_cpha1$192, Q=\new_command_cpha1
+Replacing fsm_unpatched.$driver$byte_ending_cpha0_q ($aldff): ALOAD=\rst_ni, AD=1'0, D=$byte_ending_cpha0_q$191, Q=\byte_ending_cpha0_q
+Replacing fsm_unpatched.$driver$bit_shifting_cpha0_q ($aldff): ALOAD=\rst_ni, AD=1'0, D=$bit_shifting_cpha0_q$190, Q=\bit_shifting_cpha0_q
+Replacing fsm_unpatched.$driver$byte_starting_cpha0_q ($aldff): ALOAD=\rst_ni, AD=1'0, D=$byte_starting_cpha0_q$189, Q=\byte_starting_cpha0_q
+Replacing fsm_unpatched.$driver$speed_cpha1 ($aldff): ALOAD=\rst_ni, AD=2'00, D=$procmux$83_Y, Q=\speed_cpha1
+Replacing fsm_unpatched.$driver$state_q ($aldff): ALOAD=\rst_ni, AD=3'000, D=$154y, Q=\state_q
+Replacing fsm_unpatched.$driver$clk_cntr_q ($aldff): ALOAD=\rst_ni, AD=16'0000000000000000, D=$155y, Q=\clk_cntr_q
+Replacing fsm_unpatched.$driver$csaat_q ($aldff): ALOAD=\rst_ni, AD=1'0, D=$77y, Q=\csaat_q
+Replacing fsm_unpatched.$driver$cmd_len_q ($aldff): ALOAD=\rst_ni, AD=24'000000000000000000000000, D=$89y, Q=\cmd_len_q
+Replacing fsm_unpatched.$driver$cmd_rd_en_q ($aldff): ALOAD=\rst_ni, AD=1'0, D=$83y, Q=\cmd_rd_en_q
+Replacing fsm_unpatched.$driver$cmd_wr_en_q ($aldff): ALOAD=\rst_ni, AD=1'0, D=$80y, Q=\cmd_wr_en_q
+Replacing fsm_unpatched.$driver$cmd_speed_q ($aldff): ALOAD=\rst_ni, AD=2'00, D=$86y, Q=\cmd_speed_q
+Replacing fsm_unpatched.$driver$cpol_q ($aldff): ALOAD=\rst_ni, AD=1'0, D=$56y, Q=\cpol_q
+Replacing fsm_unpatched.$driver$cpha_q ($aldff): ALOAD=\rst_ni, AD=1'0, D=$59y, Q=\cpha_q
+Replacing fsm_unpatched.$driver$full_cyc_q ($aldff): ALOAD=\rst_ni, AD=1'0, D=$62y, Q=\full_cyc_q
+Replacing fsm_unpatched.$driver$csnlead_q ($aldff): ALOAD=\rst_ni, AD=4'0000, D=$68y, Q=\csnlead_q
+Replacing fsm_unpatched.$driver$csntrail_q ($aldff): ALOAD=\rst_ni, AD=4'0000, D=$71y, Q=\csntrail_q
+Replacing fsm_unpatched.$driver$csnidle_q ($aldff): ALOAD=\rst_ni, AD=4'0000, D=$65y, Q=\csnidle_q
+Replacing fsm_unpatched.$driver$csid_q ($aldff): ALOAD=\rst_ni, AD=1'0, D=$53y, Q=\csid_q
+Replacing fsm_unpatched.$driver$clkdiv_q ($aldff): ALOAD=\rst_ni, AD=16'0000000000000000, D=$74y, Q=\clkdiv_q
+Replacing fsm_one_term.$driver$csb_q ($aldff): ALOAD=\rst_ni, AD=1'1, D=$330y, Q=\csb_q
+Replacing fsm_one_term.$driver$u_sck_flop.u_prim_generic_flop_en.q_o ($aldff): ALOAD=\rst_ni, AD=1'0, D=$procmux$611_Y, Q=\u_sck_flop.u_prim_generic_flop_en.q_o
+Replacing fsm_one_term.$driver$sample_en_q2 ($aldff): ALOAD=\rst_ni, AD=1'0, D=$298y, Q=\sample_en_q2
+Replacing fsm_one_term.$driver$sample_en_q ($aldff): ALOAD=\rst_ni, AD=1'0, D=$295y, Q=\sample_en_q
+Replacing fsm_one_term.$driver$wait_cntr_q ($aldff): ALOAD=\rst_ni, AD=4'0000, D=$273y, Q=\wait_cntr_q
+Replacing fsm_one_term.$driver$byte_cntr_cpha1_q ($aldff): ALOAD=\rst_ni, AD=24'000000000000000000000000, D=$272y, Q=\byte_cntr_cpha1_q
+Replacing fsm_one_term.$driver$byte_cntr_cpha0_q ($aldff): ALOAD=\rst_ni, AD=24'000000000000000000000000, D=$271y, Q=\byte_cntr_cpha0_q
+Replacing fsm_one_term.$driver$bit_cntr_q ($aldff): ALOAD=\rst_ni, AD=3'000, D=$270y, Q=\bit_cntr_q
+Replacing fsm_one_term.$driver$segment_rd_en_cpha1 ($aldff): ALOAD=\rst_ni, AD=1'0, D=$procmux$379_Y, Q=\segment_rd_en_cpha1
+Replacing fsm_one_term.$driver$new_command_cpha1 ($aldff): ALOAD=\rst_ni, AD=1'0, D=$new_command_cpha1$194, Q=\new_command_cpha1
+Replacing fsm_one_term.$driver$byte_ending_cpha0_q ($aldff): ALOAD=\rst_ni, AD=1'0, D=$byte_ending_cpha0_q$193, Q=\byte_ending_cpha0_q
+Replacing fsm_one_term.$driver$bit_shifting_cpha0_q ($aldff): ALOAD=\rst_ni, AD=1'0, D=$bit_shifting_cpha0_q$192, Q=\bit_shifting_cpha0_q
+Replacing fsm_one_term.$driver$byte_starting_cpha0_q ($aldff): ALOAD=\rst_ni, AD=1'0, D=$byte_starting_cpha0_q$191, Q=\byte_starting_cpha0_q
+Replacing fsm_one_term.$driver$speed_cpha1 ($aldff): ALOAD=\rst_ni, AD=2'00, D=$procmux$389_Y, Q=\speed_cpha1
+Replacing fsm_one_term.$driver$state_q ($aldff): ALOAD=\rst_ni, AD=3'000, D=$156y, Q=\state_q
+Replacing fsm_one_term.$driver$clk_cntr_q ($aldff): ALOAD=\rst_ni, AD=16'0000000000000000, D=$157y, Q=\clk_cntr_q
+Replacing fsm_one_term.$driver$csaat_q ($aldff): ALOAD=\rst_ni, AD=1'0, D=$77y, Q=\csaat_q
+Replacing fsm_one_term.$driver$cmd_len_q ($aldff): ALOAD=\rst_ni, AD=24'000000000000000000000000, D=$89y, Q=\cmd_len_q
+Replacing fsm_one_term.$driver$cmd_rd_en_q ($aldff): ALOAD=\rst_ni, AD=1'0, D=$83y, Q=\cmd_rd_en_q
+Replacing fsm_one_term.$driver$cmd_wr_en_q ($aldff): ALOAD=\rst_ni, AD=1'0, D=$80y, Q=\cmd_wr_en_q
+Replacing fsm_one_term.$driver$cmd_speed_q ($aldff): ALOAD=\rst_ni, AD=2'00, D=$86y, Q=\cmd_speed_q
+Replacing fsm_one_term.$driver$cpol_q ($aldff): ALOAD=\rst_ni, AD=1'0, D=$56y, Q=\cpol_q
+Replacing fsm_one_term.$driver$cpha_q ($aldff): ALOAD=\rst_ni, AD=1'0, D=$59y, Q=\cpha_q
+Replacing fsm_one_term.$driver$full_cyc_q ($aldff): ALOAD=\rst_ni, AD=1'0, D=$62y, Q=\full_cyc_q
+Replacing fsm_one_term.$driver$csnlead_q ($aldff): ALOAD=\rst_ni, AD=4'0000, D=$68y, Q=\csnlead_q
+Replacing fsm_one_term.$driver$csntrail_q ($aldff): ALOAD=\rst_ni, AD=4'0000, D=$71y, Q=\csntrail_q
+Replacing fsm_one_term.$driver$csnidle_q ($aldff): ALOAD=\rst_ni, AD=4'0000, D=$65y, Q=\csnidle_q
+Replacing fsm_one_term.$driver$csid_q ($aldff): ALOAD=\rst_ni, AD=1'0, D=$53y, Q=\csid_q
+Replacing fsm_one_term.$driver$clkdiv_q ($aldff): ALOAD=\rst_ni, AD=16'0000000000000000, D=$74y, Q=\clkdiv_q
+
+5. Executing EQUIV_MAKE pass (creating equiv checking module).
+Presumably equivalent wires: clk_i_gold (\clk_i_gold), clk_i_gate (\clk_i_gate) -> clk_i
+Presumably equivalent wires: rst_ni_gold (\rst_ni_gold), rst_ni_gate (\rst_ni_gate) -> rst_ni
+Presumably equivalent wires: en_i_gold (\en_i_gold), en_i_gate (\en_i_gate) -> en_i
+Presumably equivalent wires: command_i_gold (\command_i_gold), command_i_gate (\command_i_gate) -> command_i
+Presumably equivalent wires: command_valid_i_gold (\command_valid_i_gold), command_valid_i_gate (\command_valid_i_gate) -> command_valid_i
+Presumably equivalent wires: command_ready_o_gold (\command_ready_o_gold), command_ready_o_gate (\command_ready_o_gate) -> command_ready_o
+Presumably equivalent wires: sck_o_gold (\u_sck_flop.u_prim_generic_flop_en.q_o_gold), sck_o_gate (\u_sck_flop.u_prim_generic_flop_en.q_o_gate) -> sck_o
+Presumably equivalent wires: csb_o_gold (\csb_q_gold), csb_o_gate (\csb_q_gate) -> csb_o
+Presumably equivalent wires: sd_en_o_gold (\sd_en_o_gold), sd_en_o_gate (\sd_en_o_gate) -> sd_en_o
+Presumably equivalent wires: last_read_o_gold (\last_read_o_gold), last_read_o_gate (\last_read_o_gate) -> last_read_o
+Presumably equivalent wires: last_write_o_gold (\last_write_o_gold), last_write_o_gate (\last_write_o_gate) -> last_write_o
+Presumably equivalent wires: wr_en_o_gold (\wr_en_o_gold), wr_en_o_gate (\wr_en_o_gate) -> wr_en_o
+Presumably equivalent wires: sr_wr_ready_i_gold (\sr_wr_ready_i_gold), sr_wr_ready_i_gate (\sr_wr_ready_i_gate) -> sr_wr_ready_i
+Presumably equivalent wires: rd_en_o_gold (\rd_en_o_gold), rd_en_o_gate (\rd_en_o_gate) -> rd_en_o
+Presumably equivalent wires: sr_rd_ready_i_gold (\sr_rd_ready_i_gold), sr_rd_ready_i_gate (\sr_rd_ready_i_gate) -> sr_rd_ready_i
+Presumably equivalent wires: sample_en_o_gold (\sample_en_o_gold), sample_en_o_gate (\sample_en_o_gate) -> sample_en_o
+Presumably equivalent wires: shift_en_o_gold (\shift_en_o_gold), shift_en_o_gate (\shift_en_o_gate) -> shift_en_o
+Presumably equivalent wires: speed_o_gold (\speed_o_gold), speed_o_gate (\speed_o_gate) -> speed_o
+Presumably equivalent wires: full_cyc_o_gold (\full_cyc_o_gold), full_cyc_o_gate (\full_cyc_o_gate) -> full_cyc_o
+Presumably equivalent wires: rx_stall_o_gold (\rx_stall_o_gold), rx_stall_o_gate (\rx_stall_o_gate) -> rx_stall_o
+Presumably equivalent wires: tx_stall_o_gold (\tx_stall_o_gold), tx_stall_o_gate (\tx_stall_o_gate) -> tx_stall_o
+Presumably equivalent wires: active_o_gold (\active_o_gold), active_o_gate (\active_o_gate) -> active_o
+Presumably equivalent wires: sw_rst_i_gold (\sw_rst_i_gold), sw_rst_i_gate (\sw_rst_i_gate) -> sw_rst_i
+Presumably equivalent wires: is_idle_gold (\is_idle_gold), is_idle_gate (\is_idle_gate) -> is_idle
+Presumably equivalent wires: clkdiv_gold (\clkdiv_gold), clkdiv_gate (\clkdiv_gate) -> clkdiv
+Presumably equivalent wires: clkdiv_q_gold (\clkdiv_q_gold), clkdiv_q_gate (\clkdiv_q_gate) -> clkdiv_q
+Presumably equivalent wires: clk_cntr_q_gold (\clk_cntr_q_gold), clk_cntr_q_gate (\clk_cntr_q_gate) -> clk_cntr_q
+Presumably equivalent wires: clk_cntr_d_gold (\clk_cntr_d_gold), clk_cntr_d_gate (\clk_cntr_d_gate) -> clk_cntr_d
+Presumably equivalent wires: clk_cntr_en_gold (\en_i_gold), clk_cntr_en_gate (\en_i_gate) -> clk_cntr_en
+Presumably equivalent wires: speed_cpha0_gold (\cmd_speed_q_gold), speed_cpha0_gate (\cmd_speed_q_gate) -> speed_cpha0
+Presumably equivalent wires: speed_cpha1_gold (\speed_cpha1_gold), speed_cpha1_gate (\speed_cpha1_gate) -> speed_cpha1
+Presumably equivalent wires: csid_gold (\csid_gold), csid_gate (\csid_gate) -> csid
+Presumably equivalent wires: csid_q_gold (\csid_q_gold), csid_q_gate (\csid_q_gate) -> csid_q
+Presumably equivalent wires: csnidle_gold (\csnidle_gold), csnidle_gate (\csnidle_gate) -> csnidle
+Presumably equivalent wires: csntrail_gold (\csntrail_gold), csntrail_gate (\csntrail_gate) -> csntrail
+Presumably equivalent wires: csnlead_gold (\csnlead_gold), csnlead_gate (\csnlead_gate) -> csnlead
+Presumably equivalent wires: csnidle_q_gold (\csnidle_q_gold), csnidle_q_gate (\csnidle_q_gate) -> csnidle_q
+Presumably equivalent wires: csntrail_q_gold (\csntrail_q_gold), csntrail_q_gate (\csntrail_q_gate) -> csntrail_q
+Presumably equivalent wires: csnlead_q_gold (\csnlead_q_gold), csnlead_q_gate (\csnlead_q_gate) -> csnlead_q
+Presumably equivalent wires: full_cyc_gold (\full_cyc_o_gold), full_cyc_gate (\full_cyc_o_gate) -> full_cyc
+Presumably equivalent wires: cpha_gold (\cpha_gold), cpha_gate (\cpha_gate) -> cpha
+Presumably equivalent wires: cpol_gold (\cpol_gold), cpol_gate (\cpol_gate) -> cpol
+Presumably equivalent wires: full_cyc_q_gold (\full_cyc_q_gold), full_cyc_q_gate (\full_cyc_q_gate) -> full_cyc_q
+Presumably equivalent wires: cpha_q_gold (\cpha_q_gold), cpha_q_gate (\cpha_q_gate) -> cpha_q
+Presumably equivalent wires: cpol_q_gold (\cpol_q_gold), cpol_q_gate (\cpol_q_gate) -> cpol_q
+Presumably equivalent wires: cmd_speed_d_gold (\cmd_speed_d_gold), cmd_speed_d_gate (\cmd_speed_d_gate) -> cmd_speed_d
+Presumably equivalent wires: cmd_speed_q_gold (\cmd_speed_q_gold), cmd_speed_q_gate (\cmd_speed_q_gate) -> cmd_speed_q
+Presumably equivalent wires: cmd_wr_en_d_gold (\cmd_wr_en_d_gold), cmd_wr_en_d_gate (\cmd_wr_en_d_gate) -> cmd_wr_en_d
+Presumably equivalent wires: cmd_wr_en_q_gold (\cmd_wr_en_q_gold), cmd_wr_en_q_gate (\cmd_wr_en_q_gate) -> cmd_wr_en_q
+Presumably equivalent wires: cmd_rd_en_d_gold (\cmd_rd_en_d_gold), cmd_rd_en_d_gate (\cmd_rd_en_d_gate) -> cmd_rd_en_d
+Presumably equivalent wires: cmd_rd_en_q_gold (\cmd_rd_en_q_gold), cmd_rd_en_q_gate (\cmd_rd_en_q_gate) -> cmd_rd_en_q
+Presumably equivalent wires: cmd_len_d_gold (\cmd_len_d_gold), cmd_len_d_gate (\cmd_len_d_gate) -> cmd_len_d
+Presumably equivalent wires: cmd_len_q_gold (\cmd_len_q_gold), cmd_len_q_gate (\cmd_len_q_gate) -> cmd_len_q
+Presumably equivalent wires: csaat_gold (\csaat_gold), csaat_gate (\csaat_gate) -> csaat
+Presumably equivalent wires: csaat_q_gold (\csaat_q_gold), csaat_q_gate (\csaat_q_gate) -> csaat_q
+Presumably equivalent wires: bit_cntr_d_gold (\bit_cntr_d_gold), bit_cntr_d_gate (\bit_cntr_d_gate) -> bit_cntr_d
+Presumably equivalent wires: bit_cntr_q_gold (\bit_cntr_q_gold), bit_cntr_q_gate (\bit_cntr_q_gate) -> bit_cntr_q
+Presumably equivalent wires: byte_cntr_cpha0_d_gold (\byte_cntr_cpha0_d_gold), byte_cntr_cpha0_d_gate (\byte_cntr_cpha0_d_gate) -> byte_cntr_cpha0_d
+Presumably equivalent wires: byte_cntr_cpha1_d_gold (\byte_cntr_cpha1_d_gold), byte_cntr_cpha1_d_gate (\byte_cntr_cpha1_d_gate) -> byte_cntr_cpha1_d
+Presumably equivalent wires: byte_cntr_cpha0_q_gold (\byte_cntr_cpha0_q_gold), byte_cntr_cpha0_q_gate (\byte_cntr_cpha0_q_gate) -> byte_cntr_cpha0_q
+Presumably equivalent wires: byte_cntr_cpha1_q_gold (\byte_cntr_cpha1_q_gold), byte_cntr_cpha1_q_gate (\byte_cntr_cpha1_q_gate) -> byte_cntr_cpha1_q
+Presumably equivalent wires: byte_cntr_early_gold (\byte_cntr_early_gold), byte_cntr_early_gate (\byte_cntr_early_gate) -> byte_cntr_early
+Presumably equivalent wires: byte_cntr_late_gold (\byte_cntr_late_gold), byte_cntr_late_gate (\byte_cntr_late_gate) -> byte_cntr_late
+Presumably equivalent wires: wait_cntr_d_gold (\wait_cntr_d_gold), wait_cntr_d_gate (\wait_cntr_d_gate) -> wait_cntr_d
+Presumably equivalent wires: wait_cntr_q_gold (\wait_cntr_q_gold), wait_cntr_q_gate (\wait_cntr_q_gate) -> wait_cntr_q
+Presumably equivalent wires: last_bit_gold (\last_bit_gold), last_bit_gate (\last_bit_gate) -> last_bit
+Presumably equivalent wires: last_byte_gold (\last_byte_gold), last_byte_gate (\last_byte_gate) -> last_byte
+Presumably equivalent wires: state_changing_gold (\state_changing_gold), state_changing_gate (\state_changing_gate) -> state_changing
+Presumably equivalent wires: byte_starting_gold (\byte_starting_gold), byte_starting_gate (\byte_starting_gate) -> byte_starting
+Presumably equivalent wires: byte_starting_cpha0_gold (\byte_starting_cpha0_gold), byte_starting_cpha0_gate (\byte_starting_cpha0_gate) -> byte_starting_cpha0
+Presumably equivalent wires: byte_starting_cpha0_q_gold (\byte_starting_cpha0_q_gold), byte_starting_cpha0_q_gate (\byte_starting_cpha0_q_gate) -> byte_starting_cpha0_q
+Presumably equivalent wires: byte_starting_cpha1_gold (\byte_starting_cpha1_gold), byte_starting_cpha1_gate (\byte_starting_cpha1_gate) -> byte_starting_cpha1
+Presumably equivalent wires: bit_shifting_gold (\bit_shifting_gold), bit_shifting_gate (\bit_shifting_gate) -> bit_shifting
+Presumably equivalent wires: bit_shifting_cpha0_gold (\bit_shifting_cpha0_gold), bit_shifting_cpha0_gate (\bit_shifting_cpha0_gate) -> bit_shifting_cpha0
+Presumably equivalent wires: bit_shifting_cpha0_q_gold (\bit_shifting_cpha0_q_gold), bit_shifting_cpha0_q_gate (\bit_shifting_cpha0_q_gate) -> bit_shifting_cpha0_q
+Presumably equivalent wires: bit_shifting_cpha1_gold (\bit_shifting_cpha1_gold), bit_shifting_cpha1_gate (\bit_shifting_cpha1_gate) -> bit_shifting_cpha1
+Presumably equivalent wires: byte_ending_gold (\byte_ending_gold), byte_ending_gate (\byte_ending_gate) -> byte_ending
+Presumably equivalent wires: byte_ending_cpha0_gold (\byte_ending_cpha0_gold), byte_ending_cpha0_gate (\byte_ending_cpha0_gate) -> byte_ending_cpha0
+Presumably equivalent wires: byte_ending_cpha0_q_gold (\byte_ending_cpha0_q_gold), byte_ending_cpha0_q_gate (\byte_ending_cpha0_q_gate) -> byte_ending_cpha0_q
+Presumably equivalent wires: byte_ending_cpha1_gold (\byte_ending_cpha1_gold), byte_ending_cpha1_gate (\byte_ending_cpha1_gate) -> byte_ending_cpha1
+Presumably equivalent wires: sample_en_d_gold (\sample_en_d_gold), sample_en_d_gate (\sample_en_d_gate) -> sample_en_d
+Presumably equivalent wires: sample_en_q_gold (\sample_en_q_gold), sample_en_q_gate (\sample_en_q_gate) -> sample_en_q
+Presumably equivalent wires: sample_en_q2_gold (\sample_en_q2_gold), sample_en_q2_gate (\sample_en_q2_gate) -> sample_en_q2
+Presumably equivalent wires: config_changed_gold (\config_changed_gold), config_changed_gate (\config_changed_gate) -> config_changed
+Presumably equivalent wires: fsm_en_gold (\fsm_en_gold), fsm_en_gate (\fsm_en_gate) -> fsm_en
+Presumably equivalent wires: new_command_gold (\new_command_gold), new_command_gate (\new_command_gate) -> new_command
+Presumably equivalent wires: new_command_cpha1_gold (\new_command_cpha1_gold), new_command_cpha1_gate (\new_command_cpha1_gate) -> new_command_cpha1
+Presumably equivalent wires: csb_single_d_gold (\csb_single_d_gold), csb_single_d_gate (\csb_single_d_gate) -> csb_single_d
+Presumably equivalent wires: csb_q_gold (\csb_q_gold), csb_q_gate (\csb_q_gate) -> csb_q
+Presumably equivalent wires: sck_d_gold (\u_sck_flop.u_prim_generic_flop_en.d_i_gold), sck_d_gate (\u_sck_flop.u_prim_generic_flop_en.d_i_gate) -> sck_d
+Presumably equivalent wires: sck_q_gold (\u_sck_flop.u_prim_generic_flop_en.q_o_gold), sck_q_gate (\u_sck_flop.u_prim_generic_flop_en.q_o_gate) -> sck_q
+Presumably equivalent wires: wr_en_internal_gold (\wr_en_internal_gold), wr_en_internal_gate (\wr_en_internal_gate) -> wr_en_internal
+Presumably equivalent wires: rd_en_internal_gold (\rd_en_internal_gold), rd_en_internal_gate (\rd_en_internal_gate) -> rd_en_internal
+Presumably equivalent wires: sample_en_internal_gold (\sample_en_internal_gold), sample_en_internal_gate (\sample_en_internal_gate) -> sample_en_internal
+Presumably equivalent wires: shift_en_internal_gold (\bit_shifting_gold), shift_en_internal_gate (\bit_shifting_gate) -> shift_en_internal
+Presumably equivalent wires: stall_gold (\stall_gold), stall_gate (\stall_gate) -> stall
+Presumably equivalent wires: state_q_gold (\state_q_gold), state_q_gate (\state_q_gate) -> state_q
+Presumably equivalent wires: state_d_gold (\state_d_gold), state_d_gate (\state_d_gate) -> state_d
+Presumably equivalent wires: command_ready_int_gold (\command_ready_int_gold), command_ready_int_gate (\command_ready_int_gate) -> command_ready_int
+Presumably equivalent wires: next_state_after_idle_gold (\next_state_after_idle_gold), next_state_after_idle_gate (\next_state_after_idle_gate) -> next_state_after_idle
+Presumably equivalent wires: next_state_after_idle_csb_active_gold (\next_state_after_idle_csb_active_gold), next_state_after_idle_csb_active_gate (\next_state_after_idle_csb_active_gate) -> next_state_after_idle_csb_active
+Presumably equivalent wires: command_ready_idle_csb_active_gold (\command_ready_idle_csb_active_gold), command_ready_idle_csb_active_gate (\command_ready_idle_csb_active_gate) -> command_ready_idle_csb_active
+Presumably equivalent wires: segment_rd_en_gold (\segment_rd_en_gold), segment_rd_en_gate (\segment_rd_en_gate) -> segment_rd_en
+Presumably equivalent wires: segment_rd_en_cpha0_gold (\cmd_rd_en_q_gold), segment_rd_en_cpha0_gate (\cmd_rd_en_q_gate) -> segment_rd_en_cpha0
+Presumably equivalent wires: segment_rd_en_cpha1_gold (\segment_rd_en_cpha1_gold), segment_rd_en_cpha1_gate (\segment_rd_en_cpha1_gate) -> segment_rd_en_cpha1
+Presumably equivalent wires: shift_size_gold (\shift_size_gold), shift_size_gate (\shift_size_gate) -> shift_size
+Presumably equivalent wires: start_bit_gold (\start_bit_gold), start_bit_gate (\start_bit_gate) -> start_bit
+Presumably equivalent wires: u_sck_flop.clk_i_gold (\clk_i_gold), u_sck_flop.clk_i_gate (\clk_i_gate) -> u_sck_flop.clk_i
+Presumably equivalent wires: u_sck_flop.rst_ni_gold (\rst_ni_gold), u_sck_flop.rst_ni_gate (\rst_ni_gate) -> u_sck_flop.rst_ni
+Presumably equivalent wires: u_sck_flop.en_i_gold (\u_sck_flop.en_i_gold), u_sck_flop.en_i_gate (\u_sck_flop.en_i_gate) -> u_sck_flop.en_i
+Presumably equivalent wires: u_sck_flop.d_i_gold (\u_sck_flop.u_prim_generic_flop_en.d_i_gold), u_sck_flop.d_i_gate (\u_sck_flop.u_prim_generic_flop_en.d_i_gate) -> u_sck_flop.d_i
+Presumably equivalent wires: u_sck_flop.q_o_gold (\u_sck_flop.u_prim_generic_flop_en.q_o_gold), u_sck_flop.q_o_gate (\u_sck_flop.u_prim_generic_flop_en.q_o_gate) -> u_sck_flop.q_o
+Presumably equivalent wires: u_sck_flop.u_prim_generic_flop_en.clk_i_gold (\clk_i_gold), u_sck_flop.u_prim_generic_flop_en.clk_i_gate (\clk_i_gate) -> u_sck_flop.u_prim_generic_flop_en.clk_i
+Presumably equivalent wires: u_sck_flop.u_prim_generic_flop_en.rst_ni_gold (\rst_ni_gold), u_sck_flop.u_prim_generic_flop_en.rst_ni_gate (\rst_ni_gate) -> u_sck_flop.u_prim_generic_flop_en.rst_ni
+Presumably equivalent wires: u_sck_flop.u_prim_generic_flop_en.en_i_gold (\u_sck_flop.en_i_gold), u_sck_flop.u_prim_generic_flop_en.en_i_gate (\u_sck_flop.en_i_gate) -> u_sck_flop.u_prim_generic_flop_en.en_i
+Presumably equivalent wires: u_sck_flop.u_prim_generic_flop_en.d_i_gold (\u_sck_flop.u_prim_generic_flop_en.d_i_gold), u_sck_flop.u_prim_generic_flop_en.d_i_gate (\u_sck_flop.u_prim_generic_flop_en.d_i_gate) -> u_sck_flop.u_prim_generic_flop_en.d_i
+Presumably equivalent wires: u_sck_flop.u_prim_generic_flop_en.q_o_gold (\u_sck_flop.u_prim_generic_flop_en.q_o_gold), u_sck_flop.u_prim_generic_flop_en.q_o_gate (\u_sck_flop.u_prim_generic_flop_en.q_o_gate) -> u_sck_flop.u_prim_generic_flop_en.q_o
+Changing input B of cell $0_gate ($or): \tx_stall_o_gate -> \tx_stall_o
+Changing input A of cell $0_gate ($or): \rx_stall_o_gate -> \rx_stall_o
+Changing input B of cell $procmux$387_gate ($mux): \byte_starting_cpha0_gate -> \byte_starting_cpha0
+Changing input A of cell $procmux$387_gate ($mux): \byte_starting_cpha0_q_gate -> \byte_starting_cpha0_q
+Changing input B of cell $procmux$385_gate ($mux): \bit_shifting_cpha0_gate -> \bit_shifting_cpha0
+Changing input A of cell $procmux$385_gate ($mux): \bit_shifting_cpha0_q_gate -> \bit_shifting_cpha0_q
+Changing input B of cell $procmux$383_gate ($mux): \byte_ending_cpha0_gate -> \byte_ending_cpha0
+Changing input A of cell $procmux$383_gate ($mux): \byte_ending_cpha0_q_gate -> \byte_ending_cpha0_q
+Changing input B of cell $procmux$381_gate ($mux): \new_command_gate -> \new_command
+Changing input A of cell $procmux$381_gate ($mux): \new_command_cpha1_gate -> \new_command_cpha1
+Changing input B of cell $procmux$379_gate ($mux): \cmd_rd_en_q_gate -> \cmd_rd_en_q
+Changing input A of cell $procmux$379_gate ($mux): \segment_rd_en_cpha1_gate -> \segment_rd_en_cpha1
+Changing input A of cell $procmux$367_CMP0_gate ($eq): \cmd_speed_d_gate -> \cmd_speed_d
+Changing input A of cell $procmux$366_CMP0_gate ($eq): \cmd_speed_d_gate -> \cmd_speed_d
+Changing input A of cell $procmux$360_CMP0_gate ($logic_not): \cmd_speed_d_gate -> \cmd_speed_d
+Changing input A of cell $procmux$359_CMP0_gate ($eq): \cmd_speed_d_gate -> \cmd_speed_d
+Changing input A of cell $procmux$358_CMP0_gate ($eq): \cmd_speed_d_gate -> \cmd_speed_d
+Changing input S of cell $procmux$347_gate ($mux): \fsm_en_gate -> \fsm_en
+Changing input A of cell $procmux$347_gate ($mux): \wait_cntr_q_gate -> \wait_cntr_q
+Changing input S of cell $procmux$340_gate ($mux): \fsm_en_gate -> \fsm_en
+Changing input S of cell $procmux$337_gate ($mux): \state_changing_gate -> \state_changing
+Changing input A of cell $procmux$336_CMP0_gate ($eq): \state_d_gate -> \state_d
+Changing input A of cell $procmux$335_CMP0_gate ($eq): \state_d_gate -> \state_d
+Changing input A of cell $procmux$334_CMP0_gate ($eq): \state_d_gate -> \state_d
+Changing input B of cell $procmux$332_gate ($pmux): { \csnlead_gate \csntrail_gate \csnidle_gate \csnidle_gate } -> { \csnlead \csntrail \csnidle \csnidle }
+Changing input A of cell $procmux$333_CMP0_gate ($eq): \state_d_gate -> \state_d
+Changing input S of cell $procmux$325_gate ($mux): \fsm_en_gate -> \fsm_en
+Changing input S of cell $procmux$322_gate ($mux): \state_changing_gate -> \state_changing
+Changing input S of cell $procmux$314_gate ($mux): \fsm_en_gate -> \fsm_en
+Changing input S of cell $procmux$311_gate ($mux): \state_changing_gate -> \state_changing
+Changing input S of cell $procmux$595_gate ($mux): \config_changed_gate -> \config_changed
+Changing input S of cell $330_gate ($mux): \csid_gate -> \csid
+Changing input S of cell $329_gate ($mux): \stall_gate -> \stall
+Changing input B of cell $329_gate ($mux): \csb_q_gate -> \csb_q
+Changing input A of cell $329_gate ($mux): \csb_single_d_gate -> \csb_single_d
+Changing input B of cell $procmux$389_gate ($mux): \cmd_speed_q_gate -> \cmd_speed_q
+Changing input A of cell $procmux$389_gate ($mux): \speed_cpha1_gate -> \speed_cpha1
+Changing input A of cell $procmux$601_CMP0_gate ($eq): \speed_o_gate -> \speed_o
+Changing input A of cell $procmux$393_CMP0_gate ($eq): \state_d_gate -> \state_d
+Changing input A of cell $320_gate ($not): \stall_gate -> \stall
+Changing input S of cell $procmux$556_gate ($mux): \fsm_en_gate -> \fsm_en
+Changing input A of cell $procmux$556_gate ($mux): \state_q_gate -> \state_q
+Changing input B of cell $procmux$600_gate ($pmux): { 6'000100 \cmd_wr_en_q_gate \cmd_wr_en_q_gate \cmd_wr_en_q_gate \cmd_wr_en_q_gate \cmd_wr_en_q_gate \cmd_wr_en_q_gate } -> { 6'000100 \cmd_wr_en_q \cmd_wr_en_q \cmd_wr_en_q \cmd_wr_en_q \cmd_wr_en_q \cmd_wr_en_q }
+Changing input A of cell $procmux$393_CMP1_gate ($eq): \state_d_gate -> \state_d
+Changing input S of cell $procmux$550_gate ($mux): \fsm_en_gate -> \fsm_en
+Changing input S of cell $306_gate ($mux): \cpol_gate -> \cpol
+Changing input A of cell $305_gate ($eq): \state_d_gate -> \state_d
+Changing input A of cell $304_gate ($ne): \state_d_gate -> \state_d
+Changing input S of cell $procmux$544_gate ($mux): \fsm_en_gate -> \fsm_en
+Changing input A of cell $procmux$543_CMP0_gate ($logic_not): \state_q_gate -> \state_q
+Changing input S of cell $299_gate ($mux): \full_cyc_o_gate -> \full_cyc_o
+Changing input B of cell $299_gate ($mux): \sample_en_q2_gate -> \sample_en_q2
+Changing input A of cell $299_gate ($mux): \sample_en_q_gate -> \sample_en_q
+Changing input B of cell $298_gate ($mux): \sample_en_q_gate -> \sample_en_q
+Changing input A of cell $298_gate ($mux): \sample_en_q2_gate -> \sample_en_q2
+Changing input A of cell $297_gate ($logic_and): \fsm_en_gate -> \fsm_en
+Changing input A of cell $296_gate ($logic_not): \stall_gate -> \stall
+Changing input B of cell $295_gate ($mux): \sample_en_d_gate -> \sample_en_d
+Changing input A of cell $295_gate ($mux): \sample_en_q_gate -> \sample_en_q
+Changing input A of cell $294_gate ($logic_and): \fsm_en_gate -> \fsm_en
+Changing input A of cell $293_gate ($logic_not): \stall_gate -> \stall
+Changing input A of cell $procmux$602_CMP0_gate ($eq): \speed_o_gate -> \speed_o
+Changing input A of cell $procmux$393_CMP2_gate ($eq): \state_d_gate -> \state_d
+Changing input A of cell $procmux$542_CMP0_gate ($eq): \state_q_gate -> \state_q
+Changing input B of cell $287_gate ($and): \wr_en_o_gate -> \wr_en_o
+Changing input A of cell $286_gate ($logic_not): \byte_cntr_early_gate -> \byte_cntr_early
+Changing input A of cell $procmux$540_CMP0_gate ($eq): \state_q_gate -> \state_q
+Changing input B of cell $283_gate ($and): \rd_en_o_gate -> \rd_en_o
+Changing input A of cell $282_gate ($logic_not): \byte_cntr_late_gate -> \byte_cntr_late
+Changing input B of cell $procmux$537_gate ($pmux): { 1'1 $command_ready_int$138_gate $command_ready_int$143_gate \command_ready_idle_csb_active_gate } -> { 1'1 $command_ready_int$138_gate $command_ready_int$143_gate \command_ready_idle_csb_active }
+Changing input A of cell $procmux$538_CMP0_gate ($eq): \state_q_gate -> \state_q
+Changing input B of cell $279_gate ($or): \shift_en_o_gate -> \shift_en_o
+Changing input A of cell $279_gate ($or): \byte_starting_gate -> \byte_starting
+Changing input B of cell $277_gate ($and): \segment_rd_en_gate -> \segment_rd_en
+Changing input A of cell $277_gate ($and): \byte_ending_gate -> \byte_ending
+Changing input S of cell $procmux$532_gate ($mux): \fsm_en_gate -> \fsm_en
+Changing input A of cell $procmux$531_CMP0_gate ($logic_not): \state_q_gate -> \state_q
+Changing input B of cell $274_gate ($and): \cmd_wr_en_d_gate -> \cmd_wr_en_d
+Changing input A of cell $274_gate ($and): \byte_starting_gate -> \byte_starting
+Changing input S of cell $273_gate ($mux): \stall_gate -> \stall
+Changing input B of cell $273_gate ($mux): \wait_cntr_q_gate -> \wait_cntr_q
+Changing input A of cell $273_gate ($mux): \wait_cntr_d_gate -> \wait_cntr_d
+Changing input S of cell $272_gate ($mux): \stall_gate -> \stall
+Changing input B of cell $272_gate ($mux): \byte_cntr_cpha1_q_gate -> \byte_cntr_cpha1_q
+Changing input A of cell $272_gate ($mux): \byte_cntr_cpha1_d_gate -> \byte_cntr_cpha1_d
+Changing input S of cell $271_gate ($mux): \stall_gate -> \stall
+Changing input B of cell $271_gate ($mux): \byte_cntr_cpha0_q_gate -> \byte_cntr_cpha0_q
+Changing input A of cell $271_gate ($mux): \byte_cntr_cpha0_d_gate -> \byte_cntr_cpha0_d
+Changing input S of cell $270_gate ($mux): \stall_gate -> \stall
+Changing input B of cell $270_gate ($mux): \bit_cntr_q_gate -> \bit_cntr_q
+Changing input A of cell $270_gate ($mux): \bit_cntr_d_gate -> \bit_cntr_d
+Changing input A of cell $procmux$603_CMP0_gate ($logic_not): \speed_o_gate -> \speed_o
+Changing input A of cell $procmux$393_CMP3_gate ($eq): \state_d_gate -> \state_d
+Changing input A of cell $procmux$530_CMP0_gate ($eq): \state_q_gate -> \state_q
+Changing input A of cell $261_gate ($sub): { 28'0000000000000000000000000000 \wait_cntr_q_gate } -> { 28'0000000000000000000000000000 \wait_cntr_q }
+Changing input A of cell $260_gate ($logic_not): \wait_cntr_q_gate -> \wait_cntr_q
+Changing input A of cell $procmux$393_CMP4_gate ($eq): \state_d_gate -> \state_d
+Changing input A of cell $procmux$528_CMP0_gate ($eq): \state_q_gate -> \state_q
+Changing input S of cell $254_gate ($mux): \fsm_en_gate -> \fsm_en
+Changing input A of cell $254_gate ($mux): { 8'00000000 \byte_cntr_cpha1_q_gate } -> { 8'00000000 \byte_cntr_cpha1_q }
+Changing input S of cell $253_gate ($mux): \new_command_cpha1_gate -> \new_command_cpha1
+Changing input B of cell $253_gate ($mux): { 8'00000000 \cmd_len_q_gate } -> { 8'00000000 \cmd_len_q }
+Changing input S of cell $252_gate ($mux): \byte_ending_cpha1_gate -> \byte_ending_cpha1
+Changing input A of cell $252_gate ($mux): { 8'00000000 \byte_cntr_cpha1_q_gate } -> { 8'00000000 \byte_cntr_cpha1_q }
+Changing input A of cell $251_gate ($sub): { 8'00000000 \byte_cntr_cpha1_q_gate } -> { 8'00000000 \byte_cntr_cpha1_q }
+Changing input A of cell $procmux$527_CMP0_gate ($eq): \state_q_gate -> \state_q
+Changing input S of cell $247_gate ($mux): \fsm_en_gate -> \fsm_en
+Changing input A of cell $247_gate ($mux): { 8'00000000 \byte_cntr_cpha0_q_gate } -> { 8'00000000 \byte_cntr_cpha0_q }
+Changing input S of cell $246_gate ($mux): \new_command_gate -> \new_command
+Changing input B of cell $246_gate ($mux): { 8'00000000 \cmd_len_d_gate } -> { 8'00000000 \cmd_len_d }
+Changing input S of cell $245_gate ($mux): \byte_ending_cpha0_gate -> \byte_ending_cpha0
+Changing input A of cell $245_gate ($mux): { 8'00000000 \byte_cntr_cpha0_q_gate } -> { 8'00000000 \byte_cntr_cpha0_q }
+Changing input A of cell $244_gate ($sub): { 8'00000000 \byte_cntr_cpha0_q_gate } -> { 8'00000000 \byte_cntr_cpha0_q }
+Changing input A of cell $procmux$525_CMP0_gate ($eq): \state_q_gate -> \state_q
+Changing input A of cell $241_gate ($logic_not): \byte_cntr_cpha0_q_gate -> \byte_cntr_cpha0_q
+Changing input A of cell $procmux$523_CMP0_gate ($eq): \state_q_gate -> \state_q
+Changing input A of cell $239_gate ($logic_not): \bit_cntr_q_gate -> \bit_cntr_q
+Changing input A of cell $procmux$521_CMP0_gate ($eq): \state_q_gate -> \state_q
+Changing input S of cell $236_gate ($mux): \fsm_en_gate -> \fsm_en
+Changing input A of cell $236_gate ($mux): \bit_cntr_q_gate -> \bit_cntr_q
+Changing input S of cell $235_gate ($mux): \byte_starting_gate -> \byte_starting
+Changing input B of cell $235_gate ($mux): \start_bit_gate -> \start_bit
+Changing input S of cell $234_gate ($mux): \bit_shifting_gate -> \bit_shifting
+Changing input A of cell $234_gate ($mux): \bit_cntr_q_gate -> \bit_cntr_q
+Changing input B of cell $233_gate ($sub): \shift_size_gate -> \shift_size
+Changing input A of cell $233_gate ($sub): \bit_cntr_q_gate -> \bit_cntr_q
+Changing input B of cell $procmux$518_gate ($pmux): { \next_state_after_idle_gate $procmux$516_Y_gate 3'011 $procmux$486_Y_gate $procmux$437_Y_gate $procmux$425_Y_gate $procmux$403_Y_gate \next_state_after_idle_csb_active_gate } -> { \next_state_after_idle $procmux$516_Y_gate 3'011 $procmux$486_Y_gate $procmux$437_Y_gate $procmux$425_Y_gate $procmux$403_Y_gate \next_state_after_idle_csb_active }
+Changing input A of cell $225_gate ($logic_not): \cmd_wr_en_d_gate -> \cmd_wr_en_d
+Changing input A of cell $224_gate ($logic_not): \cmd_rd_en_d_gate -> \cmd_rd_en_d
+Changing input A of cell $procmux$519_CMP0_gate ($eq): \state_q_gate -> \state_q
+Changing input S of cell $221_gate ($mux): \cpha_gate -> \cpha
+Changing input B of cell $221_gate ($mux): \byte_cntr_cpha1_q_gate -> \byte_cntr_cpha1_q
+Changing input A of cell $221_gate ($mux): \byte_cntr_cpha0_q_gate -> \byte_cntr_cpha0_q
+Changing input A of cell $procmux$399_CMP0_gate ($eq): \state_q_gate -> \state_q
+Changing input S of cell $218_gate ($mux): \cpha_gate -> \cpha
+Changing input B of cell $218_gate ($mux): \byte_cntr_cpha1_d_gate -> \byte_cntr_cpha1_d
+Changing input A of cell $218_gate ($mux): \byte_cntr_cpha0_d_gate -> \byte_cntr_cpha0_d
+Changing input S of cell $procmux$513_gate ($mux): \fsm_en_gate -> \fsm_en
+Changing input S of cell $215_gate ($mux): \cpha_gate -> \cpha
+Changing input B of cell $215_gate ($mux): \segment_rd_en_cpha1_gate -> \segment_rd_en_cpha1
+Changing input A of cell $215_gate ($mux): \cmd_rd_en_q_gate -> \cmd_rd_en_q
+Changing input S of cell $procmux$400_gate ($mux): \fsm_en_gate -> \fsm_en
+Changing input S of cell $212_gate ($mux): \cpha_gate -> \cpha
+Changing input B of cell $212_gate ($mux): \speed_cpha1_gate -> \speed_cpha1
+Changing input A of cell $212_gate ($mux): \cmd_speed_q_gate -> \cmd_speed_q
+Changing input A of cell $procmux$512_CMP0_gate ($eq): \state_q_gate -> \state_q
+Changing input S of cell $209_gate ($mux): \cpha_gate -> \cpha
+Changing input B of cell $209_gate ($mux): \bit_shifting_cpha1_gate -> \bit_shifting_cpha1
+Changing input A of cell $209_gate ($mux): \bit_shifting_cpha0_gate -> \bit_shifting_cpha0
+Changing input A of cell $procmux$509_gate ($mux): \state_q_gate -> \state_q
+Changing input S of cell $206_gate ($mux): \cpha_gate -> \cpha
+Changing input B of cell $206_gate ($mux): \byte_ending_cpha1_gate -> \byte_ending_cpha1
+Changing input A of cell $206_gate ($mux): \byte_ending_cpha0_gate -> \byte_ending_cpha0
+Changing input A of cell $procmux$410_CMP0_gate ($eq): \state_q_gate -> \state_q
+Changing input S of cell $203_gate ($mux): \cpha_gate -> \cpha
+Changing input B of cell $203_gate ($mux): \byte_starting_cpha1_gate -> \byte_starting_cpha1
+Changing input A of cell $203_gate ($mux): \byte_starting_cpha0_gate -> \byte_starting_cpha0
+Changing input S of cell $procmux$498_gate ($mux): \fsm_en_gate -> \fsm_en
+Changing input B of cell $200_gate ($and): \state_changing_gate -> \state_changing
+Changing input A of cell $200_gate ($and): \bit_shifting_cpha0_q_gate -> \bit_shifting_cpha0_q
+Changing input B of cell $198_gate ($and): \state_changing_gate -> \state_changing
+Changing input A of cell $198_gate ($and): \byte_ending_cpha0_q_gate -> \byte_ending_cpha0_q
+Changing input A of cell $procmux$497_CMP0_gate ($eq): \state_q_gate -> \state_q
+Changing input B of cell $196_gate ($and): \state_changing_gate -> \state_changing
+Changing input A of cell $196_gate ($and): \byte_starting_cpha0_q_gate -> \byte_starting_cpha0_q
+Changing input A of cell $189_gate ($logic_and): \state_changing_gate -> \state_changing
+Changing input A of cell $188_gate ($logic_not): \stall_gate -> \stall
+Changing input S of cell $procmux$605_gate ($mux): \csb_q_gate -> \csb_q
+Changing input S of cell $procmux$411_gate ($mux): \fsm_en_gate -> \fsm_en
+Changing input S of cell $procmux$483_gate ($mux): \fsm_en_gate -> \fsm_en
+Changing input A of cell $179_gate ($logic_not): \bit_cntr_q_gate -> \bit_cntr_q
+Changing input A of cell $178_gate ($eq): \state_q_gate -> \state_q
+Changing input B of cell $177_gate ($and): \state_changing_gate -> \state_changing
+Changing input A of cell $172_gate ($reduce_bool): \bit_cntr_q_gate -> \bit_cntr_q
+Changing input A of cell $171_gate ($eq): \state_d_gate -> \state_d
+Changing input B of cell $170_gate ($and): \state_changing_gate -> \state_changing
+Changing input A of cell $procmux$482_CMP0_gate ($eq): \state_q_gate -> \state_q
+Changing input A of cell $164_gate ($logic_not): \bit_cntr_q_gate -> \bit_cntr_q
+Changing input A of cell $163_gate ($eq): \state_d_gate -> \state_d
+Changing input A of cell $162_gate ($eq): \state_d_gate -> \state_d
+Changing input B of cell $161_gate ($and): \state_changing_gate -> \state_changing
+Changing input B of cell $158_gate ($ne): \state_d_gate -> \state_d
+Changing input A of cell $158_gate ($ne): \state_q_gate -> \state_q
+Changing input S of cell $157_gate ($mux): \stall_gate -> \stall
+Changing input B of cell $157_gate ($mux): \clk_cntr_q_gate -> \clk_cntr_q
+Changing input A of cell $157_gate ($mux): \clk_cntr_d_gate -> \clk_cntr_d
+Changing input S of cell $156_gate ($mux): \stall_gate -> \stall
+Changing input B of cell $156_gate ($mux): \state_q_gate -> \state_q
+Changing input A of cell $156_gate ($mux): \state_d_gate -> \state_d
+Changing input S of cell $procmux$609_gate ($mux): \csb_q_gate -> \csb_q
+Changing input A of cell $144_gate ($logic_not): \wait_cntr_q_gate -> \wait_cntr_q
+Changing input A of cell $141_gate ($logic_not): \wait_cntr_q_gate -> \wait_cntr_q
+Changing input A of cell $139_gate ($logic_not): \wait_cntr_q_gate -> \wait_cntr_q
+Changing input B of cell $procmux$418_gate ($mux): \next_state_after_idle_gate -> \next_state_after_idle
+Changing input A of cell $procmux$418_gate ($mux): \state_q_gate -> \state_q
+Changing input A of cell $132_gate ($logic_not): \last_byte_gate -> \last_byte
+Changing input A of cell $131_gate ($logic_not): \last_bit_gate -> \last_bit
+Changing input A of cell $129_gate ($logic_not): \wait_cntr_q_gate -> \wait_cntr_q
+Changing input S of cell $procmux$468_gate ($mux): \fsm_en_gate -> \fsm_en
+Changing input B of cell $122_gate ($ne): \csid_q_gate -> \csid_q
+Changing input A of cell $procmux$467_CMP0_gate ($eq): \state_q_gate -> \state_q
+Changing input A of cell $114_gate ($logic_not): \clk_cntr_q_gate -> \clk_cntr_q
+Changing input S of cell $procmux$461_gate ($mux): \csaat_q_gate -> \csaat_q
+Changing input B of cell $procmux$461_gate ($mux): \command_ready_idle_csb_active_gate -> \command_ready_idle_csb_active
+Changing input A of cell $111_gate ($and): \rd_en_internal_gate -> \rd_en_internal
+Changing input A of cell $108_gate ($and): \wr_en_internal_gate -> \wr_en_internal
+Changing input S of cell $procmux$451_gate ($mux): \fsm_en_gate -> \fsm_en
+Changing input A of cell $104_gate ($mux): { 16'0000000000000000 \clk_cntr_q_gate } -> { 16'0000000000000000 \clk_cntr_q }
+Changing input S of cell $102_gate ($mux): \new_command_gate -> \new_command
+Changing input B of cell $102_gate ($mux): { 16'0000000000000000 \clkdiv_gate } -> { 16'0000000000000000 \clkdiv }
+Changing input B of cell $101_gate ($mux): { 16'0000000000000000 \clkdiv_gate } -> { 16'0000000000000000 \clkdiv }
+Changing input A of cell $100_gate ($sub): { 16'0000000000000000 \clk_cntr_q_gate } -> { 16'0000000000000000 \clk_cntr_q }
+Changing input A of cell $99_gate ($logic_not): \clk_cntr_q_gate -> \clk_cntr_q
+Changing input A of cell $98_gate ($logic_and): \is_idle_gate -> \is_idle
+Changing input A of cell $97_gate ($logic_not): \state_changing_gate -> \state_changing
+Changing input A of cell $procmux$421_CMP0_gate ($eq): \state_q_gate -> \state_q
+Changing input A of cell $94_gate ($not): \is_idle_gate -> \is_idle
+Changing input A of cell $procmux$450_CMP0_gate ($eq): \state_q_gate -> \state_q
+Changing input A of cell $91_gate ($eq): \state_q_gate -> \state_q
+Changing input A of cell $90_gate ($logic_not): \state_q_gate -> \state_q
+Changing input B of cell $89_gate ($mux): \cmd_len_d_gate -> \cmd_len_d
+Changing input A of cell $89_gate ($mux): \cmd_len_q_gate -> \cmd_len_q
+Changing input A of cell $88_gate ($logic_and): \new_command_gate -> \new_command
+Changing input A of cell $87_gate ($logic_not): \stall_gate -> \stall
+Changing input B of cell $86_gate ($mux): \cmd_speed_d_gate -> \cmd_speed_d
+Changing input A of cell $86_gate ($mux): \cmd_speed_q_gate -> \cmd_speed_q
+Changing input A of cell $85_gate ($logic_and): \new_command_gate -> \new_command
+Changing input A of cell $84_gate ($logic_not): \stall_gate -> \stall
+Changing input B of cell $83_gate ($mux): \cmd_rd_en_d_gate -> \cmd_rd_en_d
+Changing input A of cell $83_gate ($mux): \cmd_rd_en_q_gate -> \cmd_rd_en_q
+Changing input A of cell $82_gate ($logic_and): \new_command_gate -> \new_command
+Changing input A of cell $81_gate ($logic_not): \stall_gate -> \stall
+Changing input B of cell $80_gate ($mux): \cmd_wr_en_d_gate -> \cmd_wr_en_d
+Changing input A of cell $80_gate ($mux): \cmd_wr_en_q_gate -> \cmd_wr_en_q
+Changing input A of cell $79_gate ($logic_and): \new_command_gate -> \new_command
+Changing input A of cell $78_gate ($logic_not): \stall_gate -> \stall
+Changing input B of cell $77_gate ($mux): \csaat_gate -> \csaat
+Changing input A of cell $77_gate ($mux): \csaat_q_gate -> \csaat_q
+Changing input A of cell $76_gate ($logic_and): \new_command_gate -> \new_command
+Changing input A of cell $75_gate ($logic_not): \stall_gate -> \stall
+Changing input B of cell $74_gate ($mux): \clkdiv_gate -> \clkdiv
+Changing input A of cell $74_gate ($mux): \clkdiv_q_gate -> \clkdiv_q
+Changing input A of cell $73_gate ($logic_and): \new_command_gate -> \new_command
+Changing input A of cell $72_gate ($logic_not): \stall_gate -> \stall
+Changing input B of cell $71_gate ($mux): \csntrail_gate -> \csntrail
+Changing input A of cell $71_gate ($mux): \csntrail_q_gate -> \csntrail_q
+Changing input A of cell $70_gate ($logic_and): \new_command_gate -> \new_command
+Changing input A of cell $69_gate ($logic_not): \stall_gate -> \stall
+Changing input B of cell $68_gate ($mux): \csnlead_gate -> \csnlead
+Changing input A of cell $68_gate ($mux): \csnlead_q_gate -> \csnlead_q
+Changing input A of cell $67_gate ($logic_and): \new_command_gate -> \new_command
+Changing input A of cell $66_gate ($logic_not): \stall_gate -> \stall
+Changing input B of cell $65_gate ($mux): \csnidle_gate -> \csnidle
+Changing input A of cell $65_gate ($mux): \csnidle_q_gate -> \csnidle_q
+Changing input A of cell $64_gate ($logic_and): \new_command_gate -> \new_command
+Changing input A of cell $63_gate ($logic_not): \stall_gate -> \stall
+Changing input B of cell $62_gate ($mux): \full_cyc_o_gate -> \full_cyc_o
+Changing input A of cell $62_gate ($mux): \full_cyc_q_gate -> \full_cyc_q
+Changing input A of cell $61_gate ($logic_and): \new_command_gate -> \new_command
+Changing input A of cell $60_gate ($logic_not): \stall_gate -> \stall
+Changing input B of cell $59_gate ($mux): \cpha_gate -> \cpha
+Changing input A of cell $59_gate ($mux): \cpha_q_gate -> \cpha_q
+Changing input A of cell $58_gate ($logic_and): \new_command_gate -> \new_command
+Changing input A of cell $57_gate ($logic_not): \stall_gate -> \stall
+Changing input B of cell $56_gate ($mux): \cpol_gate -> \cpol
+Changing input A of cell $56_gate ($mux): \cpol_q_gate -> \cpol_q
+Changing input A of cell $55_gate ($logic_and): \new_command_gate -> \new_command
+Changing input A of cell $54_gate ($logic_not): \stall_gate -> \stall
+Changing input B of cell $53_gate ($mux): \csid_gate -> \csid
+Changing input A of cell $53_gate ($mux): \csid_q_gate -> \csid_q
+Changing input A of cell $52_gate ($logic_and): \new_command_gate -> \new_command
+Changing input A of cell $51_gate ($logic_not): \stall_gate -> \stall
+Changing input S of cell $procmux$611_gate ($mux): \u_sck_flop.en_i_gate -> \u_sck_flop.en_i
+Changing input B of cell $procmux$611_gate ($mux): \u_sck_flop.u_prim_generic_flop_en.d_i_gate -> \u_sck_flop.u_prim_generic_flop_en.d_i
+Changing input A of cell $procmux$611_gate ($mux): \u_sck_flop.u_prim_generic_flop_en.q_o_gate -> \u_sck_flop.u_prim_generic_flop_en.q_o
+Changing input S of cell $46_gate ($mux): \new_command_gate -> \new_command
+Changing input A of cell $46_gate ($mux): \cmd_speed_q_gate -> \cmd_speed_q
+Changing input S of cell $45_gate ($mux): \new_command_gate -> \new_command
+Changing input A of cell $45_gate ($mux): \cmd_rd_en_q_gate -> \cmd_rd_en_q
+Changing input S of cell $44_gate ($mux): \new_command_gate -> \new_command
+Changing input A of cell $44_gate ($mux): \cmd_wr_en_q_gate -> \cmd_wr_en_q
+Changing input S of cell $43_gate ($mux): \new_command_gate -> \new_command
+Changing input A of cell $43_gate ($mux): \cmd_len_q_gate -> \cmd_len_q
+Changing input S of cell $42_gate ($mux): \new_command_gate -> \new_command
+Changing input A of cell $42_gate ($mux): \csaat_q_gate -> \csaat_q
+Changing input S of cell $41_gate ($mux): \new_command_gate -> \new_command
+Changing input A of cell $41_gate ($mux): \clkdiv_q_gate -> \clkdiv_q
+Changing input S of cell $40_gate ($mux): \new_command_gate -> \new_command
+Changing input A of cell $40_gate ($mux): \csntrail_q_gate -> \csntrail_q
+Changing input S of cell $39_gate ($mux): \new_command_gate -> \new_command
+Changing input A of cell $39_gate ($mux): \csnlead_q_gate -> \csnlead_q
+Changing input S of cell $38_gate ($mux): \new_command_gate -> \new_command
+Changing input A of cell $38_gate ($mux): \csnidle_q_gate -> \csnidle_q
+Changing input S of cell $37_gate ($mux): \new_command_gate -> \new_command
+Changing input A of cell $37_gate ($mux): \full_cyc_q_gate -> \full_cyc_q
+Changing input S of cell $36_gate ($mux): \new_command_gate -> \new_command
+Changing input A of cell $36_gate ($mux): \cpha_q_gate -> \cpha_q
+Changing input S of cell $35_gate ($mux): \new_command_gate -> \new_command
+Changing input A of cell $35_gate ($mux): \cpol_q_gate -> \cpol_q
+Changing input S of cell $34_gate ($mux): \new_command_gate -> \new_command
+Changing input A of cell $34_gate ($mux): \csid_q_gate -> \csid_q
+Changing input S of cell $procmux$444_gate ($mux): \csaat_q_gate -> \csaat_q
+Changing input B of cell $procmux$444_gate ($mux): \next_state_after_idle_csb_active_gate -> \next_state_after_idle_csb_active
+Changing input B of cell $30_gate ($ne): \clkdiv_q_gate -> \clkdiv_q
+Changing input B of cell $28_gate ($ne): \csnlead_q_gate -> \csnlead_q
+Changing input B of cell $26_gate ($ne): \csntrail_q_gate -> \csntrail_q
+Changing input B of cell $24_gate ($ne): \csnidle_q_gate -> \csnidle_q
+Changing input B of cell $22_gate ($ne): \full_cyc_q_gate -> \full_cyc_q
+Changing input B of cell $20_gate ($ne): \cpha_q_gate -> \cpha_q
+Changing input B of cell $19_gate ($ne): \cpol_q_gate -> \cpol_q
+Changing input B of cell $17_gate ($logic_and): \command_ready_int_gate -> \command_ready_int
+Changing input S of cell $procmux$434_gate ($mux): \fsm_en_gate -> \fsm_en
+Changing input A of cell $15_gate ($and): \command_ready_int_gate -> \command_ready_int
+Changing input A of cell $14_gate ($not): \stall_gate -> \stall
+Changing input A of cell $12_gate ($and): \bit_shifting_gate -> \bit_shifting
+Changing input A of cell $11_gate ($not): \stall_gate -> \stall
+Changing input A of cell $procmux$433_CMP0_gate ($eq): \state_q_gate -> \state_q
+Changing input A of cell $9_gate ($and): \sample_en_internal_gate -> \sample_en_internal
+Changing input A of cell $8_gate ($not): \stall_gate -> \stall
+Changing input A of cell $procmux$430_gate ($mux): \state_q_gate -> \state_q
+Changing input A of cell $6_gate ($and): \rd_en_internal_gate -> \rd_en_internal
+Changing input A of cell $5_gate ($not): \stall_gate -> \stall
+Changing input A of cell $3_gate ($and): \wr_en_internal_gate -> \wr_en_internal
+Changing input A of cell $2_gate ($not): \stall_gate -> \stall
+Changing input S of cell $procmux$422_gate ($mux): \fsm_en_gate -> \fsm_en
+Changing input B of cell $0_gold ($or): \tx_stall_o_gold -> \tx_stall_o
+Changing input A of cell $0_gold ($or): \rx_stall_o_gold -> \rx_stall_o
+Changing input B of cell $procmux$81_gold ($mux): \byte_starting_cpha0_gold -> \byte_starting_cpha0
+Changing input A of cell $procmux$81_gold ($mux): \byte_starting_cpha0_q_gold -> \byte_starting_cpha0_q
+Changing input B of cell $procmux$79_gold ($mux): \bit_shifting_cpha0_gold -> \bit_shifting_cpha0
+Changing input A of cell $procmux$79_gold ($mux): \bit_shifting_cpha0_q_gold -> \bit_shifting_cpha0_q
+Changing input B of cell $procmux$77_gold ($mux): \byte_ending_cpha0_gold -> \byte_ending_cpha0
+Changing input A of cell $procmux$77_gold ($mux): \byte_ending_cpha0_q_gold -> \byte_ending_cpha0_q
+Changing input B of cell $procmux$75_gold ($mux): \new_command_gold -> \new_command
+Changing input A of cell $procmux$75_gold ($mux): \new_command_cpha1_gold -> \new_command_cpha1
+Changing input B of cell $procmux$73_gold ($mux): \cmd_rd_en_q_gold -> \cmd_rd_en_q
+Changing input A of cell $procmux$73_gold ($mux): \segment_rd_en_cpha1_gold -> \segment_rd_en_cpha1
+Changing input A of cell $procmux$61_CMP0_gold ($eq): \cmd_speed_d_gold -> \cmd_speed_d
+Changing input A of cell $procmux$60_CMP0_gold ($eq): \cmd_speed_d_gold -> \cmd_speed_d
+Changing input A of cell $procmux$54_CMP0_gold ($logic_not): \cmd_speed_d_gold -> \cmd_speed_d
+Changing input A of cell $procmux$53_CMP0_gold ($eq): \cmd_speed_d_gold -> \cmd_speed_d
+Changing input A of cell $procmux$52_CMP0_gold ($eq): \cmd_speed_d_gold -> \cmd_speed_d
+Changing input S of cell $procmux$41_gold ($mux): \fsm_en_gold -> \fsm_en
+Changing input A of cell $procmux$41_gold ($mux): \wait_cntr_q_gold -> \wait_cntr_q
+Changing input S of cell $procmux$34_gold ($mux): \fsm_en_gold -> \fsm_en
+Changing input S of cell $procmux$31_gold ($mux): \state_changing_gold -> \state_changing
+Changing input A of cell $procmux$30_CMP0_gold ($eq): \state_d_gold -> \state_d
+Changing input A of cell $procmux$29_CMP0_gold ($eq): \state_d_gold -> \state_d
+Changing input A of cell $procmux$28_CMP0_gold ($eq): \state_d_gold -> \state_d
+Changing input B of cell $procmux$26_gold ($pmux): { \csnlead_gold \csntrail_gold \csnidle_gold \csnidle_gold } -> { \csnlead \csntrail \csnidle \csnidle }
+Changing input A of cell $procmux$27_CMP0_gold ($eq): \state_d_gold -> \state_d
+Changing input S of cell $procmux$19_gold ($mux): \fsm_en_gold -> \fsm_en
+Changing input S of cell $procmux$16_gold ($mux): \state_changing_gold -> \state_changing
+Changing input S of cell $procmux$8_gold ($mux): \fsm_en_gold -> \fsm_en
+Changing input S of cell $procmux$5_gold ($mux): \state_changing_gold -> \state_changing
+Changing input S of cell $procmux$289_gold ($mux): \config_changed_gold -> \config_changed
+Changing input S of cell $328_gold ($mux): \csid_gold -> \csid
+Changing input S of cell $327_gold ($mux): \stall_gold -> \stall
+Changing input B of cell $327_gold ($mux): \csb_q_gold -> \csb_q
+Changing input A of cell $327_gold ($mux): \csb_single_d_gold -> \csb_single_d
+Changing input A of cell $procmux$87_CMP0_gold ($eq): \state_d_gold -> \state_d
+Changing input A of cell $procmux$295_CMP0_gold ($eq): \speed_o_gold -> \speed_o
+Changing input A of cell $procmux$87_CMP1_gold ($eq): \state_d_gold -> \state_d
+Changing input A of cell $318_gold ($not): \stall_gold -> \stall
+Changing input S of cell $procmux$250_gold ($mux): \fsm_en_gold -> \fsm_en
+Changing input A of cell $procmux$250_gold ($mux): \state_q_gold -> \state_q
+Changing input B of cell $procmux$294_gold ($pmux): { 6'000100 \cmd_wr_en_q_gold \cmd_wr_en_q_gold \cmd_wr_en_q_gold \cmd_wr_en_q_gold \cmd_wr_en_q_gold \cmd_wr_en_q_gold } -> { 6'000100 \cmd_wr_en_q \cmd_wr_en_q \cmd_wr_en_q \cmd_wr_en_q \cmd_wr_en_q \cmd_wr_en_q }
+Changing input A of cell $procmux$87_CMP2_gold ($eq): \state_d_gold -> \state_d
+Changing input S of cell $procmux$244_gold ($mux): \fsm_en_gold -> \fsm_en
+Changing input S of cell $304_gold ($mux): \cpol_gold -> \cpol
+Changing input A of cell $303_gold ($eq): \state_d_gold -> \state_d
+Changing input A of cell $302_gold ($ne): \state_d_gold -> \state_d
+Changing input S of cell $procmux$238_gold ($mux): \fsm_en_gold -> \fsm_en
+Changing input A of cell $procmux$237_CMP0_gold ($logic_not): \state_q_gold -> \state_q
+Changing input S of cell $297_gold ($mux): \full_cyc_o_gold -> \full_cyc_o
+Changing input B of cell $297_gold ($mux): \sample_en_q2_gold -> \sample_en_q2
+Changing input A of cell $297_gold ($mux): \sample_en_q_gold -> \sample_en_q
+Changing input B of cell $296_gold ($mux): \sample_en_q_gold -> \sample_en_q
+Changing input A of cell $296_gold ($mux): \sample_en_q2_gold -> \sample_en_q2
+Changing input A of cell $295_gold ($logic_and): \fsm_en_gold -> \fsm_en
+Changing input A of cell $294_gold ($logic_not): \stall_gold -> \stall
+Changing input B of cell $293_gold ($mux): \sample_en_d_gold -> \sample_en_d
+Changing input A of cell $293_gold ($mux): \sample_en_q_gold -> \sample_en_q
+Changing input A of cell $292_gold ($logic_and): \fsm_en_gold -> \fsm_en
+Changing input A of cell $291_gold ($logic_not): \stall_gold -> \stall
+Changing input A of cell $procmux$296_CMP0_gold ($eq): \speed_o_gold -> \speed_o
+Changing input A of cell $procmux$87_CMP3_gold ($eq): \state_d_gold -> \state_d
+Changing input A of cell $procmux$236_CMP0_gold ($eq): \state_q_gold -> \state_q
+Changing input B of cell $285_gold ($and): \wr_en_o_gold -> \wr_en_o
+Changing input A of cell $284_gold ($logic_not): \byte_cntr_early_gold -> \byte_cntr_early
+Changing input A of cell $procmux$234_CMP0_gold ($eq): \state_q_gold -> \state_q
+Changing input B of cell $281_gold ($and): \rd_en_o_gold -> \rd_en_o
+Changing input A of cell $280_gold ($logic_not): \byte_cntr_late_gold -> \byte_cntr_late
+Changing input B of cell $procmux$231_gold ($pmux): { 1'1 $command_ready_int$136_gold $command_ready_int$141_gold \command_ready_idle_csb_active_gold } -> { 1'1 $command_ready_int$136_gold $command_ready_int$141_gold \command_ready_idle_csb_active }
+Changing input A of cell $procmux$232_CMP0_gold ($eq): \state_q_gold -> \state_q
+Changing input B of cell $277_gold ($or): \shift_en_o_gold -> \shift_en_o
+Changing input A of cell $277_gold ($or): \byte_starting_gold -> \byte_starting
+Changing input B of cell $275_gold ($and): \segment_rd_en_gold -> \segment_rd_en
+Changing input A of cell $275_gold ($and): \byte_ending_gold -> \byte_ending
+Changing input S of cell $procmux$226_gold ($mux): \fsm_en_gold -> \fsm_en
+Changing input A of cell $procmux$225_CMP0_gold ($logic_not): \state_q_gold -> \state_q
+Changing input B of cell $272_gold ($and): \cmd_wr_en_d_gold -> \cmd_wr_en_d
+Changing input A of cell $272_gold ($and): \byte_starting_gold -> \byte_starting
+Changing input S of cell $271_gold ($mux): \stall_gold -> \stall
+Changing input B of cell $271_gold ($mux): \wait_cntr_q_gold -> \wait_cntr_q
+Changing input A of cell $271_gold ($mux): \wait_cntr_d_gold -> \wait_cntr_d
+Changing input S of cell $270_gold ($mux): \stall_gold -> \stall
+Changing input B of cell $270_gold ($mux): \byte_cntr_cpha1_q_gold -> \byte_cntr_cpha1_q
+Changing input A of cell $270_gold ($mux): \byte_cntr_cpha1_d_gold -> \byte_cntr_cpha1_d
+Changing input S of cell $269_gold ($mux): \stall_gold -> \stall
+Changing input B of cell $269_gold ($mux): \byte_cntr_cpha0_q_gold -> \byte_cntr_cpha0_q
+Changing input A of cell $269_gold ($mux): \byte_cntr_cpha0_d_gold -> \byte_cntr_cpha0_d
+Changing input S of cell $268_gold ($mux): \stall_gold -> \stall
+Changing input B of cell $268_gold ($mux): \bit_cntr_q_gold -> \bit_cntr_q
+Changing input A of cell $268_gold ($mux): \bit_cntr_d_gold -> \bit_cntr_d
+Changing input A of cell $procmux$297_CMP0_gold ($logic_not): \speed_o_gold -> \speed_o
+Changing input A of cell $procmux$87_CMP4_gold ($eq): \state_d_gold -> \state_d
+Changing input A of cell $procmux$224_CMP0_gold ($eq): \state_q_gold -> \state_q
+Changing input A of cell $259_gold ($sub): { 28'0000000000000000000000000000 \wait_cntr_q_gold } -> { 28'0000000000000000000000000000 \wait_cntr_q }
+Changing input A of cell $258_gold ($logic_not): \wait_cntr_q_gold -> \wait_cntr_q
+Changing input A of cell $procmux$222_CMP0_gold ($eq): \state_q_gold -> \state_q
+Changing input S of cell $252_gold ($mux): \fsm_en_gold -> \fsm_en
+Changing input A of cell $252_gold ($mux): { 8'00000000 \byte_cntr_cpha1_q_gold } -> { 8'00000000 \byte_cntr_cpha1_q }
+Changing input S of cell $251_gold ($mux): \new_command_cpha1_gold -> \new_command_cpha1
+Changing input B of cell $251_gold ($mux): { 8'00000000 \cmd_len_q_gold } -> { 8'00000000 \cmd_len_q }
+Changing input S of cell $250_gold ($mux): \byte_ending_cpha1_gold -> \byte_ending_cpha1
+Changing input A of cell $250_gold ($mux): { 8'00000000 \byte_cntr_cpha1_q_gold } -> { 8'00000000 \byte_cntr_cpha1_q }
+Changing input A of cell $249_gold ($sub): { 8'00000000 \byte_cntr_cpha1_q_gold } -> { 8'00000000 \byte_cntr_cpha1_q }
+Changing input A of cell $procmux$221_CMP0_gold ($eq): \state_q_gold -> \state_q
+Changing input S of cell $245_gold ($mux): \fsm_en_gold -> \fsm_en
+Changing input A of cell $245_gold ($mux): { 8'00000000 \byte_cntr_cpha0_q_gold } -> { 8'00000000 \byte_cntr_cpha0_q }
+Changing input S of cell $244_gold ($mux): \new_command_gold -> \new_command
+Changing input B of cell $244_gold ($mux): { 8'00000000 \cmd_len_d_gold } -> { 8'00000000 \cmd_len_d }
+Changing input S of cell $243_gold ($mux): \byte_ending_cpha0_gold -> \byte_ending_cpha0
+Changing input A of cell $243_gold ($mux): { 8'00000000 \byte_cntr_cpha0_q_gold } -> { 8'00000000 \byte_cntr_cpha0_q }
+Changing input A of cell $242_gold ($sub): { 8'00000000 \byte_cntr_cpha0_q_gold } -> { 8'00000000 \byte_cntr_cpha0_q }
+Changing input A of cell $procmux$219_CMP0_gold ($eq): \state_q_gold -> \state_q
+Changing input A of cell $239_gold ($logic_not): \byte_cntr_cpha0_q_gold -> \byte_cntr_cpha0_q
+Changing input A of cell $procmux$217_CMP0_gold ($eq): \state_q_gold -> \state_q
+Changing input A of cell $237_gold ($logic_not): \bit_cntr_q_gold -> \bit_cntr_q
+Changing input A of cell $procmux$215_CMP0_gold ($eq): \state_q_gold -> \state_q
+Changing input S of cell $234_gold ($mux): \fsm_en_gold -> \fsm_en
+Changing input A of cell $234_gold ($mux): \bit_cntr_q_gold -> \bit_cntr_q
+Changing input S of cell $233_gold ($mux): \byte_starting_gold -> \byte_starting
+Changing input B of cell $233_gold ($mux): \start_bit_gold -> \start_bit
+Changing input S of cell $232_gold ($mux): \bit_shifting_gold -> \bit_shifting
+Changing input A of cell $232_gold ($mux): \bit_cntr_q_gold -> \bit_cntr_q
+Changing input B of cell $231_gold ($sub): \shift_size_gold -> \shift_size
+Changing input A of cell $231_gold ($sub): \bit_cntr_q_gold -> \bit_cntr_q
+Changing input B of cell $procmux$83_gold ($mux): \cmd_speed_q_gold -> \cmd_speed_q
+Changing input A of cell $procmux$83_gold ($mux): \speed_cpha1_gold -> \speed_cpha1
+Changing input B of cell $procmux$212_gold ($pmux): { \next_state_after_idle_gold $procmux$210_Y_gold 3'011 $procmux$180_Y_gold $procmux$131_Y_gold $procmux$119_Y_gold $procmux$97_Y_gold \next_state_after_idle_csb_active_gold } -> { \next_state_after_idle $procmux$210_Y_gold 3'011 $procmux$180_Y_gold $procmux$131_Y_gold $procmux$119_Y_gold $procmux$97_Y_gold \next_state_after_idle_csb_active }
+Changing input A of cell $223_gold ($logic_not): \cmd_wr_en_d_gold -> \cmd_wr_en_d
+Changing input A of cell $222_gold ($logic_not): \cmd_rd_en_d_gold -> \cmd_rd_en_d
+Changing input A of cell $procmux$213_CMP0_gold ($eq): \state_q_gold -> \state_q
+Changing input S of cell $219_gold ($mux): \cpha_gold -> \cpha
+Changing input B of cell $219_gold ($mux): \byte_cntr_cpha1_q_gold -> \byte_cntr_cpha1_q
+Changing input A of cell $219_gold ($mux): \byte_cntr_cpha0_q_gold -> \byte_cntr_cpha0_q
+Changing input A of cell $procmux$93_CMP0_gold ($eq): \state_q_gold -> \state_q
+Changing input S of cell $216_gold ($mux): \cpha_gold -> \cpha
+Changing input B of cell $216_gold ($mux): \byte_cntr_cpha1_d_gold -> \byte_cntr_cpha1_d
+Changing input A of cell $216_gold ($mux): \byte_cntr_cpha0_d_gold -> \byte_cntr_cpha0_d
+Changing input S of cell $procmux$207_gold ($mux): \fsm_en_gold -> \fsm_en
+Changing input S of cell $213_gold ($mux): \cpha_gold -> \cpha
+Changing input B of cell $213_gold ($mux): \segment_rd_en_cpha1_gold -> \segment_rd_en_cpha1
+Changing input A of cell $213_gold ($mux): \cmd_rd_en_q_gold -> \cmd_rd_en_q
+Changing input S of cell $procmux$94_gold ($mux): \fsm_en_gold -> \fsm_en
+Changing input S of cell $210_gold ($mux): \cpha_gold -> \cpha
+Changing input B of cell $210_gold ($mux): \speed_cpha1_gold -> \speed_cpha1
+Changing input A of cell $210_gold ($mux): \cmd_speed_q_gold -> \cmd_speed_q
+Changing input A of cell $procmux$206_CMP0_gold ($eq): \state_q_gold -> \state_q
+Changing input S of cell $207_gold ($mux): \cpha_gold -> \cpha
+Changing input B of cell $207_gold ($mux): \bit_shifting_cpha1_gold -> \bit_shifting_cpha1
+Changing input A of cell $207_gold ($mux): \bit_shifting_cpha0_gold -> \bit_shifting_cpha0
+Changing input A of cell $procmux$203_gold ($mux): \state_q_gold -> \state_q
+Changing input S of cell $204_gold ($mux): \cpha_gold -> \cpha
+Changing input B of cell $204_gold ($mux): \byte_ending_cpha1_gold -> \byte_ending_cpha1
+Changing input A of cell $204_gold ($mux): \byte_ending_cpha0_gold -> \byte_ending_cpha0
+Changing input A of cell $procmux$104_CMP0_gold ($eq): \state_q_gold -> \state_q
+Changing input S of cell $201_gold ($mux): \cpha_gold -> \cpha
+Changing input B of cell $201_gold ($mux): \byte_starting_cpha1_gold -> \byte_starting_cpha1
+Changing input A of cell $201_gold ($mux): \byte_starting_cpha0_gold -> \byte_starting_cpha0
+Changing input S of cell $procmux$192_gold ($mux): \fsm_en_gold -> \fsm_en
+Changing input B of cell $198_gold ($and): \state_changing_gold -> \state_changing
+Changing input A of cell $198_gold ($and): \bit_shifting_cpha0_q_gold -> \bit_shifting_cpha0_q
+Changing input B of cell $196_gold ($and): \state_changing_gold -> \state_changing
+Changing input A of cell $196_gold ($and): \byte_ending_cpha0_q_gold -> \byte_ending_cpha0_q
+Changing input A of cell $procmux$191_CMP0_gold ($eq): \state_q_gold -> \state_q
+Changing input B of cell $194_gold ($and): \state_changing_gold -> \state_changing
+Changing input A of cell $194_gold ($and): \byte_starting_cpha0_q_gold -> \byte_starting_cpha0_q
+Changing input A of cell $187_gold ($logic_and): \state_changing_gold -> \state_changing
+Changing input A of cell $186_gold ($logic_not): \stall_gold -> \stall
+Changing input S of cell $procmux$299_gold ($mux): \csb_q_gold -> \csb_q
+Changing input S of cell $procmux$105_gold ($mux): \fsm_en_gold -> \fsm_en
+Changing input S of cell $procmux$177_gold ($mux): \fsm_en_gold -> \fsm_en
+Changing input A of cell $177_gold ($logic_not): \bit_cntr_q_gold -> \bit_cntr_q
+Changing input A of cell $176_gold ($eq): \state_q_gold -> \state_q
+Changing input B of cell $175_gold ($and): \state_changing_gold -> \state_changing
+Changing input A of cell $170_gold ($reduce_bool): \bit_cntr_q_gold -> \bit_cntr_q
+Changing input A of cell $169_gold ($eq): \state_d_gold -> \state_d
+Changing input B of cell $168_gold ($and): \state_changing_gold -> \state_changing
+Changing input A of cell $procmux$176_CMP0_gold ($eq): \state_q_gold -> \state_q
+Changing input A of cell $162_gold ($logic_not): \bit_cntr_q_gold -> \bit_cntr_q
+Changing input A of cell $161_gold ($eq): \state_d_gold -> \state_d
+Changing input A of cell $160_gold ($eq): \state_d_gold -> \state_d
+Changing input B of cell $159_gold ($and): \state_changing_gold -> \state_changing
+Changing input B of cell $156_gold ($ne): \state_d_gold -> \state_d
+Changing input A of cell $156_gold ($ne): \state_q_gold -> \state_q
+Changing input S of cell $155_gold ($mux): \stall_gold -> \stall
+Changing input B of cell $155_gold ($mux): \clk_cntr_q_gold -> \clk_cntr_q
+Changing input A of cell $155_gold ($mux): \clk_cntr_d_gold -> \clk_cntr_d
+Changing input S of cell $154_gold ($mux): \stall_gold -> \stall
+Changing input B of cell $154_gold ($mux): \state_q_gold -> \state_q
+Changing input A of cell $154_gold ($mux): \state_d_gold -> \state_d
+Changing input S of cell $procmux$303_gold ($mux): \csb_q_gold -> \csb_q
+Changing input A of cell $142_gold ($logic_not): \wait_cntr_q_gold -> \wait_cntr_q
+Changing input A of cell $139_gold ($logic_not): \wait_cntr_q_gold -> \wait_cntr_q
+Changing input A of cell $137_gold ($logic_not): \wait_cntr_q_gold -> \wait_cntr_q
+Changing input B of cell $procmux$112_gold ($mux): \next_state_after_idle_gold -> \next_state_after_idle
+Changing input A of cell $procmux$112_gold ($mux): \state_q_gold -> \state_q
+Changing input A of cell $130_gold ($logic_not): \last_byte_gold -> \last_byte
+Changing input A of cell $129_gold ($logic_not): \last_bit_gold -> \last_bit
+Changing input A of cell $127_gold ($logic_not): \wait_cntr_q_gold -> \wait_cntr_q
+Changing input S of cell $procmux$162_gold ($mux): \fsm_en_gold -> \fsm_en
+Changing input B of cell $120_gold ($ne): \csid_q_gold -> \csid_q
+Changing input A of cell $procmux$161_CMP0_gold ($eq): \state_q_gold -> \state_q
+Changing input A of cell $112_gold ($logic_not): \clk_cntr_q_gold -> \clk_cntr_q
+Changing input S of cell $procmux$155_gold ($mux): \csaat_q_gold -> \csaat_q
+Changing input B of cell $procmux$155_gold ($mux): \command_ready_idle_csb_active_gold -> \command_ready_idle_csb_active
+Changing input A of cell $109_gold ($and): \rd_en_internal_gold -> \rd_en_internal
+Changing input A of cell $106_gold ($and): \wr_en_internal_gold -> \wr_en_internal
+Changing input S of cell $procmux$145_gold ($mux): \fsm_en_gold -> \fsm_en
+Changing input A of cell $102_gold ($mux): { 16'0000000000000000 \clk_cntr_q_gold } -> { 16'0000000000000000 \clk_cntr_q }
+Changing input S of cell $101_gold ($mux): \is_idle_gold -> \is_idle
+Changing input S of cell $100_gold ($mux): \new_command_gold -> \new_command
+Changing input B of cell $100_gold ($mux): { 16'0000000000000000 \clkdiv_gold } -> { 16'0000000000000000 \clkdiv }
+Changing input B of cell $99_gold ($mux): { 16'0000000000000000 \clkdiv_gold } -> { 16'0000000000000000 \clkdiv }
+Changing input A of cell $98_gold ($sub): { 16'0000000000000000 \clk_cntr_q_gold } -> { 16'0000000000000000 \clk_cntr_q }
+Changing input A of cell $97_gold ($logic_not): \clk_cntr_q_gold -> \clk_cntr_q
+Changing input A of cell $procmux$115_CMP0_gold ($eq): \state_q_gold -> \state_q
+Changing input A of cell $94_gold ($not): \is_idle_gold -> \is_idle
+Changing input A of cell $procmux$144_CMP0_gold ($eq): \state_q_gold -> \state_q
+Changing input A of cell $91_gold ($eq): \state_q_gold -> \state_q
+Changing input A of cell $90_gold ($logic_not): \state_q_gold -> \state_q
+Changing input B of cell $89_gold ($mux): \cmd_len_d_gold -> \cmd_len_d
+Changing input A of cell $89_gold ($mux): \cmd_len_q_gold -> \cmd_len_q
+Changing input A of cell $88_gold ($logic_and): \new_command_gold -> \new_command
+Changing input A of cell $87_gold ($logic_not): \stall_gold -> \stall
+Changing input B of cell $86_gold ($mux): \cmd_speed_d_gold -> \cmd_speed_d
+Changing input A of cell $86_gold ($mux): \cmd_speed_q_gold -> \cmd_speed_q
+Changing input A of cell $85_gold ($logic_and): \new_command_gold -> \new_command
+Changing input A of cell $84_gold ($logic_not): \stall_gold -> \stall
+Changing input B of cell $83_gold ($mux): \cmd_rd_en_d_gold -> \cmd_rd_en_d
+Changing input A of cell $83_gold ($mux): \cmd_rd_en_q_gold -> \cmd_rd_en_q
+Changing input A of cell $82_gold ($logic_and): \new_command_gold -> \new_command
+Changing input A of cell $81_gold ($logic_not): \stall_gold -> \stall
+Changing input B of cell $80_gold ($mux): \cmd_wr_en_d_gold -> \cmd_wr_en_d
+Changing input A of cell $80_gold ($mux): \cmd_wr_en_q_gold -> \cmd_wr_en_q
+Changing input A of cell $79_gold ($logic_and): \new_command_gold -> \new_command
+Changing input A of cell $78_gold ($logic_not): \stall_gold -> \stall
+Changing input B of cell $77_gold ($mux): \csaat_gold -> \csaat
+Changing input A of cell $77_gold ($mux): \csaat_q_gold -> \csaat_q
+Changing input A of cell $76_gold ($logic_and): \new_command_gold -> \new_command
+Changing input A of cell $75_gold ($logic_not): \stall_gold -> \stall
+Changing input B of cell $74_gold ($mux): \clkdiv_gold -> \clkdiv
+Changing input A of cell $74_gold ($mux): \clkdiv_q_gold -> \clkdiv_q
+Changing input A of cell $73_gold ($logic_and): \new_command_gold -> \new_command
+Changing input A of cell $72_gold ($logic_not): \stall_gold -> \stall
+Changing input B of cell $71_gold ($mux): \csntrail_gold -> \csntrail
+Changing input A of cell $71_gold ($mux): \csntrail_q_gold -> \csntrail_q
+Changing input A of cell $70_gold ($logic_and): \new_command_gold -> \new_command
+Changing input A of cell $69_gold ($logic_not): \stall_gold -> \stall
+Changing input B of cell $68_gold ($mux): \csnlead_gold -> \csnlead
+Changing input A of cell $68_gold ($mux): \csnlead_q_gold -> \csnlead_q
+Changing input A of cell $67_gold ($logic_and): \new_command_gold -> \new_command
+Changing input A of cell $66_gold ($logic_not): \stall_gold -> \stall
+Changing input B of cell $65_gold ($mux): \csnidle_gold -> \csnidle
+Changing input A of cell $65_gold ($mux): \csnidle_q_gold -> \csnidle_q
+Changing input A of cell $64_gold ($logic_and): \new_command_gold -> \new_command
+Changing input A of cell $63_gold ($logic_not): \stall_gold -> \stall
+Changing input B of cell $62_gold ($mux): \full_cyc_o_gold -> \full_cyc_o
+Changing input A of cell $62_gold ($mux): \full_cyc_q_gold -> \full_cyc_q
+Changing input A of cell $61_gold ($logic_and): \new_command_gold -> \new_command
+Changing input A of cell $60_gold ($logic_not): \stall_gold -> \stall
+Changing input B of cell $59_gold ($mux): \cpha_gold -> \cpha
+Changing input A of cell $59_gold ($mux): \cpha_q_gold -> \cpha_q
+Changing input A of cell $58_gold ($logic_and): \new_command_gold -> \new_command
+Changing input A of cell $57_gold ($logic_not): \stall_gold -> \stall
+Changing input B of cell $56_gold ($mux): \cpol_gold -> \cpol
+Changing input A of cell $56_gold ($mux): \cpol_q_gold -> \cpol_q
+Changing input A of cell $55_gold ($logic_and): \new_command_gold -> \new_command
+Changing input A of cell $54_gold ($logic_not): \stall_gold -> \stall
+Changing input B of cell $53_gold ($mux): \csid_gold -> \csid
+Changing input A of cell $53_gold ($mux): \csid_q_gold -> \csid_q
+Changing input A of cell $52_gold ($logic_and): \new_command_gold -> \new_command
+Changing input A of cell $51_gold ($logic_not): \stall_gold -> \stall
+Changing input S of cell $procmux$305_gold ($mux): \u_sck_flop.en_i_gold -> \u_sck_flop.en_i
+Changing input B of cell $procmux$305_gold ($mux): \u_sck_flop.u_prim_generic_flop_en.d_i_gold -> \u_sck_flop.u_prim_generic_flop_en.d_i
+Changing input A of cell $procmux$305_gold ($mux): \u_sck_flop.u_prim_generic_flop_en.q_o_gold -> \u_sck_flop.u_prim_generic_flop_en.q_o
+Changing input S of cell $46_gold ($mux): \new_command_gold -> \new_command
+Changing input A of cell $46_gold ($mux): \cmd_speed_q_gold -> \cmd_speed_q
+Changing input S of cell $45_gold ($mux): \new_command_gold -> \new_command
+Changing input A of cell $45_gold ($mux): \cmd_rd_en_q_gold -> \cmd_rd_en_q
+Changing input S of cell $44_gold ($mux): \new_command_gold -> \new_command
+Changing input A of cell $44_gold ($mux): \cmd_wr_en_q_gold -> \cmd_wr_en_q
+Changing input S of cell $43_gold ($mux): \new_command_gold -> \new_command
+Changing input A of cell $43_gold ($mux): \cmd_len_q_gold -> \cmd_len_q
+Changing input S of cell $42_gold ($mux): \new_command_gold -> \new_command
+Changing input A of cell $42_gold ($mux): \csaat_q_gold -> \csaat_q
+Changing input S of cell $41_gold ($mux): \new_command_gold -> \new_command
+Changing input A of cell $41_gold ($mux): \clkdiv_q_gold -> \clkdiv_q
+Changing input S of cell $40_gold ($mux): \new_command_gold -> \new_command
+Changing input A of cell $40_gold ($mux): \csntrail_q_gold -> \csntrail_q
+Changing input S of cell $39_gold ($mux): \new_command_gold -> \new_command
+Changing input A of cell $39_gold ($mux): \csnlead_q_gold -> \csnlead_q
+Changing input S of cell $38_gold ($mux): \new_command_gold -> \new_command
+Changing input A of cell $38_gold ($mux): \csnidle_q_gold -> \csnidle_q
+Changing input S of cell $37_gold ($mux): \new_command_gold -> \new_command
+Changing input A of cell $37_gold ($mux): \full_cyc_q_gold -> \full_cyc_q
+Changing input S of cell $36_gold ($mux): \new_command_gold -> \new_command
+Changing input A of cell $36_gold ($mux): \cpha_q_gold -> \cpha_q
+Changing input S of cell $35_gold ($mux): \new_command_gold -> \new_command
+Changing input A of cell $35_gold ($mux): \cpol_q_gold -> \cpol_q
+Changing input S of cell $34_gold ($mux): \new_command_gold -> \new_command
+Changing input A of cell $34_gold ($mux): \csid_q_gold -> \csid_q
+Changing input S of cell $procmux$138_gold ($mux): \csaat_q_gold -> \csaat_q
+Changing input B of cell $procmux$138_gold ($mux): \next_state_after_idle_csb_active_gold -> \next_state_after_idle_csb_active
+Changing input B of cell $30_gold ($ne): \clkdiv_q_gold -> \clkdiv_q
+Changing input B of cell $28_gold ($ne): \csnlead_q_gold -> \csnlead_q
+Changing input B of cell $26_gold ($ne): \csntrail_q_gold -> \csntrail_q
+Changing input B of cell $24_gold ($ne): \csnidle_q_gold -> \csnidle_q
+Changing input B of cell $22_gold ($ne): \full_cyc_q_gold -> \full_cyc_q
+Changing input B of cell $20_gold ($ne): \cpha_q_gold -> \cpha_q
+Changing input B of cell $19_gold ($ne): \cpol_q_gold -> \cpol_q
+Changing input B of cell $17_gold ($logic_and): \command_ready_int_gold -> \command_ready_int
+Changing input S of cell $procmux$128_gold ($mux): \fsm_en_gold -> \fsm_en
+Changing input A of cell $15_gold ($and): \command_ready_int_gold -> \command_ready_int
+Changing input A of cell $14_gold ($not): \stall_gold -> \stall
+Changing input A of cell $12_gold ($and): \bit_shifting_gold -> \bit_shifting
+Changing input A of cell $11_gold ($not): \stall_gold -> \stall
+Changing input A of cell $procmux$127_CMP0_gold ($eq): \state_q_gold -> \state_q
+Changing input A of cell $9_gold ($and): \sample_en_internal_gold -> \sample_en_internal
+Changing input A of cell $8_gold ($not): \stall_gold -> \stall
+Changing input A of cell $procmux$124_gold ($mux): \state_q_gold -> \state_q
+Changing input A of cell $6_gold ($and): \rd_en_internal_gold -> \rd_en_internal
+Changing input A of cell $5_gold ($not): \stall_gold -> \stall
+Changing input A of cell $3_gold ($and): \wr_en_internal_gold -> \wr_en_internal
+Changing input A of cell $2_gold ($not): \stall_gold -> \stall
+Changing input S of cell $procmux$116_gold ($mux): \fsm_en_gold -> \fsm_en
+
+6. Executing HIERARCHY pass (managing design hierarchy).
+
+6.1. Analyzing design hierarchy..
+Top module:  \equiv_top
+
+6.2. Analyzing design hierarchy..
+Top module:  \equiv_top
+Removing unused module `\fsm_unpatched'.
+Removing unused module `\fsm_one_term'.
+Removed 2 unused modules.
+
+7. Executing EQUIV_SIMPLE pass.
+Found 401 unproven $equiv cells (109 groups) in equiv_top:
+  Trying to prove $equiv for \command_ready_o:
+ezsat
+    success!
+  Trying to prove $equiv for \sck_o:
+ezsat
+ezsat
+    success!
+  Trying to prove $equiv for \csb_o:
+ezsat
+ezsat
+    success!
+ Grouping SAT models for \sd_en_o:
+  Trying to prove $equiv for \sd_en_o [0]:
+ezsat
+    success!
+  Trying to prove $equiv for \sd_en_o [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \sd_en_o [2]:
+ezsat
+    success!
+  Trying to prove $equiv for \sd_en_o [3]:
+ezsat
+    success!
+  Trying to prove $equiv for \last_read_o:
+ezsat
+    success!
+  Trying to prove $equiv for \last_write_o:
+ezsat
+    success!
+  Trying to prove $equiv for \wr_en_o:
+ezsat
+    success!
+  Trying to prove $equiv for \rd_en_o:
+ezsat
+    success!
+  Trying to prove $equiv for \sample_en_o:
+ezsat
+    success!
+  Trying to prove $equiv for \shift_en_o:
+ezsat
+    success!
+ Grouping SAT models for \speed_o:
+  Trying to prove $equiv for \speed_o [0]:
+ezsat
+    success!
+  Trying to prove $equiv for \speed_o [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \full_cyc_o:
+ezsat
+    success!
+  Trying to prove $equiv for \rx_stall_o:
+ezsat
+    success!
+  Trying to prove $equiv for \tx_stall_o:
+ezsat
+    success!
+  Trying to prove $equiv for \active_o:
+ezsat
+    success!
+  Trying to prove $equiv for \is_idle:
+ezsat
+    success!
+ Grouping SAT models for \clkdiv:
+  Trying to prove $equiv for \clkdiv [0]:
+ezsat
+    success!
+  Trying to prove $equiv for \clkdiv [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \clkdiv [2]:
+ezsat
+    success!
+  Trying to prove $equiv for \clkdiv [3]:
+ezsat
+    success!
+  Trying to prove $equiv for \clkdiv [4]:
+ezsat
+    success!
+  Trying to prove $equiv for \clkdiv [5]:
+ezsat
+    success!
+  Trying to prove $equiv for \clkdiv [6]:
+ezsat
+    success!
+  Trying to prove $equiv for \clkdiv [7]:
+ezsat
+    success!
+  Trying to prove $equiv for \clkdiv [8]:
+ezsat
+    success!
+  Trying to prove $equiv for \clkdiv [9]:
+ezsat
+    success!
+  Trying to prove $equiv for \clkdiv [10]:
+ezsat
+    success!
+  Trying to prove $equiv for \clkdiv [11]:
+ezsat
+    success!
+  Trying to prove $equiv for \clkdiv [12]:
+ezsat
+    success!
+  Trying to prove $equiv for \clkdiv [13]:
+ezsat
+    success!
+  Trying to prove $equiv for \clkdiv [14]:
+ezsat
+    success!
+  Trying to prove $equiv for \clkdiv [15]:
+ezsat
+    success!
+ Grouping SAT models for \clkdiv_q:
+  Trying to prove $equiv for \clkdiv_q [0]:
+ezsat
+ezsat
+    success!
+  Trying to prove $equiv for \clkdiv_q [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \clkdiv_q [2]:
+ezsat
+    success!
+  Trying to prove $equiv for \clkdiv_q [3]:
+ezsat
+    success!
+  Trying to prove $equiv for \clkdiv_q [4]:
+ezsat
+    success!
+  Trying to prove $equiv for \clkdiv_q [5]:
+ezsat
+    success!
+  Trying to prove $equiv for \clkdiv_q [6]:
+ezsat
+    success!
+  Trying to prove $equiv for \clkdiv_q [7]:
+ezsat
+    success!
+  Trying to prove $equiv for \clkdiv_q [8]:
+ezsat
+    success!
+  Trying to prove $equiv for \clkdiv_q [9]:
+ezsat
+    success!
+  Trying to prove $equiv for \clkdiv_q [10]:
+ezsat
+    success!
+  Trying to prove $equiv for \clkdiv_q [11]:
+ezsat
+    success!
+  Trying to prove $equiv for \clkdiv_q [12]:
+ezsat
+    success!
+  Trying to prove $equiv for \clkdiv_q [13]:
+ezsat
+    success!
+  Trying to prove $equiv for \clkdiv_q [14]:
+ezsat
+    success!
+  Trying to prove $equiv for \clkdiv_q [15]:
+ezsat
+    success!
+ Grouping SAT models for \clk_cntr_q:
+  Trying to prove $equiv for \clk_cntr_q [0]:
+ezsat
+ezsat
+    success!
+  Trying to prove $equiv for \clk_cntr_q [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \clk_cntr_q [2]:
+ezsat
+    success!
+  Trying to prove $equiv for \clk_cntr_q [3]:
+ezsat
+    success!
+  Trying to prove $equiv for \clk_cntr_q [4]:
+ezsat
+    success!
+  Trying to prove $equiv for \clk_cntr_q [5]:
+ezsat
+    success!
+  Trying to prove $equiv for \clk_cntr_q [6]:
+ezsat
+    success!
+  Trying to prove $equiv for \clk_cntr_q [7]:
+ezsat
+    success!
+  Trying to prove $equiv for \clk_cntr_q [8]:
+ezsat
+    success!
+  Trying to prove $equiv for \clk_cntr_q [9]:
+ezsat
+    success!
+  Trying to prove $equiv for \clk_cntr_q [10]:
+ezsat
+    success!
+  Trying to prove $equiv for \clk_cntr_q [11]:
+ezsat
+    success!
+  Trying to prove $equiv for \clk_cntr_q [12]:
+ezsat
+    success!
+  Trying to prove $equiv for \clk_cntr_q [13]:
+ezsat
+    success!
+  Trying to prove $equiv for \clk_cntr_q [14]:
+ezsat
+    success!
+  Trying to prove $equiv for \clk_cntr_q [15]:
+ezsat
+    success!
+ Grouping SAT models for \clk_cntr_d:
+  Trying to prove $equiv for \clk_cntr_d [0]:
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \clk_cntr_d [1]:
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \clk_cntr_d [2]:
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \clk_cntr_d [3]:
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \clk_cntr_d [4]:
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \clk_cntr_d [5]:
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \clk_cntr_d [6]:
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \clk_cntr_d [7]:
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \clk_cntr_d [8]:
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \clk_cntr_d [9]:
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \clk_cntr_d [10]:
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \clk_cntr_d [11]:
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \clk_cntr_d [12]:
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \clk_cntr_d [13]:
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \clk_cntr_d [14]:
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \clk_cntr_d [15]:
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ezsat
+ failed.
+  Trying to prove $equiv for \clk_cntr_en:
+ezsat
+    success!
+ Grouping SAT models for \speed_cpha0:
+  Trying to prove $equiv for \speed_cpha0 [0]:
+ezsat
+ezsat
+    success!
+  Trying to prove $equiv for \speed_cpha0 [1]:
+ezsat
+    success!
+ Grouping SAT models for \speed_cpha1:
+  Trying to prove $equiv for \speed_cpha1 [0]:
+ezsat
+ezsat
+    success!
+  Trying to prove $equiv for \speed_cpha1 [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \csid:
+ezsat
+    success!
+  Trying to prove $equiv for \csid_q:
+ezsat
+ezsat
+    success!
+ Grouping SAT models for \csnidle:
+  Trying to prove $equiv for \csnidle [0]:
+ezsat
+    success!
+  Trying to prove $equiv for \csnidle [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \csnidle [2]:
+ezsat
+    success!
+  Trying to prove $equiv for \csnidle [3]:
+ezsat
+    success!
+ Grouping SAT models for \csntrail:
+  Trying to prove $equiv for \csntrail [0]:
+ezsat
+    success!
+  Trying to prove $equiv for \csntrail [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \csntrail [2]:
+ezsat
+    success!
+  Trying to prove $equiv for \csntrail [3]:
+ezsat
+    success!
+ Grouping SAT models for \csnlead:
+  Trying to prove $equiv for \csnlead [0]:
+ezsat
+    success!
+  Trying to prove $equiv for \csnlead [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \csnlead [2]:
+ezsat
+    success!
+  Trying to prove $equiv for \csnlead [3]:
+ezsat
+    success!
+ Grouping SAT models for \csnidle_q:
+  Trying to prove $equiv for \csnidle_q [0]:
+ezsat
+ezsat
+    success!
+  Trying to prove $equiv for \csnidle_q [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \csnidle_q [2]:
+ezsat
+    success!
+  Trying to prove $equiv for \csnidle_q [3]:
+ezsat
+    success!
+ Grouping SAT models for \csntrail_q:
+  Trying to prove $equiv for \csntrail_q [0]:
+ezsat
+ezsat
+    success!
+  Trying to prove $equiv for \csntrail_q [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \csntrail_q [2]:
+ezsat
+    success!
+  Trying to prove $equiv for \csntrail_q [3]:
+ezsat
+    success!
+ Grouping SAT models for \csnlead_q:
+  Trying to prove $equiv for \csnlead_q [0]:
+ezsat
+ezsat
+    success!
+  Trying to prove $equiv for \csnlead_q [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \csnlead_q [2]:
+ezsat
+    success!
+  Trying to prove $equiv for \csnlead_q [3]:
+ezsat
+    success!
+  Trying to prove $equiv for \full_cyc:
+ezsat
+    success!
+  Trying to prove $equiv for \cpha:
+ezsat
+    success!
+  Trying to prove $equiv for \cpol:
+ezsat
+    success!
+  Trying to prove $equiv for \full_cyc_q:
+ezsat
+ezsat
+    success!
+  Trying to prove $equiv for \cpha_q:
+ezsat
+ezsat
+    success!
+  Trying to prove $equiv for \cpol_q:
+ezsat
+ezsat
+    success!
+ Grouping SAT models for \cmd_speed_d:
+  Trying to prove $equiv for \cmd_speed_d [0]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_speed_d [1]:
+ezsat
+    success!
+ Grouping SAT models for \cmd_speed_q:
+  Trying to prove $equiv for \cmd_speed_q [0]:
+ezsat
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_speed_q [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_wr_en_d:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_wr_en_q:
+ezsat
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_rd_en_d:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_rd_en_q:
+ezsat
+ezsat
+    success!
+ Grouping SAT models for \cmd_len_d:
+  Trying to prove $equiv for \cmd_len_d [0]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_d [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_d [2]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_d [3]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_d [4]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_d [5]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_d [6]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_d [7]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_d [8]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_d [9]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_d [10]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_d [11]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_d [12]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_d [13]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_d [14]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_d [15]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_d [16]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_d [17]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_d [18]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_d [19]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_d [20]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_d [21]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_d [22]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_d [23]:
+ezsat
+    success!
+ Grouping SAT models for \cmd_len_q:
+  Trying to prove $equiv for \cmd_len_q [0]:
+ezsat
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_q [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_q [2]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_q [3]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_q [4]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_q [5]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_q [6]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_q [7]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_q [8]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_q [9]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_q [10]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_q [11]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_q [12]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_q [13]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_q [14]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_q [15]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_q [16]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_q [17]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_q [18]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_q [19]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_q [20]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_q [21]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_q [22]:
+ezsat
+    success!
+  Trying to prove $equiv for \cmd_len_q [23]:
+ezsat
+    success!
+  Trying to prove $equiv for \csaat:
+ezsat
+    success!
+  Trying to prove $equiv for \csaat_q:
+ezsat
+ezsat
+    success!
+ Grouping SAT models for \bit_cntr_d:
+  Trying to prove $equiv for \bit_cntr_d [0]:
+ezsat
+    success!
+  Trying to prove $equiv for \bit_cntr_d [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \bit_cntr_d [2]:
+ezsat
+    success!
+ Grouping SAT models for \bit_cntr_q:
+  Trying to prove $equiv for \bit_cntr_q [0]:
+ezsat
+ezsat
+    success!
+  Trying to prove $equiv for \bit_cntr_q [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \bit_cntr_q [2]:
+ezsat
+    success!
+ Grouping SAT models for \byte_cntr_cpha0_d:
+  Trying to prove $equiv for \byte_cntr_cpha0_d [0]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_d [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_d [2]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_d [3]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_d [4]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_d [5]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_d [6]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_d [7]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_d [8]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_d [9]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_d [10]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_d [11]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_d [12]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_d [13]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_d [14]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_d [15]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_d [16]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_d [17]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_d [18]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_d [19]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_d [20]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_d [21]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_d [22]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_d [23]:
+ezsat
+    success!
+ Grouping SAT models for \byte_cntr_cpha1_d:
+  Trying to prove $equiv for \byte_cntr_cpha1_d [0]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_d [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_d [2]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_d [3]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_d [4]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_d [5]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_d [6]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_d [7]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_d [8]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_d [9]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_d [10]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_d [11]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_d [12]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_d [13]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_d [14]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_d [15]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_d [16]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_d [17]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_d [18]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_d [19]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_d [20]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_d [21]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_d [22]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_d [23]:
+ezsat
+    success!
+ Grouping SAT models for \byte_cntr_cpha0_q:
+  Trying to prove $equiv for \byte_cntr_cpha0_q [0]:
+ezsat
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_q [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_q [2]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_q [3]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_q [4]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_q [5]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_q [6]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_q [7]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_q [8]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_q [9]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_q [10]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_q [11]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_q [12]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_q [13]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_q [14]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_q [15]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_q [16]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_q [17]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_q [18]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_q [19]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_q [20]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_q [21]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_q [22]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha0_q [23]:
+ezsat
+    success!
+ Grouping SAT models for \byte_cntr_cpha1_q:
+  Trying to prove $equiv for \byte_cntr_cpha1_q [0]:
+ezsat
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_q [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_q [2]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_q [3]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_q [4]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_q [5]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_q [6]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_q [7]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_q [8]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_q [9]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_q [10]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_q [11]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_q [12]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_q [13]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_q [14]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_q [15]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_q [16]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_q [17]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_q [18]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_q [19]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_q [20]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_q [21]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_q [22]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_cpha1_q [23]:
+ezsat
+    success!
+ Grouping SAT models for \byte_cntr_early:
+  Trying to prove $equiv for \byte_cntr_early [0]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_early [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_early [2]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_early [3]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_early [4]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_early [5]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_early [6]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_early [7]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_early [8]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_early [9]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_early [10]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_early [11]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_early [12]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_early [13]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_early [14]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_early [15]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_early [16]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_early [17]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_early [18]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_early [19]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_early [20]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_early [21]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_early [22]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_early [23]:
+ezsat
+    success!
+ Grouping SAT models for \byte_cntr_late:
+  Trying to prove $equiv for \byte_cntr_late [0]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_late [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_late [2]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_late [3]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_late [4]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_late [5]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_late [6]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_late [7]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_late [8]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_late [9]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_late [10]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_late [11]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_late [12]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_late [13]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_late [14]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_late [15]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_late [16]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_late [17]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_late [18]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_late [19]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_late [20]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_late [21]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_late [22]:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_cntr_late [23]:
+ezsat
+    success!
+ Grouping SAT models for \wait_cntr_d:
+  Trying to prove $equiv for \wait_cntr_d [0]:
+ezsat
+    success!
+  Trying to prove $equiv for \wait_cntr_d [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \wait_cntr_d [2]:
+ezsat
+    success!
+  Trying to prove $equiv for \wait_cntr_d [3]:
+ezsat
+    success!
+ Grouping SAT models for \wait_cntr_q:
+  Trying to prove $equiv for \wait_cntr_q [0]:
+ezsat
+ezsat
+    success!
+  Trying to prove $equiv for \wait_cntr_q [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \wait_cntr_q [2]:
+ezsat
+    success!
+  Trying to prove $equiv for \wait_cntr_q [3]:
+ezsat
+    success!
+  Trying to prove $equiv for \last_bit:
+ezsat
+    success!
+  Trying to prove $equiv for \last_byte:
+ezsat
+    success!
+  Trying to prove $equiv for \state_changing:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_starting:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_starting_cpha0:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_starting_cpha0_q:
+ezsat
+ezsat
+    success!
+  Trying to prove $equiv for \byte_starting_cpha1:
+ezsat
+    success!
+  Trying to prove $equiv for \bit_shifting:
+ezsat
+    success!
+  Trying to prove $equiv for \bit_shifting_cpha0:
+ezsat
+    success!
+  Trying to prove $equiv for \bit_shifting_cpha0_q:
+ezsat
+ezsat
+    success!
+  Trying to prove $equiv for \bit_shifting_cpha1:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_ending:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_ending_cpha0:
+ezsat
+    success!
+  Trying to prove $equiv for \byte_ending_cpha0_q:
+ezsat
+ezsat
+    success!
+  Trying to prove $equiv for \byte_ending_cpha1:
+ezsat
+    success!
+  Trying to prove $equiv for \sample_en_d:
+ezsat
+    success!
+  Trying to prove $equiv for \sample_en_q:
+ezsat
+ezsat
+    success!
+  Trying to prove $equiv for \sample_en_q2:
+ezsat
+ezsat
+    success!
+  Trying to prove $equiv for \config_changed:
+ezsat
+    success!
+  Trying to prove $equiv for \fsm_en:
+ezsat
+    success!
+  Trying to prove $equiv for \new_command:
+ezsat
+    success!
+  Trying to prove $equiv for \new_command_cpha1:
+ezsat
+ezsat
+    success!
+  Trying to prove $equiv for \csb_single_d:
+ezsat
+    success!
+  Trying to prove $equiv for \csb_q:
+ezsat
+ezsat
+    success!
+  Trying to prove $equiv for \sck_d:
+ezsat
+    success!
+  Trying to prove $equiv for \sck_q:
+ezsat
+ezsat
+    success!
+  Trying to prove $equiv for \wr_en_internal:
+ezsat
+    success!
+  Trying to prove $equiv for \rd_en_internal:
+ezsat
+    success!
+  Trying to prove $equiv for \sample_en_internal:
+ezsat
+    success!
+  Trying to prove $equiv for \shift_en_internal:
+ezsat
+    success!
+  Trying to prove $equiv for \stall:
+ezsat
+    success!
+ Grouping SAT models for \state_q:
+  Trying to prove $equiv for \state_q [0]:
+ezsat
+ezsat
+    success!
+  Trying to prove $equiv for \state_q [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \state_q [2]:
+ezsat
+    success!
+ Grouping SAT models for \state_d:
+  Trying to prove $equiv for \state_d [0]:
+ezsat
+    success!
+  Trying to prove $equiv for \state_d [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \state_d [2]:
+ezsat
+    success!
+  Trying to prove $equiv for \command_ready_int:
+ezsat
+    success!
+ Grouping SAT models for \next_state_after_idle:
+  Trying to prove $equiv for \next_state_after_idle [0]:
+ezsat
+    success!
+  Trying to prove $equiv for \next_state_after_idle [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \next_state_after_idle [2]:
+ezsat
+    success!
+ Grouping SAT models for \next_state_after_idle_csb_active:
+  Trying to prove $equiv for \next_state_after_idle_csb_active [0]:
+ezsat
+    success!
+  Trying to prove $equiv for \next_state_after_idle_csb_active [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \next_state_after_idle_csb_active [2]:
+ezsat
+    success!
+  Trying to prove $equiv for \command_ready_idle_csb_active:
+ezsat
+    success!
+  Trying to prove $equiv for \segment_rd_en:
+ezsat
+    success!
+  Trying to prove $equiv for \segment_rd_en_cpha0:
+ezsat
+ezsat
+    success!
+  Trying to prove $equiv for \segment_rd_en_cpha1:
+ezsat
+ezsat
+    success!
+ Grouping SAT models for \shift_size:
+  Trying to prove $equiv for \shift_size [0]:
+ezsat
+    success!
+  Trying to prove $equiv for \shift_size [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \shift_size [2]:
+ezsat
+    success!
+ Grouping SAT models for \start_bit:
+  Trying to prove $equiv for \start_bit [0]:
+ezsat
+    success!
+  Trying to prove $equiv for \start_bit [1]:
+ezsat
+    success!
+  Trying to prove $equiv for \start_bit [2]:
+ezsat
+    success!
+  Trying to prove $equiv for \u_sck_flop.clk_i:
+ezsat
+    success!
+  Trying to prove $equiv for \u_sck_flop.rst_ni:
+ezsat
+    success!
+  Trying to prove $equiv for \u_sck_flop.en_i:
+ezsat
+    success!
+  Trying to prove $equiv for \u_sck_flop.d_i:
+ezsat
+    success!
+  Trying to prove $equiv for \u_sck_flop.q_o:
+ezsat
+ezsat
+    success!
+  Trying to prove $equiv for \u_sck_flop.u_prim_generic_flop_en.clk_i:
+ezsat
+    success!
+  Trying to prove $equiv for \u_sck_flop.u_prim_generic_flop_en.rst_ni:
+ezsat
+    success!
+  Trying to prove $equiv for \u_sck_flop.u_prim_generic_flop_en.en_i:
+ezsat
+    success!
+  Trying to prove $equiv for \u_sck_flop.u_prim_generic_flop_en.d_i:
+ezsat
+    success!
+  Trying to prove $equiv for \u_sck_flop.u_prim_generic_flop_en.q_o:
+ezsat
+ezsat
+    success!
+Proved 385 previously unproven $equiv cells.
+
+8. Executing EQUIV_INDUCT pass.
+Found 16 unproven $equiv cells in module equiv_top:
+  Proving existence of base case for step 1. (51908 clauses over 19875 variables)
+  Proving induction step 1. (106735 clauses over 40625 variables)
+  Proof for induction step failed. Extending to next time step.
+  Proving existence of base case for step 2. (106736 clauses over 40625 variables)
+  Proving induction step 2. (161563 clauses over 61375 variables)
+  Proof for induction step failed. Extending to next time step.
+  Proving existence of base case for step 3. (161564 clauses over 61375 variables)
+  Proving induction step 3. (216391 clauses over 82125 variables)
+  Proof for induction step failed. Extending to next time step.
+  Proving existence of base case for step 4. (216392 clauses over 82125 variables)
+  Proving induction step 4. (271219 clauses over 102875 variables)
+  Proof for induction step failed. Extending to next time step.
+  Proving existence of base case for step 5. (271220 clauses over 102875 variables)
+  Proving induction step 5. (326047 clauses over 123625 variables)
+  Proof for induction step failed. Trying to prove individual $equiv from workset.
+  Trying to prove $equiv for \clk_cntr_d [4]: failed.
+  Trying to prove $equiv for \clk_cntr_d [2]: failed.
+  Trying to prove $equiv for \clk_cntr_d [3]: failed.
+  Trying to prove $equiv for \clk_cntr_d [0]: failed.
+  Trying to prove $equiv for \clk_cntr_d [1]: failed.
+  Trying to prove $equiv for \clk_cntr_d [12]: failed.
+  Trying to prove $equiv for \clk_cntr_d [13]: failed.
+  Trying to prove $equiv for \clk_cntr_d [14]: failed.
+  Trying to prove $equiv for \clk_cntr_d [5]: failed.
+  Trying to prove $equiv for \clk_cntr_d [6]: failed.
+  Trying to prove $equiv for \clk_cntr_d [7]: failed.
+  Trying to prove $equiv for \clk_cntr_d [8]: failed.
+  Trying to prove $equiv for \clk_cntr_d [9]: failed.
+  Trying to prove $equiv for \clk_cntr_d [10]: failed.
+  Trying to prove $equiv for \clk_cntr_d [11]: failed.
+  Trying to prove $equiv for \clk_cntr_d [15]: failed.
+Proved 0 previously unproven $equiv cells.
+
+9. Executing EQUIV_STATUS pass.
+Found 401 $equiv cells in equiv_top:
+  Of those cells 385 are proven and 16 are unproven.
+  Unproven $equiv $auto$equiv_make.cc:297:find_same_wires$928: \clk_cntr_d_gold [15] \clk_cntr_d_gate [15]
+  Unproven $equiv $auto$equiv_make.cc:297:find_same_wires$927: \clk_cntr_d_gold [14] \clk_cntr_d_gate [14]
+  Unproven $equiv $auto$equiv_make.cc:297:find_same_wires$926: \clk_cntr_d_gold [13] \clk_cntr_d_gate [13]
+  Unproven $equiv $auto$equiv_make.cc:297:find_same_wires$925: \clk_cntr_d_gold [12] \clk_cntr_d_gate [12]
+  Unproven $equiv $auto$equiv_make.cc:297:find_same_wires$924: \clk_cntr_d_gold [11] \clk_cntr_d_gate [11]
+  Unproven $equiv $auto$equiv_make.cc:297:find_same_wires$923: \clk_cntr_d_gold [10] \clk_cntr_d_gate [10]
+  Unproven $equiv $auto$equiv_make.cc:297:find_same_wires$922: \clk_cntr_d_gold [9] \clk_cntr_d_gate [9]
+  Unproven $equiv $auto$equiv_make.cc:297:find_same_wires$921: \clk_cntr_d_gold [8] \clk_cntr_d_gate [8]
+  Unproven $equiv $auto$equiv_make.cc:297:find_same_wires$920: \clk_cntr_d_gold [7] \clk_cntr_d_gate [7]
+  Unproven $equiv $auto$equiv_make.cc:297:find_same_wires$919: \clk_cntr_d_gold [6] \clk_cntr_d_gate [6]
+  Unproven $equiv $auto$equiv_make.cc:297:find_same_wires$918: \clk_cntr_d_gold [5] \clk_cntr_d_gate [5]
+  Unproven $equiv $auto$equiv_make.cc:297:find_same_wires$917: \clk_cntr_d_gold [4] \clk_cntr_d_gate [4]
+  Unproven $equiv $auto$equiv_make.cc:297:find_same_wires$916: \clk_cntr_d_gold [3] \clk_cntr_d_gate [3]
+  Unproven $equiv $auto$equiv_make.cc:297:find_same_wires$915: \clk_cntr_d_gold [2] \clk_cntr_d_gate [2]
+  Unproven $equiv $auto$equiv_make.cc:297:find_same_wires$914: \clk_cntr_d_gold [1] \clk_cntr_d_gate [1]
+  Unproven $equiv $auto$equiv_make.cc:297:find_same_wires$913: \clk_cntr_d_gold [0] \clk_cntr_d_gate [0]
+Found a total of 16 unproven $equiv cells.
+
+End of script. Logfile hash: a07f3d52fa, time: 5.17s, user: 4.94s, system: 0.13s, MEM: 108.05 MB peak
+Yosys 0.70+360 (git sha1 5e740962d, Release, Clang /usr/bin/clang++ 21.1.8)
+Time spent: 69% 1x equiv_simple (3 sec), 28% 1x equiv_induct (1 sec), ...

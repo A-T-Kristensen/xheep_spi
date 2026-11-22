@@ -106,13 +106,8 @@
 `ifdef FPV_ON                        \
    `ASSUME_I(__name, __prop)         \
 `endif (__name, __prop)'
-%Warning-DECLFILENAME: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_eq/one_term_fsm.sv:10:8: Filename 'one_term_fsm' does not match MODULE name: 'spi_host_fsm'
-   10 | module spi_host_fsm
-      |        ^~~~~~~~~~~~
-                       ... For warning description see https://verilator.org/warn/DECLFILENAME?v=5.040
-                       ... Use "/* verilator lint_off DECLFILENAME */" and lint_on around source to disable this message.
-%Warning-WIDTHEXPAND: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_eq/one_term_fsm.sv:599:109: Operator LT expects 32 bits on the LHS, but LHS's VARREF 'csid' generates 1 bits.
-                                                                                                                                                       : ... note: In instance 'spi_host_fsm'
+%Warning-WIDTHEXPAND: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_eq/lint_one_term/spi_host_fsm.sv:599:109: Operator LT expects 32 bits on the LHS, but LHS's VARREF 'csid' generates 1 bits.
+                                                                                                                                                                     : ... note: In instance 'spi_host_fsm'
   599 |   ValidCSID_A: assert property (@(posedge clk_i) disable iff ((rst_ni) !== '0) ($isunknown(rst_ni) || (csid < NumCS)))                    
       |                                                                                                             ^
                       ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.040
@@ -255,13 +250,13 @@
                                                                                                                                                          : ... note: In instance 'spi_host_fsm.u_sck_flop'
    11 |   parameter int CmdSize = CSW + 60;
       |                 ^~~~~~~
-%Warning-SYNCASYNCNET: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_eq/one_term_fsm.sv:16:38: Signal flopped as both synchronous and async: 'rst_ni'
-                       /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_eq/one_term_fsm.sv:153:10: ... Location of async usage
+%Warning-SYNCASYNCNET: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_eq/lint_one_term/spi_host_fsm.sv:16:38: Signal flopped as both synchronous and async: 'rst_ni'
+                       /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_eq/lint_one_term/spi_host_fsm.sv:153:10: ... Location of async usage
   153 |     if (!rst_ni) begin
       |          ^~~~~~
-                       /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_eq/one_term_fsm.sv:597:73: ... Location of sync usage
+                       /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/spi_eq/lint_one_term/spi_host_fsm.sv:597:73: ... Location of sync usage
   597 |   BidirOnlyInStdMode_A: assert property (@(posedge clk_i) disable iff ((rst_ni) !== '0) ($isunknown(rst_ni) || (cmd_speed_d == Standard || !(cmd_rd_en_d && cmd_wr_en_d))))                    
       |                                                                         ^~~~~~
                        ... For warning description see https://verilator.org/warn/SYNCASYNCNET?v=5.040
                        ... Use "/* verilator lint_off SYNCASYNCNET */" and lint_on around source to disable this message.
-%Error: Exiting due to 51 warning(s)
+%Error: Exiting due to 50 warning(s)

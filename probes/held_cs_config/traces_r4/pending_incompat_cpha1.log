@@ -1,0 +1,66 @@
+t=6 st=0 sck=0 csb=11 wr=0 sh=0 samp=0 rd=0 cmd_wr_q=0 sd_en=0000 bit=0 byte0=0 byte1=0
+t=8 st=6 sck=0 csb=11 wr=0 sh=0 samp=0 rd=0 cmd_wr_q=1 sd_en=0000 bit=0 byte0=0 byte1=0
+t=24 st=1 sck=0 csb=10 wr=0 sh=0 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=0 byte0=0 byte1=0
+t=39 st=1 sck=0 csb=10 wr=1 sh=0 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=0 byte0=0 byte1=0
+t=40 st=3 sck=1 csb=10 wr=0 sh=0 samp=1 rd=0 cmd_wr_q=1 sd_en=0001 bit=7 byte0=0 byte1=0
+t=48 st=2 sck=0 csb=10 wr=0 sh=0 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=7 byte0=0 byte1=0
+t=55 st=2 sck=0 csb=10 wr=0 sh=1 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=7 byte0=0 byte1=0
+t=56 st=3 sck=1 csb=10 wr=0 sh=0 samp=1 rd=0 cmd_wr_q=1 sd_en=0001 bit=6 byte0=0 byte1=0
+t=64 st=2 sck=0 csb=10 wr=0 sh=0 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=6 byte0=0 byte1=0
+t=71 st=2 sck=0 csb=10 wr=0 sh=1 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=6 byte0=0 byte1=0
+t=72 st=3 sck=1 csb=10 wr=0 sh=0 samp=1 rd=0 cmd_wr_q=1 sd_en=0001 bit=5 byte0=0 byte1=0
+t=80 st=2 sck=0 csb=10 wr=0 sh=0 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=5 byte0=0 byte1=0
+t=87 st=2 sck=0 csb=10 wr=0 sh=1 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=5 byte0=0 byte1=0
+t=88 st=3 sck=1 csb=10 wr=0 sh=0 samp=1 rd=0 cmd_wr_q=1 sd_en=0001 bit=4 byte0=0 byte1=0
+t=96 st=2 sck=0 csb=10 wr=0 sh=0 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=4 byte0=0 byte1=0
+t=103 st=2 sck=0 csb=10 wr=0 sh=1 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=4 byte0=0 byte1=0
+t=104 st=3 sck=1 csb=10 wr=0 sh=0 samp=1 rd=0 cmd_wr_q=1 sd_en=0001 bit=3 byte0=0 byte1=0
+t=112 st=2 sck=0 csb=10 wr=0 sh=0 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=3 byte0=0 byte1=0
+t=119 st=2 sck=0 csb=10 wr=0 sh=1 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=3 byte0=0 byte1=0
+t=120 st=3 sck=1 csb=10 wr=0 sh=0 samp=1 rd=0 cmd_wr_q=1 sd_en=0001 bit=2 byte0=0 byte1=0
+t=128 st=2 sck=0 csb=10 wr=0 sh=0 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=2 byte0=0 byte1=0
+t=135 st=2 sck=0 csb=10 wr=0 sh=1 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=2 byte0=0 byte1=0
+t=136 st=3 sck=1 csb=10 wr=0 sh=0 samp=1 rd=0 cmd_wr_q=1 sd_en=0001 bit=1 byte0=0 byte1=0
+t=144 st=2 sck=0 csb=10 wr=0 sh=0 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=1 byte0=0 byte1=0
+t=151 st=2 sck=0 csb=10 wr=0 sh=1 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=1 byte0=0 byte1=0
+t=152 st=3 sck=1 csb=10 wr=0 sh=0 samp=1 rd=0 cmd_wr_q=1 sd_en=0001 bit=0 byte0=0 byte1=0
+t=160 st=2 sck=0 csb=10 wr=0 sh=0 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=0 byte0=16777215 byte1=0
+t=167 st=2 sck=0 csb=10 wr=0 sh=0 samp=0 rd=1 cmd_wr_q=1 sd_en=0001 bit=0 byte0=16777215 byte1=0
+t=168 st=4 sck=0 csb=10 wr=0 sh=0 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=0 byte0=16777215 byte1=16777215
+CS0 lead=16 trail=24 edges=16 min_half=8
+t=184 st=5 sck=0 csb=11 wr=0 sh=0 samp=0 rd=0 cmd_wr_q=1 sd_en=0000 bit=0 byte0=16777215 byte1=16777215
+CSB all-high gap before CS0 = 24
+t=208 st=1 sck=0 csb=10 wr=0 sh=0 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=0 byte0=0 byte1=0
+t=215 st=1 sck=0 csb=10 wr=1 sh=0 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=0 byte0=0 byte1=0
+t=216 st=3 sck=1 csb=10 wr=0 sh=0 samp=1 rd=0 cmd_wr_q=1 sd_en=0001 bit=7 byte0=0 byte1=0
+t=220 st=2 sck=0 csb=10 wr=0 sh=0 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=7 byte0=0 byte1=0
+t=223 st=2 sck=0 csb=10 wr=0 sh=1 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=7 byte0=0 byte1=0
+t=224 st=3 sck=1 csb=10 wr=0 sh=0 samp=1 rd=0 cmd_wr_q=1 sd_en=0001 bit=6 byte0=0 byte1=0
+t=228 st=2 sck=0 csb=10 wr=0 sh=0 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=6 byte0=0 byte1=0
+t=231 st=2 sck=0 csb=10 wr=0 sh=1 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=6 byte0=0 byte1=0
+t=232 st=3 sck=1 csb=10 wr=0 sh=0 samp=1 rd=0 cmd_wr_q=1 sd_en=0001 bit=5 byte0=0 byte1=0
+t=236 st=2 sck=0 csb=10 wr=0 sh=0 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=5 byte0=0 byte1=0
+t=239 st=2 sck=0 csb=10 wr=0 sh=1 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=5 byte0=0 byte1=0
+t=240 st=3 sck=1 csb=10 wr=0 sh=0 samp=1 rd=0 cmd_wr_q=1 sd_en=0001 bit=4 byte0=0 byte1=0
+t=244 st=2 sck=0 csb=10 wr=0 sh=0 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=4 byte0=0 byte1=0
+t=247 st=2 sck=0 csb=10 wr=0 sh=1 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=4 byte0=0 byte1=0
+t=248 st=3 sck=1 csb=10 wr=0 sh=0 samp=1 rd=0 cmd_wr_q=1 sd_en=0001 bit=3 byte0=0 byte1=0
+t=252 st=2 sck=0 csb=10 wr=0 sh=0 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=3 byte0=0 byte1=0
+t=255 st=2 sck=0 csb=10 wr=0 sh=1 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=3 byte0=0 byte1=0
+t=256 st=3 sck=1 csb=10 wr=0 sh=0 samp=1 rd=0 cmd_wr_q=1 sd_en=0001 bit=2 byte0=0 byte1=0
+t=260 st=2 sck=0 csb=10 wr=0 sh=0 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=2 byte0=0 byte1=0
+t=263 st=2 sck=0 csb=10 wr=0 sh=1 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=2 byte0=0 byte1=0
+t=264 st=3 sck=1 csb=10 wr=0 sh=0 samp=1 rd=0 cmd_wr_q=1 sd_en=0001 bit=1 byte0=0 byte1=0
+t=268 st=2 sck=0 csb=10 wr=0 sh=0 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=1 byte0=0 byte1=0
+t=271 st=2 sck=0 csb=10 wr=0 sh=1 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=1 byte0=0 byte1=0
+t=272 st=3 sck=1 csb=10 wr=0 sh=0 samp=1 rd=0 cmd_wr_q=1 sd_en=0001 bit=0 byte0=0 byte1=0
+t=276 st=2 sck=0 csb=10 wr=0 sh=0 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=0 byte0=16777215 byte1=0
+t=279 st=2 sck=0 csb=10 wr=0 sh=0 samp=0 rd=1 cmd_wr_q=1 sd_en=0001 bit=0 byte0=16777215 byte1=0
+t=280 st=4 sck=0 csb=10 wr=0 sh=0 samp=0 rd=0 cmd_wr_q=1 sd_en=0001 bit=0 byte0=16777215 byte1=16777215
+CS0 lead=8 trail=12 edges=16 min_half=4
+t=288 st=5 sck=0 csb=11 wr=0 sh=0 samp=0 rd=0 cmd_wr_q=1 sd_en=0000 bit=0 byte0=16777215 byte1=16777215
+TOTAL accept=2 wr_en=2 shift_en=14 rd_en=2 last_read=2 last_write=2
+- tb.sv:169: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.040 2025-08-30
+- Verilator: $finish at 32ns; walltime 0.002 s; speed 13.242 us/s
+- Verilator: cpu 0.002 s on 1 threads; alloced 126 MB

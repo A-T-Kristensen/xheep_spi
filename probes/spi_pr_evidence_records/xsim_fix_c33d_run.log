@@ -1,0 +1,87 @@
+offload: address-space ceiling none
+PHASE generate
+generate_rc=0
+INFO: Wrote dependency graph to /scratch/kristens/claude-0919455e/spi_fix_c33d/with/theshire/build/epfl_cheshire_cheshire_0.0.1/zcu104_wrapper_manifest-vivado/epfl_cheshire_cheshire_0.0.1.deps-after-generators.dot
+INFO: Wrote Makefile fragment to /scratch/kristens/claude-0919455e/spi_fix_c33d/with/theshire/build/epfl_cheshire_cheshire_0.0.1/zcu104_wrapper_manifest-vivado/core-deps.mk
+INFO: Setting up project
+
+make: Leaving directory '/scratch/kristens/claude-0919455e/spi_fix_c33d/with/theshire'
+PHASE source_check
+missing_sources=0
+PHASE probe_install
+PHASE lanes
+LANE neg__all expected=detected verdict=detected make_rc=2 pass_line=0 fail_line=1 reach_fatal=0
+CHS_SPI_HOST_DIGITAL PASS access_invalid_unmaskable
+CHS_SPI_HOST_DIGITAL PASS chip_select_parking
+CHS_SPI_HOST_DIGITAL PASS error_retry
+CHS_SPI_HOST_DIGITAL PASS error_status_clear
+CHS_SPI_HOST_DIGITAL PASS miso_capture
+CHS_SPI_HOST_DIGITAL PASS mmio_command_packing
+CHS_SPI_HOST_DIGITAL PASS mode_0
+CHS_SPI_HOST_DIGITAL PASS mode_1
+CHS_SPI_HOST_DIGITAL PASS mode_2
+CHS_SPI_HOST_DIGITAL PASS mode_3
+CHS_SPI_HOST_DIGITAL PASS mosi_framing
+CHS_SPI_HOST_DIGITAL PASS parked_ownership
+CHS_SPI_HOST_TRAIL_GAP cs=0 gap_cycles=16 floor_cycles=16
+CHS_SPI_HOST_TRAIL_GAP cs=1 gap_cycles=16 floor_cycles=16
+CHS_SPI_HOST_TRAIL_GAP cs=2 gap_cycles=16 floor_cycles=16
+Fatal: sample_digital_peripheral: CS lead too short; required=(model_tick-cs_tick >= model_lead_floor); model_tick=0000000e cs_tick=00000005 model_lead_floor=12
+LANE neg__trail expected=detected verdict=detected make_rc=2 pass_line=0 fail_line=1 reach_fatal=0
+CHS_SPI_HOST_WAIT_TRAIL cycles=13 required=16
+Fatal: held_cs_switch_trail: WaitTrail after IdleCSBActive too short; required=(wait_trail_cycles >= TrailCycles); wait_trail_cycles=13 TrailCycles=16
+LANE port__all expected=pass verdict=pass make_rc=0 pass_line=1 fail_line=0 reach_fatal=0
+CHS_SPI_HOST_DIGITAL PASS access_invalid_unmaskable
+CHS_SPI_HOST_DIGITAL PASS all
+CHS_SPI_HOST_DIGITAL PASS chip_select_parking
+CHS_SPI_HOST_DIGITAL PASS error_retry
+CHS_SPI_HOST_DIGITAL PASS error_status_clear
+CHS_SPI_HOST_DIGITAL PASS idle_relaunch_lead
+CHS_SPI_HOST_DIGITAL PASS miso_capture
+CHS_SPI_HOST_DIGITAL PASS mmio_command_packing
+CHS_SPI_HOST_DIGITAL PASS mode_0
+CHS_SPI_HOST_DIGITAL PASS mode_1
+CHS_SPI_HOST_DIGITAL PASS mode_2
+CHS_SPI_HOST_DIGITAL PASS mode_3
+CHS_SPI_HOST_DIGITAL PASS mosi_framing
+CHS_SPI_HOST_DIGITAL PASS parked_ownership
+CHS_SPI_HOST_DIGITAL PASS reset_recovery
+CHS_SPI_HOST_DIGITAL PASS window_direction_noop
+CHS_SPI_HOST_TRAIL_GAP cs=0 gap_cycles=16 floor_cycles=16
+CHS_SPI_HOST_TRAIL_GAP cs=0 gap_cycles=20 floor_cycles=16
+CHS_SPI_HOST_TRAIL_GAP cs=1 gap_cycles=16 floor_cycles=16
+CHS_SPI_HOST_TRAIL_GAP cs=1 gap_cycles=20 floor_cycles=16
+CHS_SPI_HOST_TRAIL_GAP cs=2 gap_cycles=16 floor_cycles=16
+CHS_SPI_HOST_TRAIL_GAP cs=2 gap_cycles=20 floor_cycles=16
+LANE port__trail expected=pass verdict=pass make_rc=0 pass_line=1 fail_line=0 reach_fatal=0
+CHS_SPI_HOST_DIGITAL PASS held_cs_switch_trail
+CHS_SPI_HOST_TRAIL_GAP cs=1 gap_cycles=28 floor_cycles=16
+CHS_SPI_HOST_WAIT_TRAIL cycles=16 required=16
+LANE fix__all expected=pass verdict=pass make_rc=0 pass_line=1 fail_line=0 reach_fatal=0
+CHS_SPI_HOST_DIGITAL PASS access_invalid_unmaskable
+CHS_SPI_HOST_DIGITAL PASS all
+CHS_SPI_HOST_DIGITAL PASS chip_select_parking
+CHS_SPI_HOST_DIGITAL PASS error_retry
+CHS_SPI_HOST_DIGITAL PASS error_status_clear
+CHS_SPI_HOST_DIGITAL PASS idle_relaunch_lead
+CHS_SPI_HOST_DIGITAL PASS miso_capture
+CHS_SPI_HOST_DIGITAL PASS mmio_command_packing
+CHS_SPI_HOST_DIGITAL PASS mode_0
+CHS_SPI_HOST_DIGITAL PASS mode_1
+CHS_SPI_HOST_DIGITAL PASS mode_2
+CHS_SPI_HOST_DIGITAL PASS mode_3
+CHS_SPI_HOST_DIGITAL PASS mosi_framing
+CHS_SPI_HOST_DIGITAL PASS parked_ownership
+CHS_SPI_HOST_DIGITAL PASS reset_recovery
+CHS_SPI_HOST_DIGITAL PASS window_direction_noop
+CHS_SPI_HOST_TRAIL_GAP cs=0 gap_cycles=16 floor_cycles=16
+CHS_SPI_HOST_TRAIL_GAP cs=0 gap_cycles=20 floor_cycles=16
+CHS_SPI_HOST_TRAIL_GAP cs=1 gap_cycles=16 floor_cycles=16
+CHS_SPI_HOST_TRAIL_GAP cs=1 gap_cycles=20 floor_cycles=16
+CHS_SPI_HOST_TRAIL_GAP cs=2 gap_cycles=16 floor_cycles=16
+CHS_SPI_HOST_TRAIL_GAP cs=2 gap_cycles=20 floor_cycles=16
+LANE fix__trail expected=pass verdict=pass make_rc=0 pass_line=1 fail_line=0 reach_fatal=0
+CHS_SPI_HOST_DIGITAL PASS held_cs_switch_trail
+CHS_SPI_HOST_TRAIL_GAP cs=1 gap_cycles=28 floor_cycles=16
+CHS_SPI_HOST_WAIT_TRAIL cycles=16 required=16
+rc=0

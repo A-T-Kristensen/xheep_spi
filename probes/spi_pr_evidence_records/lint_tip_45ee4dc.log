@@ -1,0 +1,262 @@
+%Warning-REDEFMACRO: /home/andreas/gitlab_esl/x-heep-driver-error-paths/hw/vendor/pulp_platform/common_cells/include/common_cells/assertions.svh:73:7: Redefining existing define: 'ASSERT_I', with different value: '\
+`ifdef INC_ASSERT                                    \
+  __name: assert (__prop)                            \
+    else begin                                       \
+      `ASSERT_RPT(`ASSERT_STRINGIFY(__name), __desc) \
+    end                                              \
+`endif (__name, __prop, __desc = "")'
+                     /home/andreas/gitlab_esl/x-heep-driver-error-paths/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_assert_dummy_macros.svh:18:1: ... Location of previous definition, with value: ' (__name, __prop)'
+                     ... For warning description see https://verilator.org/warn/REDEFMACRO?v=5.040
+                     ... Use "/* verilator lint_off REDEFMACRO */" and lint_on around source to disable this message.
+%Warning-REDEFMACRO: /home/andreas/gitlab_esl/x-heep-driver-error-paths/hw/vendor/pulp_platform/common_cells/include/common_cells/assertions.svh:84:7: Redefining existing define: 'ASSERT_INIT', with different value: '\
+`ifdef INC_ASSERT                                      \
+  initial begin                                        \
+    __name: assert (__prop)                            \
+      else begin                                       \
+        `ASSERT_RPT(`ASSERT_STRINGIFY(__name), __desc) \
+      end                                              \
+  end                                                  \
+`endif (__name, __prop, __desc = "")'
+                     /home/andreas/gitlab_esl/x-heep-driver-error-paths/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_assert_dummy_macros.svh:18:1: ... Location of previous definition, with value: ' (__name, __prop)'
+%Warning-REDEFMACRO: /home/andreas/gitlab_esl/x-heep-driver-error-paths/hw/vendor/pulp_platform/common_cells/include/common_cells/assertions.svh:97:7: Redefining existing define: 'ASSERT_FINAL', with different value: '\
+`ifdef INC_ASSERT                                                            \
+  final begin                                                                \
+    __name: assert (__prop || $test$plusargs("disable_assert_final_checks")) \
+      else begin                                                             \
+        `ASSERT_RPT(`ASSERT_STRINGIFY(__name), __desc)                       \
+      end                                                                    \
+  end                                                                        \
+`endif (__name, __prop, __desc = "")'
+                     /home/andreas/gitlab_esl/x-heep-driver-error-paths/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_assert_dummy_macros.svh:18:1: ... Location of previous definition, with value: ' (__name, __prop)'
+%Warning-REDEFMACRO: /home/andreas/gitlab_esl/x-heep-driver-error-paths/hw/vendor/pulp_platform/common_cells/include/common_cells/assertions.svh:107:7: Redefining existing define: 'ASSERT', with different value: '\
+`ifdef INC_ASSERT                                                                                     \
+  __name: assert property (@(posedge __clk) disable iff ((__rst) !== '0) (__prop))                    \
+    else begin                                                                                        \
+      `ASSERT_RPT(`ASSERT_STRINGIFY(__name), __desc)                                                  \
+    end                                                                                               \
+`endif (__name, __prop, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST, __desc = "")'
+                     /home/andreas/gitlab_esl/x-heep-driver-error-paths/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_assert_dummy_macros.svh:18:1: ... Location of previous definition, with value: ' (__name, __prop, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST)'
+%Warning-REDEFMACRO: /home/andreas/gitlab_esl/x-heep-driver-error-paths/hw/vendor/pulp_platform/common_cells/include/common_cells/assertions.svh:120:7: Redefining existing define: 'ASSERT_NEVER', with different value: '\
+`ifdef INC_ASSERT                                                                                           \
+  __name: assert property (@(posedge __clk) disable iff ((__rst) !== '0) not (__prop))                      \
+    else begin                                                                                              \
+      `ASSERT_RPT(`ASSERT_STRINGIFY(__name), __desc)                                                        \
+    end                                                                                                     \
+`endif (__name, __prop, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST, __desc = "")'
+                     /home/andreas/gitlab_esl/x-heep-driver-error-paths/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_assert_dummy_macros.svh:18:1: ... Location of previous definition, with value: ' (__name, __prop, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST)'
+%Warning-REDEFMACRO: /home/andreas/gitlab_esl/x-heep-driver-error-paths/hw/vendor/pulp_platform/common_cells/include/common_cells/assertions.svh:127:7: Redefining existing define: 'ASSERT_KNOWN', with different value: '\
+`ifdef INC_ASSERT                                                                                          \
+  `ASSERT(__name, !$isunknown(__sig), __clk, __rst, __desc)                                                \
+`endif (__name, __sig, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST, __desc = "")'
+                     /home/andreas/gitlab_esl/x-heep-driver-error-paths/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_assert_dummy_macros.svh:18:1: ... Location of previous definition, with value: ' (__name, __sig, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST)'
+%Warning-REDEFMACRO: /home/andreas/gitlab_esl/x-heep-driver-error-paths/hw/vendor/pulp_platform/common_cells/include/common_cells/assertions.svh:133:7: Redefining existing define: 'COVER', with different value: '\
+`ifdef INC_ASSERT                                                                       \
+  __name: cover property (@(posedge __clk) disable iff ((__rst) !== '0) (__prop));      \
+`endif (__name, __prop, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST)'
+                     /home/andreas/gitlab_esl/x-heep-driver-error-paths/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_assert_dummy_macros.svh:18:1: ... Location of previous definition, with value: ' (__name, __prop, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST)'
+%Warning-REDEFMACRO: /home/andreas/gitlab_esl/x-heep-driver-error-paths/hw/vendor/pulp_platform/common_cells/include/common_cells/assertions.svh:143:7: Redefining existing define: 'ASSERT_PULSE', with different value: '\
+`ifdef INC_ASSERT                                                                                          \
+  `ASSERT(__name, $rose(__sig) |=> !(__sig), __clk, __rst, __desc)                                         \
+`endif (__name, __sig, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST, __desc = "")'
+                     /home/andreas/gitlab_esl/x-heep-driver-error-paths/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_assert.sv:133:1: ... Location of previous definition, with value: '\
+  `ASSERT(__name, $rose(__sig) |=> !(__sig), __clk, __rst) (__name, __sig, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST)'
+%Warning-REDEFMACRO: /home/andreas/gitlab_esl/x-heep-driver-error-paths/hw/vendor/pulp_platform/common_cells/include/common_cells/assertions.svh:150:7: Redefining existing define: 'ASSERT_IF', with different value: '\
+`ifdef INC_ASSERT                                                                                                  \
+  `ASSERT(__name, (__enable) |-> (__prop), __clk, __rst, __desc)                                                   \
+`endif (__name, __prop, __enable, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST, __desc = "")'
+                     /home/andreas/gitlab_esl/x-heep-driver-error-paths/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_assert.sv:133:1: ... Location of previous definition, with value: '\
+  `ASSERT(__name, (__enable) |-> (__prop), __clk, __rst) (__name, __prop, __enable, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST)'
+%Warning-REDEFMACRO: /home/andreas/gitlab_esl/x-heep-driver-error-paths/hw/vendor/pulp_platform/common_cells/include/common_cells/assertions.svh:158:7: Redefining existing define: 'ASSERT_KNOWN_IF', with different value: '\
+`ifdef INC_ASSERT                                                                                                       \
+  `ASSERT_KNOWN(__name``KnownEnable, __enable, __clk, __rst, __desc)                                                    \
+  `ASSERT_IF(__name, !$isunknown(__sig), __enable, __clk, __rst, __desc)                                                \
+`endif (__name, __sig, __enable, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST, __desc = "")'
+                     /home/andreas/gitlab_esl/x-heep-driver-error-paths/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_assert.sv:133:1: ... Location of previous definition, with value: '\
+  `ASSERT_KNOWN(__name``KnownEnable, __enable, __clk, __rst)                                               \
+  `ASSERT_IF(__name, !$isunknown(__sig), __enable, __clk, __rst) (__name, __sig, __enable, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST)'
+%Warning-REDEFMACRO: /home/andreas/gitlab_esl/x-heep-driver-error-paths/hw/vendor/pulp_platform/common_cells/include/common_cells/assertions.svh:177:7: Redefining existing define: 'ASSUME', with different value: '\
+`ifdef INC_ASSERT                                                                                     \
+  __name: assume property (@(posedge __clk) disable iff ((__rst) !== '0) (__prop))                    \
+    else begin                                                                                        \
+      `ASSERT_RPT(`ASSERT_STRINGIFY(__name), __desc)                                                  \
+    end                                                                                               \
+`endif (__name, __prop, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST, __desc = "")'
+                     /home/andreas/gitlab_esl/x-heep-driver-error-paths/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_assert_dummy_macros.svh:18:1: ... Location of previous definition, with value: ' (__name, __prop, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST)'
+%Warning-REDEFMACRO: /home/andreas/gitlab_esl/x-heep-driver-error-paths/hw/vendor/pulp_platform/common_cells/include/common_cells/assertions.svh:186:7: Redefining existing define: 'ASSUME_I', with different value: '\
+`ifdef INC_ASSERT                                    \
+  __name: assume (__prop)                            \
+    else begin                                       \
+      `ASSERT_RPT(`ASSERT_STRINGIFY(__name), __desc) \
+    end                                              \
+`endif (__name, __prop, __desc = "")'
+                     /home/andreas/gitlab_esl/x-heep-driver-error-paths/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_assert_dummy_macros.svh:18:1: ... Location of previous definition, with value: ' (__name, __prop)'
+%Warning-REDEFMACRO: /home/andreas/gitlab_esl/x-heep-driver-error-paths/hw/vendor/pulp_platform/common_cells/include/common_cells/assertions.svh:200:7: Redefining existing define: 'ASSUME_FPV', with different value: '\
+`ifdef FPV_ON                                                                                             \
+   `ASSUME(__name, __prop, __clk, __rst, __desc)                                                          \
+`endif (__name, __prop, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST, __desc = "")'
+                     /home/andreas/gitlab_esl/x-heep-driver-error-paths/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_assert.sv:133:1: ... Location of previous definition, with value: '\
+`ifdef FPV_ON                                                                                \
+   `ASSUME(__name, __prop, __clk, __rst)                                                     \
+`endif (__name, __prop, __clk = `ASSERT_DEFAULT_CLK, __rst = `ASSERT_DEFAULT_RST)'
+%Warning-REDEFMACRO: /home/andreas/gitlab_esl/x-heep-driver-error-paths/hw/vendor/pulp_platform/common_cells/include/common_cells/assertions.svh:207:7: Redefining existing define: 'ASSUME_I_FPV', with different value: '\
+`ifdef FPV_ON                                     \
+   `ASSUME_I(__name, __prop, __desc)              \
+`endif (__name, __prop, __desc = "")'
+                     /home/andreas/gitlab_esl/x-heep-driver-error-paths/hw/vendor/lowrisc/opentitan/hw/ip/prim/rtl/prim_assert.sv:133:1: ... Location of previous definition, with value: '\
+`ifdef FPV_ON                        \
+   `ASSUME_I(__name, __prop)         \
+`endif (__name, __prop)'
+%Warning-WIDTHEXPAND: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_fsm.sv:608:109: Operator LT expects 32 bits on the LHS, but LHS's VARREF 'csid' generates 1 bits.
+                                                                                                                                                                      : ... note: In instance 'spi_host_fsm'
+  608 |   ValidCSID_A: assert property (@(posedge clk_i) disable iff ((rst_ni) !== '0) ($isunknown(rst_ni) || (csid < NumCS)))                    
+      |                                                                                                             ^
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.040
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:10:19: Parameter is not used: 'ByteOrder'
+                                                                                                                                                                        : ... note: In instance 'spi_host_fsm'
+   10 |   parameter logic ByteOrder = 1;
+      |                   ^~~~~~~~~
+                      ... For warning description see https://verilator.org/warn/UNUSEDPARAM?v=5.040
+                      ... Use "/* verilator lint_off UNUSEDPARAM */" and lint_on around source to disable this message.
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:12:17: Parameter is not used: 'TxDepth'
+                                                                                                                                                                        : ... note: In instance 'spi_host_fsm'
+   12 |   parameter int TxDepth = 72;
+      |                 ^~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:13:17: Parameter is not used: 'RxDepth'
+                                                                                                                                                                        : ... note: In instance 'spi_host_fsm'
+   13 |   parameter int RxDepth = 64;
+      |                 ^~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:14:17: Parameter is not used: 'CmdDepth'
+                                                                                                                                                                        : ... note: In instance 'spi_host_fsm'
+   14 |   parameter int CmdDepth = 4;
+      |                 ^~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:15:17: Parameter is not used: 'NumAlerts'
+                                                                                                                                                                        : ... note: In instance 'spi_host_fsm'
+   15 |   parameter int NumAlerts = 1;
+      |                 ^~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:303:33: Parameter is not used: 'SPI_HOST_INTR_STATE_OFFSET'
+                                                                                                                                                                         : ... note: In instance 'spi_host_fsm'
+  303 |   parameter logic [BlockAw-1:0] SPI_HOST_INTR_STATE_OFFSET = 6'h 0;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:304:33: Parameter is not used: 'SPI_HOST_INTR_ENABLE_OFFSET'
+                                                                                                                                                                         : ... note: In instance 'spi_host_fsm'
+  304 |   parameter logic [BlockAw-1:0] SPI_HOST_INTR_ENABLE_OFFSET = 6'h 4;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:305:33: Parameter is not used: 'SPI_HOST_INTR_TEST_OFFSET'
+                                                                                                                                                                         : ... note: In instance 'spi_host_fsm'
+  305 |   parameter logic [BlockAw-1:0] SPI_HOST_INTR_TEST_OFFSET = 6'h 8;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:306:33: Parameter is not used: 'SPI_HOST_ALERT_TEST_OFFSET'
+                                                                                                                                                                         : ... note: In instance 'spi_host_fsm'
+  306 |   parameter logic [BlockAw-1:0] SPI_HOST_ALERT_TEST_OFFSET = 6'h c;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:307:33: Parameter is not used: 'SPI_HOST_CONTROL_OFFSET'
+                                                                                                                                                                         : ... note: In instance 'spi_host_fsm'
+  307 |   parameter logic [BlockAw-1:0] SPI_HOST_CONTROL_OFFSET = 6'h 10;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:308:33: Parameter is not used: 'SPI_HOST_STATUS_OFFSET'
+                                                                                                                                                                         : ... note: In instance 'spi_host_fsm'
+  308 |   parameter logic [BlockAw-1:0] SPI_HOST_STATUS_OFFSET = 6'h 14;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:309:33: Parameter is not used: 'SPI_HOST_CONFIGOPTS_0_OFFSET'
+                                                                                                                                                                         : ... note: In instance 'spi_host_fsm'
+  309 |   parameter logic [BlockAw-1:0] SPI_HOST_CONFIGOPTS_0_OFFSET = 6'h 18;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:310:33: Parameter is not used: 'SPI_HOST_CONFIGOPTS_1_OFFSET'
+                                                                                                                                                                         : ... note: In instance 'spi_host_fsm'
+  310 |   parameter logic [BlockAw-1:0] SPI_HOST_CONFIGOPTS_1_OFFSET = 6'h 1c;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:311:33: Parameter is not used: 'SPI_HOST_CSID_OFFSET'
+                                                                                                                                                                         : ... note: In instance 'spi_host_fsm'
+  311 |   parameter logic [BlockAw-1:0] SPI_HOST_CSID_OFFSET = 6'h 20;
+      |                                 ^~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:312:33: Parameter is not used: 'SPI_HOST_COMMAND_OFFSET'
+                                                                                                                                                                         : ... note: In instance 'spi_host_fsm'
+  312 |   parameter logic [BlockAw-1:0] SPI_HOST_COMMAND_OFFSET = 6'h 24;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:313:33: Parameter is not used: 'SPI_HOST_ERROR_ENABLE_OFFSET'
+                                                                                                                                                                         : ... note: In instance 'spi_host_fsm'
+  313 |   parameter logic [BlockAw-1:0] SPI_HOST_ERROR_ENABLE_OFFSET = 6'h 30;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:314:33: Parameter is not used: 'SPI_HOST_ERROR_STATUS_OFFSET'
+                                                                                                                                                                         : ... note: In instance 'spi_host_fsm'
+  314 |   parameter logic [BlockAw-1:0] SPI_HOST_ERROR_STATUS_OFFSET = 6'h 34;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:315:33: Parameter is not used: 'SPI_HOST_EVENT_ENABLE_OFFSET'
+                                                                                                                                                                         : ... note: In instance 'spi_host_fsm'
+  315 |   parameter logic [BlockAw-1:0] SPI_HOST_EVENT_ENABLE_OFFSET = 6'h 38;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:318:25: Parameter is not used: 'SPI_HOST_INTR_TEST_RESVAL'
+                                                                                                                                                                         : ... note: In instance 'spi_host_fsm'
+  318 |   parameter logic [1:0] SPI_HOST_INTR_TEST_RESVAL = 2'h 0;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:319:25: Parameter is not used: 'SPI_HOST_INTR_TEST_ERROR_RESVAL'
+                                                                                                                                                                         : ... note: In instance 'spi_host_fsm'
+  319 |   parameter logic [0:0] SPI_HOST_INTR_TEST_ERROR_RESVAL = 1'h 0;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:320:25: Parameter is not used: 'SPI_HOST_INTR_TEST_SPI_EVENT_RESVAL'
+                                                                                                                                                                         : ... note: In instance 'spi_host_fsm'
+  320 |   parameter logic [0:0] SPI_HOST_INTR_TEST_SPI_EVENT_RESVAL = 1'h 0;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:321:25: Parameter is not used: 'SPI_HOST_ALERT_TEST_RESVAL'
+                                                                                                                                                                         : ... note: In instance 'spi_host_fsm'
+  321 |   parameter logic [0:0] SPI_HOST_ALERT_TEST_RESVAL = 1'h 0;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:322:25: Parameter is not used: 'SPI_HOST_ALERT_TEST_FATAL_FAULT_RESVAL'
+                                                                                                                                                                         : ... note: In instance 'spi_host_fsm'
+  322 |   parameter logic [0:0] SPI_HOST_ALERT_TEST_FATAL_FAULT_RESVAL = 1'h 0;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:323:26: Parameter is not used: 'SPI_HOST_COMMAND_RESVAL'
+                                                                                                                                                                         : ... note: In instance 'spi_host_fsm'
+  323 |   parameter logic [28:0] SPI_HOST_COMMAND_RESVAL = 29'h 0;
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:324:26: Parameter is not used: 'SPI_HOST_COMMAND_LEN_RESVAL'
+                                                                                                                                                                         : ... note: In instance 'spi_host_fsm'
+  324 |   parameter logic [23:0] SPI_HOST_COMMAND_LEN_RESVAL = 24'h 0;
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:325:25: Parameter is not used: 'SPI_HOST_COMMAND_CSAAT_RESVAL'
+                                                                                                                                                                         : ... note: In instance 'spi_host_fsm'
+  325 |   parameter logic [0:0] SPI_HOST_COMMAND_CSAAT_RESVAL = 1'h 0;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:326:25: Parameter is not used: 'SPI_HOST_COMMAND_SPEED_RESVAL'
+                                                                                                                                                                         : ... note: In instance 'spi_host_fsm'
+  326 |   parameter logic [1:0] SPI_HOST_COMMAND_SPEED_RESVAL = 2'h 0;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:327:25: Parameter is not used: 'SPI_HOST_COMMAND_DIRECTION_RESVAL'
+                                                                                                                                                                         : ... note: In instance 'spi_host_fsm'
+  327 |   parameter logic [1:0] SPI_HOST_COMMAND_DIRECTION_RESVAL = 2'h 0;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:330:33: Parameter is not used: 'SPI_HOST_RXDATA_OFFSET'
+                                                                                                                                                                         : ... note: In instance 'spi_host_fsm'
+  330 |   parameter logic [BlockAw-1:0] SPI_HOST_RXDATA_OFFSET = 6'h 28;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:331:33: Parameter is not used: 'SPI_HOST_RXDATA_SIZE'
+                                                                                                                                                                         : ... note: In instance 'spi_host_fsm'
+  331 |   parameter int unsigned        SPI_HOST_RXDATA_SIZE   = 'h 4;
+      |                                 ^~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:332:33: Parameter is not used: 'SPI_HOST_TXDATA_OFFSET'
+                                                                                                                                                                         : ... note: In instance 'spi_host_fsm'
+  332 |   parameter logic [BlockAw-1:0] SPI_HOST_TXDATA_OFFSET = 6'h 2c;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:333:33: Parameter is not used: 'SPI_HOST_TXDATA_SIZE'
+                                                                                                                                                                         : ... note: In instance 'spi_host_fsm'
+  333 |   parameter int unsigned        SPI_HOST_TXDATA_SIZE   = 'h 4;
+      |                                 ^~~~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_reg_pkg.sv:353:25: Parameter is not used: 'SPI_HOST_PERMIT'
+                                                                                                                                                                         : ... note: In instance 'spi_host_fsm'
+  353 |   parameter logic [3:0] SPI_HOST_PERMIT [13] = '{
+      |                         ^~~~~~~~~~~~~~~
+%Warning-UNUSEDPARAM: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_cmd_pkg.sv:11:17: Parameter is not used: 'CmdSize'
+                                                                                                                                                                        : ... note: In instance 'spi_host_fsm.u_sck_flop'
+   11 |   parameter int CmdSize = CSW + 60;
+      |                 ^~~~~~~
+%Warning-SYNCASYNCNET: /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_fsm.sv:16:38: Signal flopped as both synchronous and async: 'rst_ni'
+                       /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_fsm.sv:149:10: ... Location of async usage
+  149 |     if (!rst_ni) begin
+      |          ^~~~~~
+                       /tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/lint_tree_45ee4dc/rtl/spi_host_fsm.sv:606:73: ... Location of sync usage
+  606 |   BidirOnlyInStdMode_A: assert property (@(posedge clk_i) disable iff ((rst_ni) !== '0) ($isunknown(rst_ni) || (cmd_speed_d == Standard || !(cmd_rd_en_d && cmd_wr_en_d))))                    
+      |                                                                         ^~~~~~
+                       ... For warning description see https://verilator.org/warn/SYNCASYNCNET?v=5.040
+                       ... Use "/* verilator lint_off SYNCASYNCNET */" and lint_on around source to disable this message.
+%Error: Exiting due to 50 warning(s)

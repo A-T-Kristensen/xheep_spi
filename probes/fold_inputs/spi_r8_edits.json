@@ -1,0 +1,20 @@
+[
+  {"id": "doc_held_continuation_paths", "path": "doc/_index.md", "first": "17bcfd0c",
+   "old": "A segment that continues a held transaction from `IdleCSBActive` starts its first byte on the first state transition in both modes.",
+   "new": "A segment that continues a held transaction, from `IdleCSBActive` or directly from the last clock state of the previous segment, starts its first byte on the first state transition in both modes."},
+  {"id": "doc_offset_basic_config_switch_name", "path": "doc/_index.md", "first": "17bcfd0c",
+   "old": "`WaitIdle` or `CSBSwitch`, it also moves each milestone signal",
+   "new": "`WaitIdle` or `ConfigSwitch`, it also moves each milestone signal"},
+  {"id": "doc_offset_milestones_config_switch_name", "path": "doc/_index.md", "first": "17bcfd0c",
+   "old": "`WaitIdle` or `CSBSwitch`, each milestone falls",
+   "new": "`WaitIdle` or `ConfigSwitch`, each milestone falls"},
+  {"id": "doc_offset_basic_rename", "path": "doc/_index.md", "first": "9a5b4d6a",
+   "old": "`WaitIdle` or `ConfigSwitch`, it also moves each milestone signal",
+   "new": "`WaitIdle` or `CSBSwitch`, it also moves each milestone signal"},
+  {"id": "doc_offset_milestones_rename", "path": "doc/_index.md", "first": "9a5b4d6a",
+   "old": "`WaitIdle` or `ConfigSwitch`, each milestone falls",
+   "new": "`WaitIdle` or `CSBSwitch`, each milestone falls"},
+  {"id": "hjson_error_status_grammar", "path": "data/spi_host.hjson", "first": "9a5b4d6a",
+   "old": "desc: '''Indicates that any errors that have occurred.",
+   "new": "desc: '''Indicates the errors that have occurred."}
+]

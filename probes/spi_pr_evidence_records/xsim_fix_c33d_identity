@@ -1,0 +1,5 @@
+job_root=/scratch/kristens
+tree=claude-0919455e/spi_fix_c33d/src repo=openwifi-hw head=c0e3ef42cf093b96b4656d45bc0ad2dca14aef4d changes_sha256=0f09314637f5928b sent_utc=2026-11-22T13:14:55Z
+tree=claude-0919455e/spi_fix_c33d/with/theshire repo=theshire head=56ddb8e4db8b58285eb13c2172b82e0ef3d84b0f changes_sha256=fd142f2901d24a21 sent_utc=2026-11-22T13:17:10Z
+tree=/tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/aff8/send/spi_variants kind=plain inventory_sha256=985c340106f51086 sent_utc=2026-11-22T13:17:10Z
+tree=/tmp/claude-1000/-home-andreas-gitlab-esl-theshire/0919455e-aec0-4714-93f3-cc1625459544/scratchpad/aff8/send/probe kind=plain inventory_sha256=707650a1c573d0a0 sent_utc=2026-11-22T13:17:11Z

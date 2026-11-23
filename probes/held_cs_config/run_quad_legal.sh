@@ -16,13 +16,15 @@
 # (IDLE is the bench default 1). Rows without such a change must give the same
 # totals on both builds. A nonzero exit, a timeout or a missing TOTAL line is
 # ERROR. Prints the verdict counts and exits nonzero unless every row passes.
+# The main_windows column records the CS0 window count of the main build; the
+# grade does not use it.
 set -uo pipefail
 main_sim="$1"
 tip_sim="$2"
 out_tsv="$3"
 bench_idle=1
 
-printf 'verdict\tconfig_change\tplusargs\tmain_total\ttip_total\ttip_windows\ttip_gap\n' > "$out_tsv" || exit 1
+printf 'verdict\tconfig_change\tplusargs\tmain_total\ttip_total\tmain_windows\ttip_windows\ttip_gap\n' > "$out_tsv" || exit 1
 for mode in 0 1 2 3 4; do
   for cpha in 0 1; do
     for cpha2 in 0 1; do
@@ -38,6 +40,7 @@ for mode in 0 1 2 3 4; do
             tip_rc=$?
             main_total=$(printf '%s\n' "$main_out" | grep '^TOTAL' | tail -1)
             tip_total=$(printf '%s\n' "$tip_out" | grep '^TOTAL' | tail -1)
+            main_windows=$(printf '%s\n' "$main_out" | grep -c '^CS0 lead=')
             tip_windows=$(printf '%s\n' "$tip_out" | grep -c '^CS0 lead=')
             tip_gap=$(printf '%s\n' "$tip_out" | grep -o 'gap before CS0 = [0-9]*' | awk '{print $NF}' | tail -1)
             config_change=0
@@ -61,8 +64,8 @@ for mode in 0 1 2 3 4; do
             elif [[ $config_change == 0 && "$main_total" != "$tip_total" ]]; then
               verdict=nochange_count_diff
             fi
-            printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\n' "$verdict" "$config_change" "${plusargs[*]}" \
-              "$main_total" "$tip_total" "$tip_windows" "${tip_gap:--}" >> "$out_tsv" || exit 1
+            printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' "$verdict" "$config_change" "${plusargs[*]}" \
+              "$main_total" "$tip_total" "$main_windows" "$tip_windows" "${tip_gap:--}" >> "$out_tsv" || exit 1
           done
         done
       done

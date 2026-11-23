@@ -15,6 +15,12 @@ These notes say what three records of this branch show, and what they do not rec
 - Verilator on the laptop was 5.040 when it was read on 2026-11-22. The run did not record its version.
 - A rerun must write the key, the state-machine commit and the Verilator version into the sweep header.
 
+## probes/spi_pr_evidence_records/xsim_variants/
+
+- These are the three state-machine files of the xsim send folder, saved on 2026-11-23 after the run. With `chs_spi_host_` renamed to `spi_host_`, neg has the blob of `main` 91acf0f3, port the blob of c1e8360b, and fix the blob of 0c66bf81.
+- `xsim_fix_c33d_identity` fingerprints that folder by file names, sizes and modification times only (`offload.sh`, the `inventory_sha256` line), and the times were not kept. So these files are not proven to be the bytes that the server ran.
+- The message of commit c541c699 calls them "the files that were sent". Read that as "the files of the send folder".
+
 ## probes/spi_pr_evidence_records/lint_tip_*.log
 
 - Each log ends with "Exiting due to 50 warning(s)".
